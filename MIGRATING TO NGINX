@@ -1,0 +1,26 @@
+To use nginx instead of Apache the following rules need to be present in your nginx.conf file within the server section
+Also we highly reccomnd using php-fpm alongside nginx for best results
+
+		location / { 
+			  include fastcgi_params;
+                          
+		    if ($request_uri ~ "/auction/(.*)-([0-9]+)\.html$"){
+			  		
+			  rewrite auction/(.*)-([0-9]+)\.html$ /viewproduct.php?aid=$2 redirect; 
+			} 
+		    if ($request_uri ~ "/auction-lowest/(.*)-([0-9]+)\.html$"){ 
+			  rewrite auction-lowest/(.*)-([0-9]+)\.html$ /viewproduct_lowest.php?aid=$2 redirect; 
+			} 
+		    if ($request_uri ~ "/redeem/(.*)-([0-9]+)\.html$"){ 
+			  rewrite redeem/(.*)-([0-9]+)\.html$ /redemptiondetail.php?rid=$2 redirect; 
+			} 
+		    if ($request_uri ~ "css/backups/(.*)/(.*)/(.*)\.(png|jpg|bmp|jpeg|gif|ttf)$"){ 
+			  rewrite css/backups/(.*)/(.*)/(.*)\.(png|jpg|bmp|jpeg|gif|ttf)$ /css/$1/$3$4 redirect; 
+			} 
+		    if ($request_uri ~ "/strategies$"){ 
+			  rewrite strategies$ /aboutus.php?page=strategies redirect; 
+			} 
+		    if ($http_host ~* "^www\.pennyauctionsoftdemo\.com$"){ 
+			  rewrite ^(.*)$ http://pennyauctionsoftdemo.com/$1 redirect; 
+			} 
+		  } 

@@ -1,0 +1,152 @@
+/* 
+  Secure and Accessible PHP Contact Form v.2.0 Basic Styles by Mike Cherim 
+  THESE ARE THE VARIOUS ELEMENTS, CLASSES, IDS, AND SELECTORS YOU MAY NEED FOR STYING THIS FORM
+  Anchors or link elements have not been included, but everythig else is :-)
+*/
+
+/* for main form wrapping div */
+div#gb_form_div { 
+  /* not styled on demo page */
+}
+
+/* id for the form itself */
+form#gb_form { 
+  /* not styled on demo page */
+}
+
+/* form and results heading size */
+.main_formhead, .formhead { 
+  font-size : 1.4em; 
+  color : #cc9900; 
+}
+
+/* outer fieldset - it's common to make this border : 0; */
+fieldset#formwrap { 
+  background-color : #fefefe; 
+}
+
+/* section fieldsets - it's common to make this border : 0; */
+fieldset { 
+  background-color : #fafafa; 
+}
+
+/* form legends and dt "heading" */
+legend, dt { 
+  font-weight : bold; 
+  color : #666;
+}
+
+/* main legend at top of the form */
+legend#mainlegend { 
+  font-size : 1.2em;
+  color : #669900; 
+}
+
+/* form label text */
+label { 
+  color : #669900;
+}
+
+/* all inputs, select, and textarea */
+input.med, input.short, select.med, textarea.textbox { 
+  font : 80% 'Trebuchet MS', sans-serif; 
+  color : #666; 
+  padding : 2px; 
+  border : 1px solid #223a7d;
+  background-color : #fffffa;
+}
+
+/* hover and focus styling - the classes like .hover and .focus below are for the javascript for IE */
+input.med:hover, input.med:focus, input.short:hover, input.short:hover, select.med:hover, select.med:focus, textarea.textbox:hover, textarea.textbox:focus, input.med.hover, input.med.focus, input.short.hover, input.short.focus, select.med.hover, select.med.focus, textarea.textbox.hover, textarea.textbox.focus { 
+  color : #000;  
+  border : 1px solid #000;
+  background-color : #fff;
+}
+
+/* for the checkbox input */
+input.checkbox {
+  /* not styled on demo page */
+}
+
+/* error heading weight and color - bold is for the error reason text */
+span.error, dt.error, strong.error { 
+  color : #cd0000; 
+  font-weight : bold; 
+}
+
+/* success heading color */
+span.success { 
+  color : #669900; 
+  font-weight : bold; 
+}
+
+/* privacy and "Why?" small element link sizes (relative to their parent element */
+small.privacy, small.whythis { 
+  font-size : 80%; 
+}
+
+/* set up relativity to position small Why? text */
+small.whythis { 
+  position : relative; 
+}
+
+/* Why? link style */
+small.whythis a { 
+  text-decoration : underline; 
+  font-size : 0.95em;
+}
+
+small.whythis a:hover, small.whythis a:focus, small.whythis a:active { 
+  text-decoration : none;
+} 
+
+/* hide the Why? text span */
+small.whythis a span { 
+  border : 1px solid #fafafa; 
+  background-color : #fafafa; 
+  padding : 0 4px 0 4px; 
+  color : #fafafa;
+  text-decoration : none; 
+}
+
+/* bring back Why? text span (title attribute backs this up for borwsers it doesn't function in */
+small.whythis a:hover span, small.whythis a:focus span, small.whythis a:active span { 
+  border : 1px solid #000; 
+  background-color : #eecc11; 
+  color : #000;
+  padding : 0 4px 0 4px; 
+  text-decoration : none; 
+}
+
+/* the link back to me for form credit */
+p.creditline { 
+  float : right; 
+  margin : -17px 0; 
+  padding-bottom : 1px; 
+  font-size : 80%; 
+}
+
+/* used for abbreviation used relative to form. the .abbr class is for the span added for IE */
+abbr, .abbr { 
+  cursor : help; 
+  border-bottom : 1px dotted #999;
+}
+
+/* set result color for blockquote dt "heading" */
+dl#result_dl_blockq dt, dl.result_dl_blockq dt {
+  color : #669900;
+}
+
+/* position result blockquote flush with parent */
+dl#result_dl_blockq blockquote, dl.result_dl_blockq blockquote {
+  margin-left : 0;
+}
+
+/* style the input names in the result */
+div#hf_form_div span.items {
+  font-weight : bold;
+  color : #cc9900;
+}
+
+
+/* End CSS */

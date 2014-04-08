@@ -1,0 +1,216 @@
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 1 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 2 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 3 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 4 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 5 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 6 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 7 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 8 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 9 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 10 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 11 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 12 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 13 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 14 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 15 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 16 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 17 time
+
+fs.js:427
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT, no such file or directory 'update_results.json'
+    at Object.fs.openSync (fs.js:427:18)
+    at Object.fs.readFileSync (fs.js:284:15)
+    at null.<anonymous> (/var/www/html/server.js:76:17)
+    at wrapper [as _onTimeout] (timers.js:252:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+error: Forever detected script exited with code: 8
+error: Forever restarting script for 18 time

@@ -1,0 +1,535 @@
+<?xml version='1.0'?>
+<rules>
+	<rule>
+		<idx_0><![CDATA[Type javascript [2]]]></idx_0>
+		<idx_1><![CDATA[Another type = javascript]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/TYPE\s*=\s*[\'\"]application\/x-javascript/]]></idx_9>
+		<idx_10>0</idx_10>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Type jscript]]></idx_0>
+		<idx_1><![CDATA[Detect jscript]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/TYPE\s*=\s*[\'\"]text\/jscript/i]]></idx_9>
+		<idx_10>0</idx_10>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Type vbscript [2]]]></idx_0>
+		<idx_1><![CDATA[And another..]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/TYPE\s*=\s*[\'\"]application\/x-vbscript/i]]></idx_9>
+		<idx_10>0</idx_10>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Style expression]]></idx_0>
+		<idx_1><![CDATA[Detect expressions]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/STYLE[\s]*=[\s]*[^>]expression[\s]*\(/i]]></idx_9>
+		<idx_10>0</idx_10>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Javascript eval]]></idx_0>
+		<idx_1><![CDATA[Nasty eval...]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/eval[\s]*\([\s]*[^\.]\.innerHTML[\s]*\)/i]]></idx_9>
+		<idx_10>0</idx_10>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Null Bytes]]></idx_0>
+		<idx_1><![CDATA[Null bytes are 99% of the time bad]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE,SERVER,FILES]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/(\\\0|x00|%00)/]]></idx_9>
+		<idx_10>0</idx_10>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Javascript url-handler]]></idx_0>
+		<idx_1><![CDATA[Detect java script: calls]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/(((URL|SRC|HREF|LOWSRC)[\s]*=)|(url[\s]*[\(]))[\s]*[\'\"]*javascript[\:]/i]]></idx_9>
+		<idx_10>0</idx_10>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[PHP in File Uploads]]></idx_0>
+		<idx_1><![CDATA[Blocks PHP file uploads]]></idx_1>
+		<idx_2>Uploads</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>FILES</idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/\<\?php/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Disallow TRACE Request Method]]></idx_0>
+		<idx_1><![CDATA[Disallow the "TRACE" request method]]></idx_1>
+		<idx_2><![CDATA[Request Parameters]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_METHOD/]]></idx_8>
+		<idx_9><![CDATA[/^TRACE$/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Apache directory disclosure]]></idx_0>
+		<idx_1><![CDATA[Blocks Apache issue]]></idx_1>
+		<idx_2><![CDATA[Directory Traversal]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[#////////#]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[SQL Injection in cookie]]></idx_0>
+		<idx_1><![CDATA[Block any SQL commands in cookies]]></idx_1>
+		<idx_2><![CDATA[SQL Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>COOKIE</idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/((select|grant|delete|insert|drop|alter|replace|truncate|update|create|rename|
+describe)\s+[A-Za-z0-9\*\s\,]?\s?(from|into|table|database|index|view)\s?[A-Za-z0-9\*\s\,]|UNION SELECT.*\'.*\'.*,[0-9].*INTO.*FROM)/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[IP Addresses]]></idx_0>
+		<idx_1><![CDATA[Block requests with IP address in the request_uri]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[/\x20([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[SQL Injection Insertion]]></idx_0>
+		<idx_1><![CDATA[Block insert SQL injection attempts]]></idx_1>
+		<idx_2><![CDATA[SQL Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/(insert\s+into.+values|select.*from.+[a-z|A-Z|0-9]|select.+from|bulk\s+insert|union.+select|convert.+\(.*from)/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[SQL Injection in request]]></idx_0>
+		<idx_1><![CDATA[Prevents SQL injection in requested page]]></idx_1>
+		<idx_2><![CDATA[SQL Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[/((select|grant|delete|insert|drop|alter|replace|truncate|update|create|rename|
+describe)\s+[A-Za-z0-9\*\s\,]?\s?(from|into|table|database|index|view)\s?[A-Za-z0-9\*\s\,]|UNION SELECT.*\'.*\'.*,[0-9].*INTO.*FROM)/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[SQL Injection in request]]></idx_0>
+		<idx_1><![CDATA[Prevents SQL injection in requested page]]></idx_1>
+		<idx_2><![CDATA[SQL Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[/((select|grant|delete|insert|drop|alter|replace|truncate|update|create|rename|
+describe)\s+[A-Za-z0-9\*\s\,]?\s?(from|into|table|database|index|view)\s?[A-Za-z0-9\*\s\,]|UNION SELECT.*\'.*\'.*,[0-9].*INTO.*FROM)/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[SQL Injection in user agent]]></idx_0>
+		<idx_1><![CDATA[Prevent SQL injection via user-agent]]></idx_1>
+		<idx_2><![CDATA[SQL Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/HTTP_USER_AGENT/]]></idx_8>
+		<idx_9><![CDATA[/((select|grant|delete|insert|drop|alter|replace|truncate|update|create|rename|
+describe)\s+[A-Za-z0-9\*\s\,]?\s?(from|into|table|database|index|view)\s?[A-Za-z0-9\*\s\,]|UNION SELECT.*\'.*\'.*,[0-9].*INTO.*FROM)/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[window.execscript]]></idx_0>
+		<idx_1><![CDATA[Hidden javascript]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE,SERVER,FILES]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/window\.execScript[\s]*\(/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[More common SQL injection]]></idx_0>
+		<idx_1><![CDATA[Blocks some more common SQL injection techniques]]></idx_1>
+		<idx_2><![CDATA[SQL Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/((alter|create|drop)\s+(column|database|procedure|table)|delete\s+from|update.+set.+=)/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Special server accounts]]></idx_0>
+		<idx_1><![CDATA[Blocks special server accounts]]></idx_1>
+		<idx_2><![CDATA[Protected Files]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[#/~(root|ftp|bin|nobody|named|guest|logs|sshd)/#i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Disallow Directory Traversal]]></idx_0>
+		<idx_1><![CDATA[Disallow "./" and "../"]]></idx_1>
+		<idx_2><![CDATA[Directory Traversal]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE,FILES]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[(\./|\.\./)]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Block command line injection]]></idx_0>
+		<idx_1><![CDATA[Blocks generic command line injection]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/\|+.*[\x20].*[\x20].*\|/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Uname -a]]></idx_0>
+		<idx_1><![CDATA[Block uname -a requests]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[/uname\s?\x20\-a/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Block Bad PHP]]></idx_0>
+		<idx_1><![CDATA[Blocks some bad PHP calls in the requested content]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE,FILES]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/(chr|fwrite|fopen|system|e?chr|passthru|popen|proc_open|shell_exec|exec|proc_nice|proc_terminate|proc_get_s
+tatus|proc_close|pfsockopen|leak|apache_child_terminate|posix_kill|posix_mkfifo|p
+osix_setpgid|posix_setsid|posix_setuid|phpinfo)(.*)\;/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Bad metacharacters (WARNING)]]></idx_0>
+		<idx_1><![CDATA[Block unexpected characters (WARNING: This could cause problems with requests, especially if you have a non-English site)]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[/!^[A-Za-z0-9.&\/?@_%=:;, -]*$/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Block protected files]]></idx_0>
+		<idx_1><![CDATA[Block requests for xterm]]></idx_1>
+		<idx_2><![CDATA[Protected Files]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[#(.*?)(/usr/X11R6/bin/xterm|/etc/shadow|/bin/ps//usr/bin/id|/etc/passwd/|/bin/echo|/bin/kill|/bin/chmod|/usr/bin/chsh|gcc|/usr/bin/cc|/usr/bin/cpp|/usr/bin/g\+\+|g\+\+\x20|bin/python|bin/tclsh|tclsh8\x20|bin/nasm|nasm\x20|/usr/bin/perl|/bin/ping|\x20-display\x20|/bin/mail|/bin/ls|/etc/inetd\.conf|/etc/motd|conf/httpd\.conf|\.htpasswd|ls\s*\x20-l|/*\x0a\.pl)(.*)#]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[XSS in PHP]]></idx_0>
+		<idx_1><![CDATA[Block XSS in php files]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/javascript\:(.*new\x20ActiveXObject.*Sh\.regwrite|.*window\.opener\.document\.body.\innerHTML=window\.opener\.document\.body\.innerHTML\.replace|onmouseover=\'javascript)/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Command Injection via cookies]]></idx_0>
+		<idx_1><![CDATA[Prevent command injection via cookies]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>COOKIE</idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/\; cmd=/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Type javascript]]></idx_0>
+		<idx_1><![CDATA[Detect type=text/javascript]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/TYPE\s*=\s*[\'\"]text\/javascript/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Type vbscript]]></idx_0>
+		<idx_1><![CDATA[Detect type = vbscript]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/TYPE\s*=\s*[\'\"]text\/vbscript/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Type ecmascript]]></idx_0>
+		<idx_1><![CDATA[Detect ecmascript]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/TYPE\s*=\s*[\'\"]text\/ecmascript/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[CDATA hiding]]></idx_0>
+		<idx_1><![CDATA[Detect styles hiding in cdata]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/<!\[CDATA\[<\]\]>SCRIPT/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Image onerror]]></idx_0>
+		<idx_1><![CDATA[Detects image onerror XSS attempts]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/\<IMG.*\bonerror\b[\s]*=/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Remote File Inclusion]]></idx_0>
+		<idx_1><![CDATA[Attempt to block remote file inclusion]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[/\.php\?(http|https|ftp)\:(.*?)/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[PHP in HTTP Headers]]></idx_0>
+		<idx_1><![CDATA[Block php in http headers]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/(<\?php|<\s?\?\s?php|<\? php)/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Remote File Download]]></idx_0>
+		<idx_1><![CDATA[Attempts to protect requests trying to remotely download a file]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/REQUEST_URI/]]></idx_8>
+		<idx_9><![CDATA[/(perl|t?ftp|links|elinks|lynx|ncftp|(s|r)(cp|sh)|wget|lwp-(download|request|mirror|rget)|curl|cvs|svn).*\x20((http|https|ftp)\:\/|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|.*[A-Za-z|0-9]\.[a-zA-Z]{2,4}\/|[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[More PHP Injection]]></idx_0>
+		<idx_1><![CDATA[blocks a lot of common php injection requests]]></idx_1>
+		<idx_2><![CDATA[PHP Injection]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,POST,REQUEST,COOKIE]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/(\?((LOCAL|INCLUDE|PEAR|SQUIZLIB)_PATH|action|content|dir|name|menu|pm_path|path|pathtoroot|cat|pagina|path|i
+nclude_location|root|page|gorumDir|site|topside|pun_root|open|seite)=(http|https|ftp)\:|(cmd|command)=(cd|\;|perl |killall |python |rpm |yum |apt-get |emerge |lynx |links |mkdir |elinks |id|cmd|pwd|wget |lwp-(download|request|mirror|rget) |uname|cvs |svn |(s|r)(cp|sh) |net(stat|cat) |rexec |smbclient |t?ftp |ncftp |curl |telnet |gcc |cc |g\+\+ |\.\/|whoami|killall |rm \-[a-zA-Z]))/i]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Enforce Valid Request Protocol]]></idx_0>
+		<idx_1><![CDATA[Enforce a valid HTTP Protocol]]></idx_1>
+		<idx_2><![CDATA[Request Parameters]]></idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7>SERVER</idx_7>
+		<idx_8><![CDATA[/SERVER_PROTOCOL/]]></idx_8>
+		<idx_9><![CDATA[/!^HTTP\/(0\.9|1\.0|1\.1)$/]]></idx_9>
+		<idx_10>1</idx_10>
+		<idx_11></idx_11>
+	</rule>
+	<rule>
+		<idx_0><![CDATA[Block XSS in _SERVER]]></idx_0>
+		<idx_1><![CDATA[Ensure XSS isn't sent in request headers or somehow set in _SERVER parameters]]></idx_1>
+		<idx_2>XSS</idx_2>
+		<idx_3>1</idx_3>
+		<idx_4>error</idx_4>
+		<idx_5></idx_5>
+		<idx_6></idx_6>
+		<idx_7><![CDATA[GET,REQUEST,COOKIE,SERVER,FILES]]></idx_7>
+		<idx_8><![CDATA[/^(.+?)$/]]></idx_8>
+		<idx_9><![CDATA[/(<\s*(script|about|applet|activex|chrome)*>.*(script|about|applet|activex|chrome)\s*>|onmouseover=|javascript\:)/i]]></idx_9>
+		<idx_10>0</idx_10>
+		<idx_11></idx_11>
+	</rule>
+</rules>

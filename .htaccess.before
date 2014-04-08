@@ -1,0 +1,42 @@
+<Files *.inc>
+Deny from all
+</Files> 
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+LimitRequestBody 0
+php_value post_max_size 20M
+php_value upload_max_filesize 20M
+#LimitRequestFields 0
+#LimitRequestFieldSize 0
+#LimitRequestLine 0
+
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.php
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} /auction/(.*)-([0-9]+)\.html$
+RewriteRule auction/(.*)-([0-9]+)\.html$ viewproduct.php?aid=$2 [L]
+
+RewriteCond %{REQUEST_URI} /auction-lowest/(.*)-([0-9]+)\.html$
+RewriteRule auction-lowest/(.*)-([0-9]+)\.html$ viewproduct_lowest.php?aid=$2 [L]
+
+RewriteCond %{REQUEST_URI} /redeem/(.*)-([0-9]+)\.html$
+RewriteRule redeem/(.*)-([0-9]+)\.html$ redemptiondetail.php?rid=$2 [L]
+
+
+RewriteCond %{REQUEST_URI} css/backups/(.*)/(.*)/(.*)\.(png|jpg|bmp|jpeg|gif|ttf)$
+RewriteRule css/backups/(.*)/(.*)/(.*)\.(png|jpg|bmp|jpeg|gif|ttf)$ css/$1/$3$4 [L]
+
+RewriteCond %{REQUEST_URI} /strategies$
+RewriteRule strategies$ aboutus.php?page=strategies [L]
+RewriteCond %{HTTP_HOST} ^www\.pennyauctionsoftdemo\.com$ [NC]
+ RewriteRule ^(.*)$  http://pennyauctionsoftdemo.com/$1 [R=301,L]
+
+#Use below for sites that are not yet live to introduce a splash page...the page content itself can be found in {DOCUMENT_ROOT}/include/{template}/splash.php
+#DirectoryIndex splash.php
+
+#RewriteCond %{REQUEST_URI} index\.php$
+#RewriteRule index\.php splash.php [L]
