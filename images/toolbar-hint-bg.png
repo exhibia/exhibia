@@ -1,0 +1,2198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Wavee</title>
+        <link href="../css/all-min1118.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../css/themes/wavee/jquery-ui-1.7.2.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../css/jquery/smoothness/jquery.autocomplete.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../css/jquery/smoothness/thickbox.css" media="screen" rel="stylesheet" type="text/css" />        
+	<script type="text/javascript" src="../js/jquery-noleak.js"></script>
+<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+<script type="text/javascript" src="../js/jquery.color.js"></script>
+<script type="text/javascript" src="../js/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="../js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="../js/jquery.ajaxQueue.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.main.js"></script>
+<script type="text/javascript" src="../js/jquery.ezpz_hint.min.js"></script>
+<script type="text/javascript" src="../js/easyTooltip-0219.js"></script>
+<script type="text/javascript" src="../js/jquery.hoverIntent.js"></script>
+<script type="text/javascript" src="../js/jquery.joverlay.min.js"></script>
+<script type="text/javascript" src="../js/jquery.ajaxmanager.js"></script>
+<script type="text/javascript" src="../js/top_nav_slide.js"></script>
+                 <!-- jquery-noleak.js replaces jquery-1.4.2.min.js -->
+
+	<script type="text/javascript">
+window.aryCurrentItemIndexes = new Array();
+window.aryNextItems = new Array(); // see next-items.phtml
+window.aryDivControllers = new Object();
+window.aryEndedAuctions = new Object();
+
+function buy(product_id,auction_id,obj)
+{
+    if(typeof auction_id == "undefined") {
+        auction_id = 0;
+    }
+    //override product if a different one has been selected
+    if(auction_id > 0) {
+        var objProductId = $('#auction-product'+auction_id);
+        if(objProductId.length > 0) {
+            var nProductId = Number(objProductId.html());
+            if(nProductId > 0) {
+                product_id = Number(objProductId.html());
+            }
+        }
+    }
+
+    window.location = '../account/payment/id/'+product_id+'../aid/'+auction_id;
+}
+
+function getNextProduct(auction_id,sort_order,max_index,direction) {
+
+	var sAuctionId = String("a"+auction_id);
+
+    if(window.aryCurrentItemIndexes[sAuctionId] === undefined) {
+        var nextIndex = sort_order;
+    }
+    else {
+        var nextIndex = window.aryCurrentItemIndexes[sAuctionId];
+    }
+
+    if(direction != null && direction == "prev") {
+        if(nextIndex > 0) {
+            nextIndex--;
+            _showArrow(auction_id,"next",true);
+        }
+        if(nextIndex == 0) {
+            _showArrow(auction_id,direction,false);
+        }
+    }
+    else {
+        if(nextIndex < max_index) {
+            nextIndex++;
+            _showArrow(auction_id,"prev",true);
+        }
+        if(nextIndex == max_index) {
+            _showArrow(auction_id,direction,false);
+        }
+    }
+
+    if(window.aryNextItems[sAuctionId] === undefined || window.aryNextItems[sAuctionId]['i'+nextIndex] === undefined) {
+        //This puts the apropriate content in window.aryNextItems[auction_id][nextIndex]
+		if(window.aryNextItems[sAuctionId] === undefined) window.aryNextItems[sAuctionId] = new Array();
+        $('#next-items-container').load('../global/next-items/auction_id/'+auction_id+'../sort_order/'+sort_order+'../direction/'+direction, function() {
+            window.aryCurrentItemIndexes[sAuctionId] = nextIndex;
+            _displayCurrentIndexProduct(auction_id,nextIndex);
+        });
+    }
+    else {
+        window.aryCurrentItemIndexes[sAuctionId] = nextIndex;
+        _displayCurrentIndexProduct(auction_id,nextIndex);
+    }
+}
+
+function _displayCurrentIndexProduct(auction_id,currentIndex) {
+
+    var sAuctionId = String("a"+auction_id);
+    var currentIndex = String("i"+currentIndex);
+
+    if(window.aryNextItems[sAuctionId] != undefined && window.aryNextItems[sAuctionId][currentIndex] != undefined) {
+
+        if(window.aryNextItems[sAuctionId][currentIndex]['id'] != undefined) {
+            // window.aryNextItems: id,product_name,etilize_id,image,product_price,product_msrp
+
+            var aryItem = window.aryNextItems[sAuctionId][currentIndex];
+            var objTitle = $('#preview-item-title'+auction_id);
+            var strObjImage = 'preview-item-image'+auction_id;
+            var objImage = $('#'+strObjImage);
+            var objPrice = $('#preview-item-price'+auction_id);
+            var objMSRP = $('#preview-item-msrp'+auction_id);
+            var objProductId = $('#auction-product'+auction_id);
+            if(objTitle.length > 0) {
+                objTitle.html(aryItem['product_name']);
+            }
+            if(objImage.length > 0) {
+                objImage.hide().html(aryItem['image']);
+                window.setTimeout("_fadeIn('"+strObjImage+"')",250);
+            }
+            if(objPrice.length > 0) {
+                objPrice.html(aryItem['product_price']);
+            }
+            if(objMSRP.length > 0) {
+                objMSRP.html(aryItem['product_msrp']);
+            }
+            if(objProductId.length > 0) {
+                objProductId.html(aryItem['id']);
+            }
+        }
+    }
+}
+
+function _fadeIn(strObjId) {
+    var objImage = $('#'+strObjId);
+    objImage.fadeIn("slow");
+}
+
+function _showArrow(auction_id,direction,bShow) {
+    if(direction == 'prev') {
+        var objArrow = $('#photo-prev'+auction_id);
+    }
+    else {
+        var objArrow = $('#photo-next'+auction_id);
+    }
+    if(objArrow.length > 0) {
+        if(bShow) {
+            objArrow.css("visibility", "visible");
+        }
+        else {
+            //objArrow.hide();
+            objArrow.css("visibility", "hidden");
+        }
+    }
+}
+
+function watchItem(auction_id,product_id,strID) {
+
+    var blnChanged = false;
+
+    var objWatch = $('#'+strID);
+
+    if(objWatch.length == 0) return;
+
+    if(objWatch.hasClass('watching')) {
+        var strMode = 'remove';
+    }
+    else {
+        var strMode = 'add';
+    }
+
+    $.post('../global/watch/auction_id/'+auction_id+'../product_id/'+product_id+'../mode/'+strMode, { }, function(watch){
+
+        if(watch['success'] == "y")
+        {
+            objWatch.unbind(); // remove tooltips
+            var objWatchCount = $('#watch-count');
+            var objWatchCount_s = $('#watch-count_s');
+            var nWatchCount = 0;
+
+            if(strMode == 'add') {
+                objWatch.addClass('watching');
+                if(objWatchCount.length > 0) {
+                    nWatchCount = Number(objWatchCount.html());
+                    objWatchCount.html(nWatchCount + 1);
+                }
+            }
+            else {
+                objWatch.removeClass('watching');
+                if(objWatchCount.length > 0) {
+                    nWatchCount = Number(objWatchCount.html());
+                    if(nWatchCount > 0) {
+                        objWatchCount.html(nWatchCount - 1);
+                    }
+                }
+            }
+            if(objWatchCount_s.length > 0) {
+                if(nWatchCount == 1) {
+                    objWatchCount_s.html('');
+                }
+                else {
+                    objWatchCount_s.html('s');
+                }
+            }
+            // Reload watches content
+            reloadWatch();
+        }
+        else if(watch['success'] == "wrong-mode") {
+            if(strMode == 'add') {
+                objWatch.addClass('watching');
+            }
+            else {
+                objWatch.removeClass('watching');
+            }
+        }
+    }, "json");
+
+}
+
+function reloadWatch() {
+    var objWatchList = $('#watch-list-content');
+    if(objWatchList.length > 0) {
+        objWatchList.load('../global/watch-items/count/20/no-layout/1');
+    }
+}
+
+function t_animateBid(item_id,price,high_bidder) {
+    flashTimer(item_id);
+    flashBox(item_id,price,high_bidder);
+}
+
+function flashTimer(item_id) {
+
+    var strObject;
+
+    for( var key in window.aryPrefixes ) {
+
+        strObject = '#'+window.aryPrefixes[key]+'flash-bg'+item_id+' .flash-highlight';
+        var objTimerBg = $(strObject);
+
+        if(objTimerBg.length == 0 || objTimerBg.hasClass('animating')) {
+            if(objTimerBg.length > 0) {
+                objTimerBg.removeClass('animating');
+            }
+        }
+        else {
+           _flashTimerHelper(strObject,item_id);
+        }
+    }
+}
+
+function _flashTimerHelper(strObject,item_id) {
+
+    var objTimerBg = $(strObject);
+
+    if(objTimerBg.length > 0) {
+
+        /*
+        objTimerBg.css({ display:'block' }).css({ opacity:0 }).stop().animate({ opacity:1 }, 500, "linear", function() {
+            //$(strObject).css({ display:'none' })
+        });
+        */
+        $(strObject).stop().css({ opacity:0 }).show().addClass('animating').fadeTo(500, 0.9, function(){
+            $(strObject).fadeTo(500, 0.1, function(){
+                $(strObject).removeClass('animating').hide();
+                if (typeof window.objAuctionTimes[item_id] == "object") {
+                    window.objAuctionTimes[item_id]['locked'] == false;
+                }
+            });
+        });
+
+    }
+}
+
+function flashBox(item_id,price,high_bidder) {
+
+    // Detail updates High Bidder internally
+    if(window.hasDetailType && $('#cross-flash'+item_id).length > 0) {
+        flashDetailBox(item_id,price,high_bidder);
+    }
+    else {
+        updatePrice(item_id,price);
+        updateHighBidder(item_id,high_bidder);
+    }
+}
+
+function flashDetailBox(item_id,price,high_bidder) {
+    var nArgs = arguments.length;
+    var strObject = '#cross-flash'+item_id;
+
+    var objBox = $(strObject);
+    if(objBox.length > 0 && !objBox.hasClass('animating')) {  //&& $(strObject+':animated').length == 0) {
+        $(strObject).stop().css({backgroundPosition:'-300px 0px'}).addClass('animating').animate({ backgroundPosition:350 }, 500, "linear", function(){
+            try {
+                if(nArgs > 1) {
+                    updatePrice(item_id,price);
+                    updateHighBidder(item_id,high_bidder);
+                }
+
+                $(strObject).css({backgroundPosition:'-300px 0px'}).removeClass('animating');
+            }
+            catch(e1) {
+                //alert(e1.description());
+                updatePrice(item_id,price,fal);
+                updateHighBidder(item_id,high_bidder,aryPrefix);
+            }
+        });
+    }
+    else {
+        if(objBox.length > 0) {
+            objBox.removeClass('animating');
+        }
+    }
+}
+
+function t_getPrice(item_id) {
+    var maxPrice = 0;
+    var price = 0;
+
+    for( var key in window.aryPrefixes ) {
+        objPrice = $('#'+window.aryPrefixes[key]+'price'+item_id);
+        if(objPrice.length > 0) {
+            price = parseFloat(objPrice.html());
+            if(price > maxPrice) {
+                maxPrice = price;
+            }
+            else {
+                price = maxPrice;
+            }
+        }
+    }
+
+    return price;
+}
+
+function updatePrice(item_id,price,aryPrefix)	{
+
+    if(!aryPrefix) var aryPrefix = window.aryPrefixes;
+
+    for( var key in aryPrefix ) {
+
+        var objPrice = $('#'+aryPrefix[key]+'price'+item_id);
+        if(objPrice.length == 0) continue;
+
+        price = Number(price);
+        objPrice.html(price.toFixed(2));
+
+        var strStart = objPrice.css('fontSize');
+        var nStart = Number(strStart.substring(0,2));
+
+        // The following is a safety. Numbers were staying at a larger font if the animation failed
+        // As a result, this function can currently only handle font sizes less than 16, 16, and 30.
+        if(nStart >= 30) {
+            strStart = '30px';
+            nStart = 30;
+        }
+        else if(nStart > 16) {
+            strStart = '16px';
+            nStart = 16;
+        }
+
+        var nEnd = nStart + 4;
+        var strEnd = String(nEnd) + 'px';
+
+        var strObject = '#'+aryPrefix[key]+'price'+item_id;
+
+        _updatePriceHelper(strObject,strStart,strEnd);
+    }
+}
+
+function _updatePriceHelper(strObject,strStart,strEnd) {
+
+    $(strObject).stop().css({ fontSize:strStart }).animate({ fontSize:strEnd }, 100, "linear", function(){
+        try {
+            $(strObject).css({ fontSize:strEnd }).animate({ fontSize:strStart }, 150, "linear", function(){
+                // Animation complete, clear safety timeout
+                //clearTimeout(flashCheckID);
+                //alert("cleared: " + flashCheckID);
+            });
+        }
+        catch(e1) { }
+    });
+}
+
+function addCredits(nAdd,animate) {
+    var nSubtract = -1*nAdd;
+    subtractCredits(nSubtract,animate);
+}
+
+function subtractCredits(nSubtract,animate) {
+	if(animate == null) animate = false;
+
+    var objCredits = $('#realtime-credits');
+    var nCredits = Number(objCredits.html()) - nSubtract;
+
+    setCredits(nCredits,animate);
+}
+
+function setCredits(nCredits,animate) {
+	if(animate == null) animate = false;
+
+    var objCredits = $('#realtime-credits');
+    var objCredit_s = $('#realtime-credit_s');
+    if(objCredits.length > 0) {
+        objCredits.html(nCredits);
+    }
+    if(objCredit_s.length > 0) {
+        if(Number(nCredits) == 1) {
+            objCredit_s.html("");
+        }
+        else {
+            objCredit_s.html("s");
+        }
+    }
+	if(animate) {
+		var strStart = '12px';
+		var strEnd = '20px';
+		$('#realtime-credits').stop().css({ fontSize:strStart }).animate({ fontSize:strEnd }, 100, "linear", function(){
+			try {
+				$('#realtime-credits').css({ fontSize:strEnd }).animate({ fontSize:strStart }, 150, "linear", function(){
+
+				});
+			}
+			catch(e1) { }
+		});
+	}
+}
+
+// A little helper function, added onto $. that counts
+// items in an "associative array" (which doesn't exist
+// in JS)
+jQuery.extend( {
+    objSize: function(obj) {
+    var size = 0, key;
+        for (key in obj) {
+            if (obj.hasOwnProperty(key)) size++;
+        }
+        return size;
+    }
+});
+
+function setDivController(divID, controlURL) {
+    if(divID != '' && controlURL != '') {
+        window.aryDivControllers[''+divID+''] = controlURL;
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+function registerEndedAuction(divController, divID, endedAucID) {
+    if(typeof(window.aryEndedAuctions[''+endedAucID+''])=='undefined') {
+        window.aryEndedAuctions[''+endedAucID+''] = {'controller': ''+divController+'', 'updateDiv': ''+divID+''};
+    }
+}
+
+function registerAnyEnded() {
+    itemPrefix = 'ended';
+    found = false;
+    for(divid in window.aryDivControllers) {
+        //console.log(divid + ' div[id^="'+itemPrefix+'"]');
+        if($('#'+ divid + ' div[id^="'+itemPrefix+'"]:visible').length != 0) {
+             $('#'+ divid + ' div[id^="'+itemPrefix+'"]:visible').each(function(index) {
+                 if( ($('#btn-bid'+$(this).attr('id').replace(itemPrefix, '')).length != 0) &&  ($('#btn-bid'+$(this).attr('id').replace(itemPrefix, '')).hasClass('pay'))) {
+                     
+                 } else {
+                    found = true;
+                    registerEndedAuction(window.aryDivControllers[''+divid+''], ''+divid+'', $(this).attr('id').replace(itemPrefix, ''));
+                 }
+             });
+        } else {
+            if($('div[id^="'+itemPrefix+'"]:visible').length != 0) {
+                $('div[id^="'+itemPrefix+'"]:visible').each(function(index) {
+                    if( ($('#btn-bid'+$(this).attr('id').replace(itemPrefix, '')).length != 0) &&  ($('#btn-bid'+$(this).attr('id').replace(itemPrefix, '')).hasClass('pay'))) {
+                     
+                    } else {
+                        found = true;
+                        registerEndedAuction(window.aryDivControllers[''+divid+''], ''+divid+'', $(this).attr('id').replace(itemPrefix, ''));
+                    }
+                });
+            }
+        }
+    }
+
+    /*
+    dbugStr = '';
+    for(auc in window.aryEndedAuctions) {
+        dbugStr += auc + ', ';
+    }
+    console.log('End Auc Array String: ' + dbugStr);
+    */
+
+    if(found) {
+        replaceEndedAuctions();
+    } else {
+        //console.log('No ended auctions on the page');
+    }
+}
+
+function replaceEndedAuctions() {
+    itemPrefix = 'flash-bg';
+
+    endAuc = new Object;
+    endAuc = window.aryEndedAuctions;
+    objSize = $.objSize(endAuc);
+    if(objSize==0){return true;}
+
+    $.manageAjax.create('auctionReplaceQueue',
+            { queue: "true",
+              contentType: 'html',
+              maxRequests: 2,
+              abortOld: false,
+              preventDoubbleRequests: true,
+              cacheResponse: false
+        });
+    //alert('window.aryEndedAuctions string' + window.aryEndedAuctions.toString());
+    //console.log('Going thru ended auctions:');
+    //console.log('-------------------------------');
+    for(aucid in endAuc) {
+        //console.log('Auc: '+aucid);
+        //alert('aucid, before manageAjax.add, is ' + aucid);
+        //alert('Going to call ' + endAuc[aucid].controller + ' to replace ' + aucid + ' in div ' + endAuc[aucid].updateDiv);
+        if( ($('#btn-bid'+aucid).length != 0) &&  $('#btn-bid'+aucid).hasClass('pay') ) {
+            for(idIndex in window.aryEndedAuctions) {
+                if(idIndex == aucid) {
+                    delete window.aryEndedAuctions[idIndex];
+                    break;
+                }
+            }
+            continue;
+        }
+/*
+        regTime = $('#'+itemPrefix+aucid).data("regTime");
+        if( regTime == null || regTime == 'null' || regTime == '' || regTime == ' ' ) {
+            tstamp = new Date().getTime();
+            $('#'+itemPrefix+aucid).data('regTime', tstamp);
+            continue;
+        } else {
+            timeAgo = Math.floor(parseInt(( (new Date().getTime()) - parseInt(regTime)) / 1000));
+            if( parseInt(timeAgo) <= parseInt(aucReplaceDelay) ) {
+                continue;
+            }
+        }
+  */
+        $.manageAjax.add('auctionReplaceQueue', {
+            //success: function(html) {
+            success: function(html) {
+              if(typeof(endAuc[''+aucid+'']) == 'undefined') { return true;}
+
+              runningAuctions = new Array();
+
+              // Grab every auction ID in the displayed page.
+              for(divid in aryDivControllers) {
+                  if( (divid != endAuc[''+aucid+''].updateDiv) && ($('#'+divid).length != 0) ) {
+                      $('#'+ divid +' div[id^="'+ itemPrefix +'"]').each(function(index) {
+                         runningAuctions.push($(this).attr('id'));
+                      });
+                  } /* else {
+                      $('#'+ endAuc[''+aucid+''].updateDiv +' div[id^="'+ itemPrefix +'"]').each(function(index) {
+                         runningAuctions.push($(this).attr('id'));
+                      });
+                 } */
+              }
+              // Turn those IDs into a string...
+              runAucString = runningAuctions.toString();
+              //console.log('Auctions running on the page: ' + runAucString);
+
+              //alert('running auction string is ' + runAucString);
+              
+              numNewAucs = 0;
+              searchReturn = 0;
+              ajaxAucs = new Array();
+              for(divid in aryDivControllers) {
+                // First see if the div ID associated with the controller exists
+                // in the returned ajax.
+                if($('#'+divid, html).length != 0) {
+                  $('#'+ divid +' div[id^="'+ itemPrefix +'"]', html).each(function(index) {
+                    searchReturn = runAucString.search($(this).attr('id'));
+                    // If one of the IDs returned in the ajaxHTML is not on the page...
+                    if(searchReturn == -1) {
+                        ajaxAucs.push($(this).attr('id'));
+                        numNewAucs++;
+                    }
+                  });
+                // If it's not there then look for auctions in whatever it is
+                // that the ajax returned.
+                } /* else {
+                   $('ul div[id^="'+ itemPrefix +'"]', html).each(function(index) {
+                    searchReturn = runAucString.search($(this).attr('id'));
+                    // If one of the IDs returned in the ajaxHTML is not on the page...
+                    if(searchReturn == -1) {
+                        ajaxAucs.push($(this).attr('id'));
+                        numNewAucs++;
+                    }
+                  });
+                } */
+              }
+
+              // If the controller for the div returned no new auctions then
+              // get out of here.
+              if(numNewAucs < 1) {
+                return false;
+              }
+
+              // Fade out the ended auction.
+//              $('#'+itemPrefix+aucid+'').removeData('regTime');
+              $('#'+itemPrefix+aucid+'').parent('li.item').animate(
+                  { opacity: 'toggle', duration: 2000 },
+                  // The function called after the fading out is done.
+                  // Here, it's a closure passing in locally scoped
+                  // variables so they keep their values.
+                  (function(ajaxHTML, newAuctions) {
+                      return function() {
+                                haveNew = 0;
+                                newAucID = '';
+                                for(auc in newAuctions) {
+                                    if($('#'+newAuctions[auc]+'', ajaxHTML).length != 0) {
+                                        haveNew = 1;
+                                        newAucID = newAuctions[auc];
+                                        break;
+                                    }
+                                }
+
+                                if(haveNew) {
+                                    // Fade out the ended auction, then replace the contents with the new auction.
+                                    $('#'+itemPrefix+aucid+'').parent('li.item').replaceWith('<li class="item">' + $('#'+newAucID, ajaxHTML).parent('li.item').html() + '</li>').animate({ opacity: 'toggle', duration: 'slow' });
+                                    // Grab the height of the new auction
+                                    newAucHeight = $('#'+newAucID).css('height');
+                                    // Immediately set it's height to zero
+                                    $('#'+newAucID).css('height', 0);
+                                    // Animate the height back to the original height
+                                    $('#'+newAucID).animate({'height': newAucHeight, duration: 1500});
+
+                                    // Make damn sure the ended auction ID is out of the aryAuctions array.
+                                    for(idIndex in window.gTimer_aryAuctions) {
+                                        if(window.gTimer_aryAuctions[idIndex] == aucid) {
+                                            retVal = window.gTimer_aryAuctions.splice(idIndex, 1);
+                                            break;
+                                        }
+                                    }
+
+                                    // Make damn sure the ended auction ID is out of the endedAuctions array.
+                                    for(idIndex in window.aryEndedAuctions) {
+                                        if(idIndex == aucid) {
+                                            delete window.aryEndedAuctions[idIndex];
+
+                                            break;
+                                        }
+                                    }
+
+                                    // Push the new auction ID onto the stack.
+                                    window.gTimer_aryAuctions.push(newAucID.replace(itemPrefix, ''));
+                                    gTimer_setAuctions();
+                                }
+                      }
+                  })(html, ajaxAucs));
+              },
+          url: endAuc[aucid].controller
+      });
+    }
+    //console.log('-------------------------------');
+    //console.log('');
+}
+
+
+
+//state: normal, processing, winning
+function t_updateButton(item_id,state) {
+
+    if(state == 'outbid') state = 'normal';
+
+    var objWinningStar = $('#winning-star'+item_id);
+    if(objWinningStar.length > 0) {
+        if(state == 'winning') {
+            objWinningStar.addClass('star-on');
+            var objCredits = $('#credits-per-bid'+item_id);
+            if(objCredits.length > 0) {
+                objCredits.addClass('hidden');
+            }
+        }
+        else {
+            objWinningStar.removeClass('star-on');
+            var objCredits = $('#credits-per-bid'+item_id);
+            if(objCredits.length > 0) {
+                objCredits.removeClass('hidden');
+            }
+        }
+    }
+
+    var objButton = $('#btn-bid-large'+item_id);
+    if(objButton.length > 0 && !objButton.hasClass(state)) {
+
+        updateButtonObj(objButton,state,large=true);
+        objButton.effect('bounce');
+    }
+
+    for( var key in window.aryPrefixes ) {
+        var strObjID = '#'+window.aryPrefixes[key]+'btn-bid'+item_id;
+        objButton = $(strObjID);
+        if(objButton.length == 0 || objButton.hasClass(state)) continue;
+
+        updateButtonObj(objButton,state);
+        objButton.effect('bounce');
+    }
+}
+
+function updateButtonObj(objButton,state) {
+    productType = $('#product-type').text();
+    if( (productType == 'c' && state == 'winning') || (productType == 'c' && state == 'processing') || (productType == 'c' && state == 'pay') || (productType != 'c')) {
+        objButton.removeClass().addClass('btn ' + state);
+    } else {
+        objButton.removeClass().addClass('hidden');
+    }
+
+}
+
+function t_showEnded(item_id) {
+    for( var sPrefix in window.aryPrefixes ) {
+        var strObjID = '#'+window.aryPrefixes[sPrefix]+'ended'+item_id;
+        var objEnded = $(strObjID);
+        if(objEnded.length > 0) {
+            objEnded.show();
+        }
+    }
+    objEnded = $('#btn-bid-large'+item_id);
+    if(objEnded.length > 0) {
+        objEnded.addClass('btn-ended');
+    }
+    objEnded = $('#credits-per-bid'+item_id);
+    if(objEnded.length > 0) {
+        objEnded.hide();
+    }
+    objEnded = $('#high-bidder-text'+item_id);
+    if(objEnded.length > 0) {
+        objEnded.html('Winner');
+    }
+}
+
+function t_showProcessing(item_id) {
+    for( var sPrefix in window.aryPrefixes ) {
+        var strObjID = '#'+window.aryPrefixes[sPrefix]+'processing'+item_id;
+        var objProcessing = $(strObjID);
+        if(objProcessing.length > 0) {
+            objProcessing.show();
+        }
+    }
+}
+
+function t_hideProcessing(item_id) {
+    for( var sPrefix in window.aryPrefixes ) {
+        var strObjID = '#'+window.aryPrefixes[sPrefix]+'processing'+item_id;
+        var objProcessing = $(strObjID);
+        if(objProcessing.length > 0) {
+            objProcessing.hide();
+        }
+    }
+}
+
+function s_hideBuyNow(item_id) {
+    var objButton = $('#btn-buy'+item_id);
+    if(objButton.length > 0) {
+        objButton.hide();
+    }
+    var objButton = $('#buy-now-invisible'+item_id);
+    if(objButton.length > 0) {
+        objButton.css('visibility','hidden');
+    }
+}
+
+function updateHighBidder(item_id,high_bidder,aryPrefix)
+{
+    if(!aryPrefix) var aryPrefix = window.aryPrefixes;
+
+    for( var sPrefix in aryPrefix ) {
+        try {
+            var objHighBidder = $('#'+aryPrefix[sPrefix]+'high-bidder'+item_id);
+            if(objHighBidder.length == 0) continue;
+
+            if(high_bidder) {
+                objHighBidder.html(high_bidder);
+            }
+            else {
+                objHighBidder.html('No Bids Yet');
+            }
+        }
+        catch(e) { }
+    }
+}
+
+function updateAvatar(id,a,h)
+{
+    if(h) updateHighBidder(id,h);
+
+    if(!a) return;
+
+    for( var sPrefix in window.aryPrefixes ) {
+        try {
+            var objAvatar = $('#'+window.aryPrefixes[sPrefix]+'avatar'+item_id);
+            if(objAvatar.length == 0) continue;
+
+            if(a.substring(0,1) == 'F')
+            {
+                objAvatar.html('<fb:profile-pic uid="'+a.substring(1)+'" facebook-logo="false" linked="false" width="26" height="26" class="login-avatar left"></fb:profile-pic>');
+            }
+            else objAvatar.html('<img src="avatars/'+a+'.jpg" />');
+        }
+        catch(e) { }
+    }
+    if(a.substring(0,1) == 'F') {
+        if($('#featured-description').length>0) FB.XFBML.Host.parseDomElement(document.getElementById("featured-description"));
+        if($('#product-details-bid').length>0) FB.XFBML.Host.parseDomElement(document.getElementById("product-details-bid"));
+    }
+}
+
+function updateDetailSavings(auction_id,chrCreditType,fCreditValue,fProductPrice,sB2B)
+{
+	if($('#savings-msrp'+auction_id).length == 0 || chrCreditType == "")
+	{
+		return;
+	}
+
+	if(sB2B != 'y') {
+		var objB2BLineInfo = $('#b2b-line-info'+auction_id);
+		if(objB2BLineInfo.length > 0) {
+			objB2BLineInfo.removeClass('info-box-on');
+			$('#btn-buy-now-large').addClass('hidden').hide();
+            if($("#b2b-off-overlay").length > 0) {
+                showB2BOverlay();
+            }
+		}
+	}
+
+	fCreditValue = getNumber(fCreditValue);
+	fProductPrice = getNumber(fProductPrice);
+
+	$('#savings-container .savings-price'+auction_id).html(fProductPrice.toFixed(2));
+
+	if(chrCreditType == "f") {
+		var nNewCount = getNumber($('#savings-container .savings-free-count'+auction_id).html()) + 1;
+		if(nNewCount > 0) {
+			$('#savings-container .savings-free-count'+auction_id).html(nNewCount);
+			$('#savings-container .savings-buy-free-count'+auction_id).html(nNewCount);
+		}
+	}
+	else if(chrCreditType == "p") {
+		var nNewCount = getNumber($('#savings-container .savings-paid-count'+auction_id).html()) + 1;
+		if(nNewCount > 0) {
+            if(nNewCount == 100) {
+
+            }
+			$('#savings-container .savings-paid-count'+auction_id).html(nNewCount);
+			$('#savings-container .savings-buy-paid-count'+auction_id).html(nNewCount);
+		}
+		var fNewValue = getNumber($('#savings-container .savings-paid-value'+auction_id).html());
+		fNewValue = fNewValue + fCreditValue;
+		if(fCreditValue > 0 && fNewValue > 0) {
+			$('#savings-container .savings-paid-value'+auction_id).html(fNewValue.toFixed(2));
+			if(sB2B == 'y') {
+				$('#savings-container .savings-buy-paid-value'+auction_id).html(fNewValue.toFixed(2));
+			}
+		}
+	}
+	else if(chrCreditType == "b") {
+		var nNewCount = getNumber($('#savings-bonus-count'+auction_id).html()) + 1;
+		if(nNewCount > 0) {
+			$('#savings-bonus-count'+auction_id).html(nNewCount);
+		}
+		if(sB2B == 'y' && $('#savings-container .savings-buy-bonus-count').length > 0) {
+            $('#savings-container .savings-buy-bonus-count').html(nNewCount);
+			var fNewValue = getNumber($('#savings-container .savings-buy-bonus-value'+auction_id).html());
+			fNewValue = fNewValue + fCreditValue;
+			if(fCreditValue > 0 && fNewValue > 0) {
+				$('#savings-container .savings-buy-bonus-value'+auction_id).html(fNewValue.toFixed(2));
+			}
+		}
+	}
+
+    if(chrCreditType == "p" || chrCreditType == "b") {
+        addHalo();
+    }
+
+	var msrp = getNumber($('#savings-container .savings-msrp'+auction_id).html());
+	var fNewAmount = msrp;
+	fNewAmount = fNewAmount - fProductPrice - getNumber($('#savings-container .savings-paid-value'+auction_id).html());
+	if(fNewAmount < 0) {
+		fNewAmount = 0;
+	}
+	$('#savings-container .savings-total'+auction_id).html(fNewAmount.toFixed(2));
+
+	var fNewPercentage = msrp;
+	if(fNewPercentage <= 0) {
+		fNewPercentage = 0;
+	}
+	else {
+		fNewPercentage = getNumber(100 * fNewAmount / fNewPercentage);
+	}
+	$('#savings-container .savings-total-percent'+auction_id).html(fNewPercentage.toFixed(0));
+
+	if(sB2B == 'y' && fCreditValue > 0) {
+		fNewAmount = getNumber($('#savings-buy-total'+auction_id).html());
+		fNewAmount = fNewAmount - fCreditValue;
+		if(fNewAmount < 0) {
+			fNewAmount = 0;
+		}
+		$('#savings-container .savings-buy-total'+auction_id).html(fNewAmount.toFixed(2));
+		//Update the one by the buy button if exists
+		var objBuyPrice = $('#buy-now-price'+auction_id);
+		if(objBuyPrice.length > 0) {
+			objBuyPrice.html(fNewAmount.toFixed(2));
+		}
+	}
+}
+
+function buildGlobalTooltip(ttWidth,ttHeight,strTip,strElementId) {
+    var blnChanged = false;
+
+    if(ttWidth == 0) {
+        var ttWidth = 100;
+        var ttHeight = 0;
+    }
+    var objTooltip = $('#global-tooltip');
+    if(objTooltip.length > 0) {
+        var cWidth = ttWidth - 16;
+        if(ttHeight > 24) {
+            var cHeight = ttHeight - 24;
+            objTooltip.width(ttWidth).height(ttHeight);
+            $('#global-tooltip .tooltip-left').height(cHeight);
+            $('#global-tooltip .tooltip-center').height(cHeight);
+            $('#global-tooltip .tooltip-right').height(cHeight);
+        }
+        $('#global-tooltip .tooltip-center').width(cWidth);
+
+        if(strTip == "" && strElementId != "") {
+            var objElement = $("#"+strElementId);
+            if(objElement.length > 0) {
+                if(objElement.html() != $('#global-tooltip-content').html()) {
+                    $('#global-tooltip-content').html(objElement.html());
+                    blnChanged = true;
+                }
+            }
+        }
+        else {
+            if(strTip != $('#global-tooltip-content').html()) {
+                $('#global-tooltip-content').html(strTip);
+                blnChanged = true;
+            }
+        }
+    }
+    return blnChanged;
+}
+
+function hideGlobalTooltip() {
+    var objTooltip = $('#global-tooltip');
+    if(objTooltip.length > 0) {
+        objTooltip.hide();
+    }
+}
+
+function fadeGlobalTooltip() {
+    var objTooltip = $('#global-tooltip');
+    if(objTooltip.length > 0) {
+        objTooltip.fadeOut('slow');
+    }
+}
+
+function showPriceTag(strId){
+    var objPriceTag = $('#'+strId);
+    if(objPriceTag.length > 0) {
+        objPriceTag.show();
+    }
+}
+
+function hidePriceTag(strId){
+    var objPriceTag = $('#'+strId);
+    if(objPriceTag.length > 0) {
+        objPriceTag.hide();
+    }
+}
+
+function getNumber(num) {
+	num = String(num);
+	num = num.replace(/\,/g,'');
+	num = Number(num);
+	return(num);
+}
+
+function getRandInt( n )
+{
+  return ( Math.floor ( Math.random ( ) * n + 1 ) );
+}
+
+function gUCB_hideNewNotifications() {
+    if($("#toolbar-tooltip-notifications").length > 0) {
+        $("#toolbar-tooltip-notifications").css("background","transparent");
+        $("#toolbar-tooltip-notifications").remove();
+    }
+}
+
+ function gUCB_showNewNotifications() {
+    if($("#toolbar-tooltip-notifications").length == 0) {
+        $("body").append('<div class="png_fix" id="toolbar-tooltip-notifications">'+ $('#notifications-tooltip').html() +'</div>');
+    }
+    var offset=$("#toolbar-notification").offset();
+    if (offset == null) {
+        offset = new Object();
+        offset.left = 0;
+        offset.right = 0;
+    }
+    $("#toolbar-tooltip-notifications")
+        .css("top","31px")
+        .css("left",(offset.left - 60) + "px")
+        .css("display","none")
+        .css("position","fixed")
+        .css("padding","25px 10px 10px")
+        .css("z-index","999")
+        .css("width","116px")
+        .css("height","34px")
+        .css("background","url('toolbar-hint-bg.png') no-repeat")
+        .fadeIn("fast");
+}
+
+</script>
+	<script type="text/javascript">
+
+	window.graphType = ""; // works in conjunction with details.phtml
+	window.idleMinutes = 30;
+	window.isIdle = false;
+	window.aryPrefixes = new Array("", "w-", "e-"); //, "m-"
+
+    $(document).ready(function(){
+        window.hasMainType = ($('#box-type-main').length > 0) ? true : false;
+        window.hasDetailType = ($('#box-type-detail').length > 0) ? true : false;
+		//window.hasFeatured = ($('#featured-item').length > 0) ? true : false;
+		window.hasControlBar = ($('#connection-strength').length > 0) ? true : false;
+		window.hasDetailSavings = ($('#detail-savings').length > 0) ? true : false;
+		//window.hasDetailWinnerSavings = ($('#product-detail-winner-savings').length > 0) ? true : false;
+
+		timedCount();
+        window.t = window.setInterval("timedCount()",1000);
+        //window.endAucs = window.setInterval("registerAnyEnded()", 5000);
+
+        //window.clearTimeout(window.idleTimeout);
+		//window.idleTimeout = window.setTimeout("idleHandler()", window.idleMinutes * 60000);
+
+        $('#wrapper').mousemove(function(e){
+          if(window.isIdle == false) {
+              window.idle_seconds = 0;
+             /*
+            if(window.idleTimeout) { // messes up in chrome
+                window.clearTimeout(window.idleTimeout);
+                window.idleTimeout = window.setTimeout("idleHandler()", 1800000);
+            }
+            */
+          }
+        });   
+
+    });
+
+	//create an ajaxmanager named timerAjaxManager
+	$.manageAjax.create('timerAjaxManager', {
+		queue: "clear",
+		abortOld: true,
+		cacheResponse: false,
+		preventDoubbleRequests: false,
+		maxRequests: 3
+	});
+
+    window.userPollingTime = 60;
+	window.megaWinPollingTime = 5;
+    window.seconds_elapsed = 0;
+    window.idle_seconds = 0;
+	window.sendTime = new Date();
+	window.receiveTime = new Date();
+	window.bidHistoryCount = 0;
+	window.gTimer_aryAuctions = new Array();
+	window.referenceAuctionId = 0;
+	window.referenceAuctionTime = 0;
+	window.objAuctionTimes = new Object();
+	window.timerAuctions = "";
+	window.missedResponseCount = 0;
+	window.cleanupTimers = false;
+    window.aryTimerLock = new Array();
+    window.objEndedItems = new Object();
+    window.gDetail_blnShowStats = false;
+    window.secondsUntilStart = 0;
+
+	function gTimer_setAuctions() {
+		var aryAuctions = window.gTimer_aryAuctions;
+		window.timerAuctions = "";
+		var nLen = aryAuctions.length;
+		if(nLen > 0) {
+            var aryUniqueIDs = new Array();
+            var key;
+            var strKey;
+            var strIDList = "";
+            //remove duplicates
+            for(key in aryAuctions) {
+                strKey = String('i'+aryAuctions[key]);
+                if(typeof aryUniqueIDs[strKey] != "string") {
+                    aryUniqueIDs[strKey] = String(aryAuctions[key]);
+                    strIDList += ","+aryAuctions[key];
+                }
+            } 
+			window.timerAuctions = "&ids="+strIDList.substring(1);
+		}
+	}
+
+    function timedCount()
+    {
+        if(window.gDetail_blnShowStats) {
+            statsCount();
+        }
+		if(window.hasControlBar && window.missedResponseCount > 1) {
+			$("#connection-strength").css('width',0);
+			$("#connection-strength").css('background-position','0 -15px');
+			$("#connection-strength-bg").css('background','none');
+			$("#connection-tooltip-content").html("<b>Connection Lost!</b><br>Try Refreshing Page");
+		}
+		else {
+			var currentTime = new Date();
+			// check if the javascript has been run recently, if not resync
+			if((currentTime.getTime() - window.sendTime.getTime()) > 2000) {
+				window.cleanupTimers = true;
+			}
+			else {
+				displayTimers();
+			}
+		}
+		window.missedResponseCount++;
+try {
+		window.sendTime = new Date();
+		$.manageAjax.add('timerAjaxManager', {
+		dataType: "json",
+		timeout: 1900,
+		success: function(data) {
+			window.receiveTime = new Date();
+			var fDiff = (window.receiveTime.getTime() - window.sendTime.getTime());
+			if(window.hasControlBar) {
+				if(fDiff < 1000) {
+					if(window.missedResponseCount > 1) {
+						$("#connection-strength").css('background-position','0 0');
+						$("#connection-strength-bg").css('background','url(connection-bg.png) no-repeat');
+						$("#connection-tooltip-content").html("Quality of Connection with Wavee");
+						if(window.missedResponseCount > 5) {
+							window.objAuctionTimes = new Object();
+						}
+					}
+					window.missedResponseCount = 0;
+
+					if(fDiff < 100) {
+						$("#connection-strength").css('width',24);
+					}
+					else if(fDiff < 200) {
+						$("#connection-strength").css('width',19);
+					}
+					else if(fDiff < 300) {
+						$("#connection-strength").css('width',14);
+					}
+					else if(fDiff < 500) {
+						$("#connection-strength").css('width',9);
+					}
+					else {
+						$("#connection-strength").css('width',4);
+					}
+				}
+				else {
+					$("#connection-strength").css('width',0);
+				}
+			}
+			//fDiff = fDiff/100;
+			//var nQuality = Math.round(200/((fDiff)*(fDiff)));
+			//if(nQuality > 100) nQuality = 100;
+
+			if(window.cleanupTimers) {
+				window.cleanupTimers = false;
+				var objCurrentItems = new Object();
+				$.each(data, function(i,item){
+					objCurrentItems[item.id] = true;
+				});
+				var aryEndedList = new Array();
+				for( var iKey in window.objAuctionTimes ) {
+					try {
+						if(typeof objCurrentItems[iKey] != "boolean") {
+                            var objPrice = null;
+                            for( var sPrefix in window.aryPrefixes ) {
+                                objPrice = $('#'+window.aryPrefixes[sPrefix]+'price'+iKey);
+                                if(objPrice.length > 0 && !objPrice.hasClass('has-ended')) {
+                                    objPrice.addClass('has-ended');
+                                    aryEndedList.push(iKey);
+                                    break;
+                                }
+                            }
+						}
+					} catch(e) { }
+				}
+
+				if(aryEndedList.length > 0) { 
+					var strEndedList = aryEndedList.join(",");
+
+					//Get ended auctions via ajax
+					$.post('../auctions/get-expired-timer-info/auction_id_list/'+strEndedList, { }, function(auction_data){
+
+						$.each(auction_data, function(i,item){
+
+							updateEnded(item);
+						});
+
+					}, "json");
+				}
+				window.objAuctionTimes = new Object(); // reset times
+			}
+
+            $.each(data, function(i,item){
+				//Local for each item
+				var strHours;
+				var strMins;
+				var strSecs;
+
+                
+//$('#debugdiv').html($('#debugdiv').html()+item.id+"<br>");
+                if(item.id=='settings')
+			    {
+					/*
+					if(window.seconds_elapsed % window.megaWinPollingTime == 1)
+                    {
+						$('#mega-win-meter').css('width',item.wm+'%');
+                        $('#mega-win-meter-small').css('width',item.wm+'%');
+                    }
+                        if ((item.tm!='')&&($(item.tm).text()!=$($('#ticker-text').html()).text())) {
+                            $('#ticker-text').slideUp(function(){
+                                $('#ticker-text').html(item.tm);
+                                $('#ticker-text').slideDown();
+                            });
+                        }
+                    */
+                }
+				else if(item.id=='bw')
+				{	
+					var aryWarAuctions = item.a.split(",");
+					var nLen = aryWarAuctions.length;
+					for(var iw=0; iw<nLen; iw++){
+						if($("#bot-war-bg"+aryWarAuctions[iw]).length > 0) {
+							try {
+								gDetail_botWar(aryWarAuctions[iw]);
+							} catch(e) { }
+						}
+					}
+				}
+                else 
+                {
+                    // Skip if item isn't on this page
+                    var objPrice = null;
+                    for( var sPrefix in window.aryPrefixes ) {
+                        objPrice = $('#'+window.aryPrefixes[sPrefix]+'price'+item.id);
+                        if(objPrice.length > 0) {
+                            break;
+                        }
+                        else {
+                            objPrice = null;
+                        }
+                    }
+
+                    if(objPrice == null || objPrice.length == 0) {
+                        return true; // for jQuery each this is the same as continue in a for loop
+                    }
+
+                    // Server returns a negative time before it flags the
+                    // auction as ended.  Look for that, and register the
+                    // auction as one that's about to end.
+                    if( (item.e == 0) && (item.t.indexOf('-') == 0) ) {
+                        itemPrefix = 'flash-bg';
+                        parentid = '';
+                        itemid = item.id;
+                        divController = '';
+
+                        jqselect = itemPrefix+itemid;
+
+                        // Every section of the page can register controllers
+                        // and the section of the page that the controllers
+                        // output will update.  The controller output has to be
+                        // an auction.
+                        /*
+                        for(divid in window.aryDivControllers) {
+                            parentid = $('#'+jqselect).parents('#'+divid).attr('id');
+                            if( (parentid != '') && (parentid==divid) ) {
+                                divController = window.aryDivControllers[parentid];
+                                break;
+                            }
+                        }
+
+                        if( (divController != '') && (parentid != '' && (typeof(itemid)!='undefined')) ) {
+                            registerEndedAuction(divController, parentid, itemid);
+                        }
+                        */
+                    }
+
+                    if(item.e == 1) // auction for this item has ended
+                    {
+						if (typeof window.objAuctionTimes[item.id] != "undefined") {
+							delete window.objAuctionTimes[item.id];
+						}
+						//only if not already processed
+						if(!objPrice.hasClass('has-ended')) {
+                            objPrice.addClass('has-ended');
+                            updateEnded(item);
+                            productType = $('#flash-bg'+item.id).find('span.product-type').text();
+                            if(productType == 'c') {
+                                if(!$('#btn-bid'+item.id).hasClass('pay')) {
+                                    $('#btn-bid'+item.id).css('visibility', 'hidden');
+                                }
+                            }
+						}/* else {
+                            // The auction has ended, AND it's UI has been
+                            // updated to show that.  Now we can replace it.
+                            replaceEndedAuctions();
+                        } */
+                    }
+                    else // BEGIN auction not over
+					{ 
+						var oldprice = 0;
+						if(window.seconds_elapsed < 1) {
+							updatePrice(item.id,item.p);
+						}
+                        else
+                        {
+                            var oldprice=parseFloat(objPrice.html());
+                            if(item.p > oldprice)
+							{
+								if (item.a != null) setTimeout('updateAvatar('+item.id+',"'+item.a+'","'+item.h+'")',1000);
+
+								if(window.hasDetailType) {
+									try {
+										gDetail_addNewBid(item); // do this before updating price on page
+									} catch(e) { alert(e); }
+								}
+
+								t_animateBid(item.id,item.p,item.h); // this also updates price
+
+                                if( ($('#btn-buy-now'+item.id).length != 0) && ($('#btn-buy-now'+item.id).is(':visible')) && (item.bp == 'n') ) {
+                                    $('#btn-buy-now'+item.id).hide();
+                                }
+								
+								if(window.hasDetailSavings) {
+									updateDetailSavings(item.id,'x',0,item.p,item.bp); //defined in scripts.phtml partial
+								} // END window.hasDetailSavings
+
+                            } // END price changed
+
+                        } // END not bFirstTime
+
+						//if(item.t.substring(0,1) == "-") item.t = "00:00:01";
+						strHours = String(item.th);
+						strMins = String(item.tm);
+						strSecs = String(item.ts);
+						var nSecs = Number(strSecs);
+
+						if(typeof window.objAuctionTimes[item.id] != "object") {
+                            var objTime = new Array();
+                            objTime['th'] = item.th; objTime['tm'] = item.tm; objTime['ts'] = item.ts; objTime['locked'] = false;
+							window.objAuctionTimes[item.id] = objTime;
+                            //updateTimer(item.id, strHours, strMins, strSecs);
+						}
+						else {
+							var aryTime = window.objAuctionTimes[item.id];
+							var nObjSecs = Number(aryTime['ts']);
+							var strObjMins = String(aryTime['tm']);
+
+							if(item.p > oldprice || (nSecs < (nObjSecs - 1)) || (nSecs < 59 && (strObjMins != strMins || nSecs > nObjSecs + 2))) {
+                                var objTime = new Array();
+                                objTime['th'] = item.th; objTime['tm'] = item.tm; objTime['ts'] = item.ts; objTime['locked'] = aryTime['locked'];
+                                window.objAuctionTimes[item.id] = objTime;
+								updateTimer(item.id, strHours, strMins, strSecs);
+							}
+						}
+                    } //END auction not over
+
+					if(window.seconds_elapsed == 1) {
+						updateHighBidder(item.id,item.h);
+						if (item.a!=null) setTimeout('updateAvatar('+item.id+',"'+item.a+'","'+item.h+'")',1000);
+					}
+					
+                } // END auction (not settings)
+			}); // END each
+		}, // END success
+		url: '/update/timerInfo.php?'+Math.random()+window.timerAuctions //productInfo.php?id[]=1&id[]=2&id[]=3 etc
+        }); // END manageAjax
+
+        if(window.seconds_elapsed % window.userPollingTime == 4)
+        {
+            updateUserInfo();
+        }
+		window.seconds_elapsed++;
+        window.idle_seconds++;
+        if(window.idle_seconds > (60*window.idleMinutes)) {
+            idleHandler();
+        }
+        if(window.secondsUntilStart > 0) {
+            window.secondsUntilStart--; // used on detail page
+        }
+		if(window.seconds_elapsed > 86459) {
+			window.seconds_elapsed = 60; // let's not let this grow forever
+		}
+} catch(e) { alert(e.description); }
+    }
+
+	function displayTimers()
+	{ 
+		try {
+			for( var iKey in window.objAuctionTimes ) {
+				var aryTime = window.objAuctionTimes[iKey];
+
+				var strHours = aryTime['th'];
+				var nHours = Number(strHours);
+				var strMins = aryTime['tm'];
+				var nMins = Number(strMins);
+				var strSecs = aryTime['ts'];
+				var nSecs = Number(strSecs);
+
+				if(nHours > 0 || nMins > 0) {
+					if(nSecs == 0) {
+						if(nMins > 0) {
+							nMins--;
+						}
+						else if(nHours > 0) {
+							nHours--;
+							nMins = 59;
+						}
+						nSecs = 59;
+					}
+					else {
+						nSecs--; 
+					}
+				}
+				else if(nSecs > 0) {
+					nSecs--; 
+				}
+                else { // if the timer stays at 1 for more than 2 seconds, see if the item ended
+                    if(typeof window.objEndedItems[iKey] == "number") {
+                        if(window.objEndedItems[iKey] == 0) {
+                            if(window.missedResponseCount < 2) {
+                                //Get ended auctions via ajax
+                                $.post('../auctions/get-expired-timer-info/auction_id_list/'+iKey, { }, function(auction_data){
+
+                                    $.each(auction_data, function(i,item){
+                                        updateEnded(item);
+                                    });
+
+                                }, "json");
+                                delete window.objEndedItems[iKey];
+                                delete window.objAuctionTimes[iKey];
+                            }
+                        }
+                        else {
+                            window.objEndedItems[iKey]--;
+                        }
+                    }
+                    else {
+                        window.objEndedItems[iKey] = Number(2);
+                    }
+                }
+
+				strHours = ""; strMins = ""; strSecs = "";
+				if(nHours < 10)
+					strHours = "0";
+				strHours += String(nHours);
+				if(nMins < 10)
+					strMins = "0";
+				strMins += String(nMins);
+				if(nSecs < 10)
+					strSecs = "0";
+				strSecs += String(nSecs);
+
+                var objTime = new Array();
+                objTime['th'] = strHours; objTime['tm'] = strMins; objTime['ts'] = strSecs; objTime['locked'] = false;
+
+                window.objAuctionTimes[iKey] = objTime;
+
+				updateTimer(iKey,strHours,strMins,strSecs);
+			}
+		} catch(e) { }
+	}
+
+	function updateTimer(iKey,strHours,strMins,strSecs)
+	{ 
+		try {
+			//var chrExpiring = ""; // using this for performance reasons
+            var blnMark = false;
+            var blnProcessing = false;
+
+			//var objItemTime = $('span.time'+iKey);
+
+			if(strHours == "00" && strMins == "00") {
+                var nSecs = Number(strSecs);
+                
+				if(nSecs <= 10) {
+                    /*
+					var cr = 250; cg = 130; cb = 30;
+					cr = cr - (4*(10 - nSecs));
+					var cg = cg - (13*(10 - nSecs));
+					var cb = cb - (3*(10 - nSecs));
+                    */
+					//$('.time'+iKey).addClass("time-expiring");
+					//objItemTime.css("color", "rgb("+cr+","+cg+","+cb+")");
+					//chrExpiring = "a";
+
+                    blnMark = true;
+
+					if(nSecs == 0) { // item is still processing
+						t_showProcessing(iKey);
+                        blnProcessing = true;
+					}
+				}
+				else {
+					//$('.time'+iKey).removeClass("time-expiring");
+					//objItemTime.css("color","rgb(0,0,0)");
+					//chrExpiring = "r";
+				}
+			}
+
+            if(!blnProcessing) {
+                t_hideProcessing(iKey);
+            }
+
+//$('#debugdiv').html($('#debugdiv').html()+strSecs+"<br>");
+			//objItemTime.html(strHours + ":" + strMins + ":" + strSecs);
+
+			for( var sPrefix in window.aryPrefixes )
+			{
+				var objTimeH = $('#'+window.aryPrefixes[sPrefix]+'timeh'+iKey);
+
+                if(objTimeH.length > 0) {
+                    var objTimeM = $('#'+window.aryPrefixes[sPrefix]+'timem'+iKey);
+                    var objTimeS = $('#'+window.aryPrefixes[sPrefix]+'times'+iKey);
+
+                    objTimeH.html(strHours);
+                    objTimeM.html(strMins);
+                    objTimeS.html(strSecs);
+                    if(blnMark) {
+                        objTimeS.addClass("mark");
+                    }
+                    else {
+                        objTimeS.removeClass("mark");
+                    }
+                }
+                /*
+				if(chrExpiring == "a") {
+
+				}
+				else if (chrExpiring == "r") {
+
+				}
+                */
+			}
+		} catch(e) { }
+	}
+
+    function bidResetTimer(auction_id,resetSecs) {
+        
+        if (typeof window.objAuctionTimes[auction_id] == "object") {
+            delete window.objAuctionTimes[auction_id];
+        }
+
+        for( var sPrefix in window.aryPrefixes )
+        {
+            var objTimeS = $('#'+window.aryPrefixes[sPrefix]+'times'+auction_id);
+
+            if(objTimeS.length > 0) {
+                objTimeS.removeClass("mark");
+                var strSecs = objTimeS.html();
+                var nSecs = Number(strSecs);
+                var nResetSecs = Number(resetSecs);
+                if(nSecs < nResetSecs) {
+                    var strResetSecs = "";
+                    if(nResetSecs < 10) strResetSecs = "0";
+                    strResetSecs += String(nResetSecs);
+                    objTimeS.html(strResetSecs);
+                }
+            }
+        }
+    }
+
+    function updateUserInfo() {
+		try {
+			$.post('../users/get-periodic', { }, function(data){
+				//Display accurate credits
+				setCredits(data['c']);
+			}, "json");
+		}
+		catch(e) { }
+    }
+
+    function updateEnded(item)
+    {
+        updateAvatar(item.id,item.a,item.h);
+
+        var strState = 'buy';
+        
+        t_updateButton(item.id,strState);
+        t_showEnded(item.id);
+        s_hideBuyNow(item.id);
+
+        if(window.hasDetailWinnerSavings) {
+            gDetail_loadWinnerSavings();
+        }
+
+    }
+
+    function idleHandler() {
+        window.idle_seconds = 0;
+		window.isIdle = true;
+		window.clearTimeout(window.idleTimeout);
+		window.clearInterval(window.t);
+		var strHTML = '<div id="idle-confirm">Still Here?<br><br>You have been idle for more than '+window.idleMinutes+' minutes. Please click Resume to continue.<br></div>';
+		$('body').append(strHTML);
+		$('#idle-confirm').dialog({
+			width: 400,
+			minWidth: 400,
+			maxWidth: 600,
+			minHeight: 200,
+			maxHeight: 400,
+			modal: true, 
+			title: 'Idle Confirmation',
+			buttons: {
+				"Resume": function() { 
+					$(this).dialog('destroy');
+					$(this).remove();
+					window.isIdle = false;
+					timedCount();
+					window.t = window.setInterval("timedCount()",1000);
+					window.idleTimeout = window.setTimeout("idleHandler()", window.idleMinutes * 60000);
+				}
+			},
+			beforeclose: function(){ 
+				$(this).dialog('destroy');
+				$(this).remove();
+				window.isIdle = false;
+				timedCount();
+				window.t = window.setInterval("timedCount()",1000);
+				window.idleTimeout = window.setTimeout("idleHandler()", window.idleMinutes * 60000);
+			}
+		});
+	}
+</script>
+
+<div id="debugdiv"></div>
+
+    <script type="text/javascript">
+
+        function bid(auction_id,product_id,obj)
+        {
+            if($(obj).hasClass('btn-login')) {
+                window.location = '../account/login';
+                return;
+            }
+
+        try {
+            alertBidFailed('<div id="bid-failed-alert"><strong>Not Logged In (Session Expired)</strong><br>Please try a hard refresh (Ctrl+F5 or Ctrl+Shift+R) to see if that resolves your issue. If not, please log in again using the form at the top of your screen.<br><br></div>');
+			} catch(e) { alert(e); }
+			
+			if($('#btn-bid-large'+auction_id).attr('class') == 'btn-bid-large btn-bid-large-processing') {
+				$('#btn-bid-large'+auction_id).removeClass().addClass('btn-bid-large btn-bid-large-normal');
+			}
+        }
+
+		function showBonusCredits(nBonusCredits) {
+			var objBonusNum = $('#bonus-credit-num');
+			if(objBonusNum.length == 0) { return; }
+
+			objBonusNum.html(String(nBonusCredits));
+
+			window.clearTimeout(window.bonusCreditTimeout);
+			window.bonusCreditTimeout = setTimeout('hideBonusCredits()',5000);
+
+			//Add and animate bonus credit images
+			window.aryBonusCredits = new Array();
+			var strHTML = '';
+			for(var i=0;i<nBonusCredits;i++) {
+				if(i>=10) {
+					break;
+				}
+				var imgID = "bonus-credit-image"+i;
+				window.aryBonusCredits.push('#'+imgID);
+				strHTML += '<img id="'+imgID+'" src="wavee-credit.gif" alt=""/>';
+			}
+			var objBonusImages = $('#bonus-credit-images');
+			objBonusImages.html(strHTML);
+			for( var index in window.aryBonusCredits ) {
+				var objImage = $(window.aryBonusCredits[index]);
+				if(objImage.length > 0) {
+					var x = getRandInt(110)+150;
+					var y = getRandInt(50)+65;
+					objImage.css('margin',y+'px 0 0 '+x+'px');
+				}
+			}
+			
+			$('#bonus-credit-images').stop().css({ opacity:0 }).fadeTo(1200, 0.8, function(){
+				//Display Info Box
+				$('#bonus-credit-info').stop().css({ opacity:0 }).show().addClass('animating').fadeTo(400, 0.9, function(){
+					$('#bonus-credit-info').fadeTo(300, 0.1, function(){
+						$('#bonus-credit-info').removeClass('animating').fadeTo(500,1, function(){
+							for( var index in window.aryBonusCredits ) {
+								var objImage = $(window.aryBonusCredits[index]);
+								if(objImage.length > 0) {
+									objImage.animate({ marginTop:'-28px', marginLeft:'-5px', width:'16px', height:'16px' }, 1000, "linear", function(){
+										window.clearTimeout(window.bonusCreditTimeout);
+										window.bonusCreditTimeout = window.setTimeout('finishBonusAnimation('+nBonusCredits+')',300);
+									});
+								}
+							}
+						});
+					});
+				});
+			});
+		}
+
+		function finishBonusAnimation(nBonusCredits) {
+			subtractCredits(-1*nBonusCredits,true);
+			hideBonusCredits();
+		}
+
+		function hideBonusCredits() {
+			$('#bonus-credit-info').fadeOut(1200);
+			$('#bonus-credit-images').fadeOut(400);
+		}
+
+		function alertBidFailed(strHTML)
+		{
+        $('body').append(strHTML);
+        $('#bid-failed-alert').dialog({
+            width: 400,
+			minWidth: 400,
+			maxWidth: 600,
+			minHeight: 200,
+			maxHeight: 400,
+                        resizable: false,
+			modal: true,
+			title: 'Bid Failed Alert!',
+            buttons: {
+                "Close": function() {
+                    $(this).dialog('destory');
+                    $(this).remove();
+                }
+            },
+            beforeClose: function(){
+                $(this).dialog('destroy');
+                $(this).remove();
+            }
+            });
+		}
+</script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+                        var strWatchTip = "Log in to watch this item";
+                var strUnwatchTip = "Log in to watch this item";
+                var nWatchWidth = 135;
+                var nWatchX = -66;
+                $('div.unwatched').easyTooltip({
+            content: strWatchTip,
+            useElement: "",
+            xOffset: nWatchX,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: nWatchWidth
+        });
+
+        $('div.watching').easyTooltip({
+            content: strUnwatchTip,
+            useElement: "",
+            xOffset: nWatchX,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: nWatchWidth
+        });
+
+        $('img.ico-beginner').easyTooltip({
+            content: "Beginner Auction<br/>(for users with less than 3 wins)",
+            useElement: "",
+            xOffset: -88,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 180
+        });
+
+        $('img.ico-cent').easyTooltip({
+            content: "Auction price increases by 1 cent per bid",
+            useElement: "",
+            xOffset: -68,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 140
+        });
+
+        $('img.ico-cent-1').easyTooltip({
+            content: "Auction price increases by 1 cent per bid",
+            useElement: "",
+            xOffset: -68,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 140
+        });
+
+        $('img.ico-cent-2').easyTooltip({
+            content: "Auction price increases by 2 cents per bid",
+            useElement: "",
+            xOffset: -68,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 140
+        });
+
+        $('img.ico-cent-3').easyTooltip({
+            content: "Auction price increases by 3 cents per bid",
+            useElement: "",
+            xOffset: -68,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 140
+        });
+
+        $('img.ico-cent-5').easyTooltip({
+            content: "Auction price increases by 5 cents per bid",
+            useElement: "",
+            xOffset: -68,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 140
+        });
+
+        $('img.ico-cent-8').easyTooltip({
+            content: "Auction price increases by 8 cents per bid",
+            useElement: "",
+            xOffset: -68,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 140
+        });
+
+        $('img.ico-cent-15').easyTooltip({
+            content: "Auction price increases by 15 cents per bid",
+            useElement: "",
+            xOffset: -68,
+            yOffset: -35,
+            fixed: false,
+            wavee: true,
+            keepHover: false,
+            clickRemove: true,
+            width: 140
+        });
+
+    });
+
+</script>	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/lt8.css" /><![endif]-->
+	<!--[if lt IE 7]>
+		<script type="text/javascript" src="js/png-fix.js"></script>
+		<script type="text/javascript" src="js/ie-hover-ns-pack.js"></script>
+	<![endif]-->
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="w1 w1-out">
+                <div class="w-main">
+                    <div class="logo-box">
+                        <h1 class="logo"><a href="../default.htm">Wavee</a></h1>
+                        <a href="#nav" class="accessibility">skip to main navigation</a>
+                        <img class="slogan" src="text-slogan.png" width="367" height="17" alt="Find. Bid. Win. The rewarding way to shop." />
+                    </div>
+
+                    <!--< ?
+                    <div class="ticker">
+                        <div class="t"></div>
+                        <div class="c">
+                            <div class="ticker-main">
+                                <strong class="title"><img src="< ? = //$this->baseUrl()?>/images/text-the-ticker.gif" width="167" height="27" alt="The ticker" /></strong>
+                                <div class="info">
+                                    <div>
+                                        <p>silverdaddy3 bid on <a href="#">Zune HD 16 GB (Black)</a></p>
+                                        <p class="mark">mrhorromon just won 3 bonus credits!</p>
+                                        <p>jstatham bid on <a href="#">iPad 3G 16GB</a></p>
+                                        <p class="mark">gunit82 just</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="b"></div>
+                         
+                    </div>
+                    ?>-->
+                    <div class="main" style="margin-top: 5px;">
+                        <div style="padding-top:5px;padding-left:30px">
+                        <div style="position:relative; margin-top:50px; width:1px; height: 15px">
+
+                </div>
+                <br/>
+                        <div align="center"><font size='6'>Oops! Something went wrong...</font></div>
+                <br/>
+                <center>
+                <div align="left" style="padding-left:20px;width:500px; font-size:18px;">
+                Please <a href="../../support.wavee.com/anonymous_requests/new" target="_blank">leave a comment</a> to tell us about it and what you were trying to do at the time. Thanks!
+                </div>
+                </center>
+        </div>                    </div>
+
+                    <div class="top-holder">
+                        <div class="promo">
+                                                            <div id="top-sign-up">
+                                    <a href="../account/register"><img src="sign-up.png" style="float:right;" width="163" height="40" alt="Sign Up" /></a><br style="clear:both;" />
+                                    <!--<img style="float:right; margin-top:1px; margin-right: 10px;" src="/images/its-free.png"/>-->
+                                </div>
+                                <div id="promo-sign-up"> 
+                                    <!--Have an account? <fb:login-button size="medium" background="dark" length="short" onlogin="window.location='< ?=$this->url(array('controller'=>'account','action'=>'login-user'), 'default', true) ?>?ref=< ?=$_SERVER['REQUEST_URI']?>'"></fb:login-button>-->
+                                    <div id="top-sign-in"><a href="javascript:;" onclick="javascript:slideSignIn();"></a>
+                                        <div id="top-sign-in-box-holder">
+                                            <div id="top-sign-in-box">
+                                                <form id="login-form" action="/account/login-user?ref=/images/toolbar-hint-bg.png" method="post">
+                                                <div>Username</div>
+                                                <div style="margin-top:37px;">Password</div>
+
+                                                <input id="login-username" name="username" type="text" autocomplete="off" />
+                                                <input id="login-password" name="password" type="password" />
+
+                                                <div style="margin-top: 10px;"><input type="image" src="btn-sign-in-orange.png" style="margin-top: 37px;" />
+                                                    <div id="login-remember"><input type="checkbox" name="remember" /><div class="remember-text">Remember Me</div></div>
+                                                </div>
+                                                </form>
+                                                <div style="margin-top: 20px;"><a href="../account/forgot-password">Forgot your information?</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                                                                                        <iframe class="fb-like-signed-out"  src="../../https@www.facebook.com/plugins/like.php@href=www.facebook.com_252Fshopwavee&layout=standard&show_faces=false&width=210&action=like&font=verdana&colorscheme=light&height=25" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                                                    </div>
+                        <div class="navbar">
+                            <ul id="nav">
+                                <li><a href="../default.htm">Home</a></li>
+                                                                <li><a href="../auctions/ended">Ended Auctions</a></li>
+                                <!--<li><a href="<*?=$this->baseUrl()?>/auctions">Browse</a></li>-->
+                                                                <li><a href="../how-it-works">How It Works</a></li>
+                                <li id="nav-buy-credits" class="right"><a href="../account/buy-credits">Buy Credits</a></li>
+                            </ul>
+                            <div>
+                            <a style="cursor:pointer; position:absolute; right: 15px; border-right:0; padding-right:0px; padding-top: 5px;" href="../../www.twitter.com/wavee" target="_blank"><img src="twitter-icon.png"  alt=""/></a>
+                            <a style="cursor:pointer; position:absolute; right: 40px; border-right:0; padding-right:5px; padding-top: 5px;" href="../../www.facebook.com/shopwavee" target="_blank"><img src="fb-icon.png"  alt=""/></a>
+                            <!--<li style="border-right:0;float:right; padding-right:5px; padding-top: 4px;"><a href="http://www.youtube.com/shopwavee" style="padding:0;" target="_blank"><img src="/images/youtube-icon.png"  alt=""/></a></li>-->
+                            <div style="font-size:12px; font-family:Tahoma; padding-right:63px; text-decoration:none;color:#CCCCCC;border-right:0; float:right; padding-top: 10px;"> Follow Us:</div>
+                            </div>
+                            <a href="#wrapper" class="accessibility">back on top</a>
+                        </div>
+                        <div class="search">
+                            <form id="searchFrm" onsubmit="submitSearch(); return false;" action="">
+                                <fieldset>
+                                    <div class="text">
+                                        <input id="search-box" class="input-hint" name="k" type="text" title="Search for an item by keyword" />
+                                    </div>
+                                    <input type="image" class="btn-search" src="btn-search.gif" alt="" />
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+<div id="header">
+
+
+    <div id="megawin-box" class="megawin-box">
+        <div class="megawin">
+            <div id="megawin-holder" class="holder">
+                <div class="frame">
+                                        <div id="megawin-empty">
+                        <div id="megawin-fill" style="width:48%;"></div>
+                    </div>
+                    <a class="help" href="../how-it-works/index/page/bonus-credits">?</a>
+
+                    <div id="mega-win-popup-content">
+                        <span class="mega-win-tooltip">
+                            <div class="mega-win-title">Mega-Win!</div>
+                            <table align="center" width="100%">
+                                                                <tr><td class="mega-win-stat">Current Status: </td><td class="mega-win-value"> 48%</td></tr>
+                                <tr><td class="mega-win-stat">MegaWin Bonus: </td><td class="mega-win-value"> 100 Credits</td></tr>
+                            </table>
+                            <div class="mega-win-info">
+                                The closer this bar is to full, the higher your chance of winning the MegaWin Bonus!<br/>
+                                <a href="../how-it-works/index/page/bonus-credits">Learn more</a>
+                            </div>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bonus-credit-images" class="bonus-credits">
+        <!--created during bidding-->
+    </div>
+    <div id="bonus-credit-info" class="bonus-credits">
+        <div>You Won <span id="bonus-credit-num"></span> Bonus Credits!</div>
+    </div>
+
+
+</div> <!-- header -->
+
+
+            </div>
+        </div>
+        <div id="footer">
+            <div class="f-main">
+                <div class="box-line">
+                    <div class="box box1">
+                        <h4><img src="text-about-wavee.gif" width="107" height="17" alt="About Wavee" /></h4>
+                        <ul class="links">
+                            <!--<li><a href="#">&gt; News</a></li>-->
+                            <li><a href="../about-us/index/type/about-us">&gt; About Us</a></li>
+                            <li><a href="../how-it-works">&gt; How it Works</a></li>
+                            <li><a href="../account/register">&gt; Sign Up Now</a></li>
+                        </ul>
+                    </div>
+                    <div class="box box2">
+                        <h4><img src="text-support.gif" width="65" height="17" alt="Support" /></h4>
+                        <ul class="links">
+                            <li><a href="../how-it-works/index">&gt; How it Works</a></li>
+                            <li><a href="../how-it-works/index/type/faq">&gt; FAQ / Customer Support</a></li>
+                            <li><a href="../pages/terms-of-use">&gt; Terms &amp; Conditions</a></li>
+                            <li><a href="../../https@privacy-policy.truste.com/verified-policy/www.wavee.com" target="_blank">&gt; Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="box box3">
+                        <h4><img src="text-connect.gif" width="69" height="17" alt="Connect" /></h4>
+                        <ul class="links">
+                            <li style="float:left; margin-left:0px;"><a href="../../www.youtube.com/shopwavee" target="_blank"><img src="youtube-icon.png"  alt=""/></a></li>
+                            <li style="float:left; margin-left:5px;"><a href="../../www.facebook.com/shopwavee" target="_blank"><img src="fb-icon.png"  alt=""/></a></li>
+                            <li style="float:left; margin-left:5px;"><a href="../../www.twitter.com/wavee" target="_blank"><img src="twitter-icon.png"  alt=""/></a></li>
+                            <!--<li><a href="https://www.facebook.com/ShopWavee" target="_blank">&gt; Be our fan on Facebook</a></li>
+                            <li><a href="https://twitter.com/wavee" target="_blank">&gt; Follow us on Twitter</a></li>-->
+                            <br/><br/>
+                        </ul>
+                        <h4><img src="text-subscribe.gif" width="80" height="17" alt="Subscribe" /></h4>
+                        <form action="#" class="newsletter-form">
+                            <fieldset>
+                                <legend><span>Sign up for our newsletter</span></legend>
+                                <p>Sign up for our newsletter</p>
+                                <div class="text">
+                                    <input id="ezpz-newsletter" class="input-hint" type="text" title="Enter your e-mail" />
+                                </div>
+                                <div class="row">
+                                    <input class="btn-submit" type="image" src="btn-submit.png" alt="Submit" />
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="box box4">
+                        <h4><img src="text-convenience-security.gif" width="194" height="17" alt="Convenience &amp; Security" /></h4>
+                        <p>We accept</p>
+                        <ul class="credit-cards">
+                            <li><img src="ico-visa.gif" width="37" height="23" alt="Visa" /></li>
+                            <li><img src="ico-mastercard.gif" width="37" height="23" alt="MasterCard" /></li>        
+                        </ul>
+                        <div style="margin-left:150px; margin-top:-63px; position:absolute;"><a href="../../https@privacy-policy.truste.com/click-to-verify/www.wavee.com" title="Privacy Policy by TRUSTe" target="_blank"><img style="border: none" alt="Privacy Policy by TRUSTe" src="../../https@privacy-policy.truste.com/verified-seal/www.wavee.com/green/h.png"/></a></div>
+                        <div style="float:right; margin-right:124px;">
+                        <!-- (c) 2005, 2010. Authorize.Net is a registered trademark of CyberSource Corporation -->  <div class="AuthorizeNetSeal">  <script type="text/javascript" language="javascript">var ANS_customer_id="cfbef3c3-1290-443d-97a5-cd4192601136";</script>  <script type="text/javascript" language="javascript" src="../../https@verify.authorize.net/anetseal/seal.js" ></script>  <a href="../../www.authorize.net/default.htm" id="AuthorizeNetText" target="_blank">Online Payment Service</a> </div>
+                        </div>
+
+                        <ul class="security-list" style="position:relative; width:135px;">
+                            <li style="padding-left:0">
+                                <table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose VeriSign SSL for secure e-commerce and confidential communications.">
+                                <tr>
+                                    <td width="135" align="center" valign="top"><script type="text/javascript" src="../../https@seal.verisign.com/getseal@host_name=www.wavee.com&size=L&use_flash=NO&use_transparent=NO&lang=en"></script></td>
+                                </tr>
+                                </table>
+                                <!--<a href="https://seal.godaddy.com/verifySeal?sealID=KAD3o7qesIkm9ewCmUAlK8QTfG9XFxDLGvel8quNwIrHQbBjNJXWYGT0wY" target="_blank"><img src="/images/logo-godaddy.gif" width="128" height="66" alt="" /></a>-->
+                            </li>
+                            <!--<li><a href="https://privacy-policy.truste.com/click-to-verify/www.wavee.com" target="_blank"><img src="/images/logo-truste-verified.gif" width="114" height="39" alt="TRUSTe" /></a></li>-->                            
+                        </ul>
+                    </div>
+                </div>
+                <div id="wavee-awards">
+                    <div id="atdc-gatech" style="display:none;"><img src="atdcgatech.gif" width="111" height="76" alt="ATDC GaTech" /></div>
+                    <div id="tag-award" style="left:0;"><img src="tagaward.gif" width="70" height="70" alt="TAG Award" /></div>
+                    <div id="award-text"><!--Wavee is an inductee of the Advanced Technology Development Center--><br/>
+                                         Wavee is a winner of the 2010 Technology Association of Georgia Top 10 Innovative Technology Company Award.</div>
+                </div>
+                <div class="copy">
+                    <p>U.S. Patent Pending</p>
+                    <p>&copy; 2010 Wavee US, LLC., all rights reserved. Wavee and the Wavee logo are either registered or common law service marks of Wavee International Holdings, LLC.</p>     
+                </div>
+            </div>
+        </div>
+        <div id="global-tooltip">
+            <div class="tooltip-um"></div>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr class="tooltip-upper"><td class="tooltip-ul"></td><td class="tooltip-upper-bg" colspan="3"></td><td class="tooltip-ur"></td></tr>
+                <tr><td class="tooltip-left"></td><td class="tooltip-center" colspan="3" valign="middle"><div id="global-tooltip-content"></div></td><td class="tooltip-right"></td></tr>
+                <tr class="tooltip-lower"><td class="tooltip-ll"></td><td class="tooltip-lower-bg" colspan="3"></td><td class="tooltip-lr"></td></tr>
+            </table>
+        </div>
+        <div id="next-items-container" style="display:none"></div>
+        <!--
+        <div class="draggble_bottom_section" id="auction-stats" style="display:none"></div>
+        //-->
+
+        <!--
+        <script type="text/javascript" src="js/DOMAssistant.js"></script>
+        //-->
+
+
+        <script type="text/javascript">
+            window.current_page = "";
+
+            $(document).ready(function(){
+                $('#search-box').ezpz_hint();
+                $('#ezpz-newsletter').ezpz_hint();
+
+                $('#search-box').autocomplete("../products/search-tag",
+                {cacheLength: 0, delay:400, autoFill:false, width: 821, maxItemsToShow: 10, scroll: false, selectFirst: false, onItemSelect: submitSearch});
+
+                $('#megawin-box').easyTooltip({
+                    content: "",
+                    useElement: "mega-win-popup-content",
+                    xOffset: -15,
+                    yOffset: -55,
+                    fixed: true,
+                    wavee: true,
+                    keepHover: true,
+                    width: 250
+                });
+
+                var tmpTimeout = window.setTimeout("showMyAuctionsTab()",500);
+            });
+
+            window.blnShowMyAuctionsTab = true; // this can be set to false in .ready on any page to turn off MyAuctions tab
+
+            function showMyAuctionsTab() {
+                            }
+
+            function submitSearch() {
+                var keyword = $('#search-box').val();
+                window.location = "../auctions/search/k/"+encodeURI(keyword);
+            }
+
+            function slideSignIn() {
+                $('#top-sign-in-box').toggle('slide', { direction: 'up'},300,function(){
+                   $('#login-username').focus();
+                });
+            }
+
+</script>
+<script type="text/javascript" src="../../https@ssl.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"></script>         <script type="text/javascript"> FB.init("8986c0cb4910736bdc4f8d06e17550cd","../xd_receiver.htm"); </script>
+
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-9358258-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? '../../https@ssl/' : '../../www/') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+
+        
+        <!-- Start Quantcast Tag (Site Tag) -->
+        <script type="text/javascript"> _qoptions={qacct:"p-ab5rywDydmcFE",labels:""}; qacct="p-ab5rywDydmcFE";</script>
+        <script type="text/javascript" src="../../https@secure.quantserve.com/quant.js"></script>
+        <noscript>
+        <img src="../../https@secure.quantserve.com/pixel/p-ab5rywDydmcFE.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+        </noscript>
+        <!-- End Quantcast tag (Site Tag) -->
+
+    </body>
+</html>
