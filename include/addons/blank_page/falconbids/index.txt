@@ -1,0 +1,76 @@
+<?php
+include("config/connect.php");
+
+include_once 'functions.php';
+
+include_once 'include/advertisefunction.php';
+
+
+$uid = isset($_SESSION["userid"]) ? $_SESSION["userid"] : 0;
+$changeimage = "home";
+$pagename = "index";
+if (!isset($_SESSION["ipid"]) && !isset($_SESSION["login_logout"])) {
+
+    $_SESSION["ipid"] = date("Y-m-d G:i:s");
+
+    $_SESSION["ipaddress"] = $_SERVER['REMOTE_ADDR'];
+
+
+
+    $qryipins = "Insert into login_logout (ipaddress,load_time) values('" . $_SESSION["ipaddress"] . "', '" . $_SESSION["ipid"] . "')";
+
+    db_query($qryipins) or die(db_error());
+}
+
+
+
+//end for first nine products
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+ <?php include("page_headers.php"); ?>
+
+    </head>
+
+    <body class="single">
+    
+    <?php include_once('include/' . $template . '/header.php'); ?>
+			  <?php include_once("include/topmenu.php"); ?>
+		  <div class="clear"></div>
+               
+        <div id="main">
+
+           
+		<div id="container">
+         
+                
+                   
+<!--custom_page--><!--custom_page-->
+
+                <?php
+              if(db_num_rows(db_query("select * from registration where id = '$_SESSION[userid]' and admin_user_flag >= 1")) >= 1){
+              
+              ?>
+              <h2 onclick="javascript: add_blank_page('<?php echo basename($_SERVER['PHP_SELF']);?>');">Edit Page</h2>
+              
+              
+              <?php
+              }
+              ?>
+                </div>
+              
+
+              
+            </div>
+    
+  
+
+<?
+include("include/footer.php");
+?>
+</body>
+</html>

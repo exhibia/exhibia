@@ -1,0 +1,15 @@
+Decemeber 27, 2012
+Version 6.5.2
+
+Ability to delete auctions from list before they have run
+
+Auction Lists are now also sortable
+
+Fixed Prepend / Append Functions When Clicking on a Product
+
+
+<a href="buywithjoel@gmail.com:subject=update for autolister">Click Here</a> To request this update
+
+OR
+
+<a href="http://pennyauctionsoftdemo.com/UPDATES/index.php?zip=yes&addon=autolister&version=6.5.2" target="_blank">Download</a> from here

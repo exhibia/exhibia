@@ -1,0 +1,69 @@
+############################### PENNY AUCTION SOTWARE USER PAGES #################################################
+
+
+This Folder contains the default layouts ALL TEMPLATES
+
+If the template you are using has a record for the page you are looking for in
+
+<SERVER ROOT>/include/<TEMPLATE>/<YOUR PAGE>/ 
+
+
+
+then you need to do your edits there, infact the preferred place to make
+these edits IS IN THAT FOLDER....these files are loaded by our flagship templates
+such as falconbids, or pas-flagship as well as sticky, wavee and a few others
+if you wish to modify one of these template's user pages then move the file you 
+wish to edit to the user_pages folder inside that template(create the folder if
+it does not exist) and the new page when you refrsh will in fact be the content
+that you are working on
+
+
+User Pages
+mydetails, myaccount etc etc
+Are all stored in the cusom folder mentioned before in a subfolder titled 'user_pages'
+
+
+Product Pages
+buybids.php, buyitnow.php etc etc
+Are all stored in a sub folder titled 'product_pages'
+
+AGAIN WE RECCOMEND MAKING ALL EDITS TO YOUR TEMPLATE INSIDE THE CUSTOM FOLDER SPECIFIC TO YOUR TEMPLATE
+IF FOLDERS DO NTO EXIST IN THE APPROPRIATE PLACES THEN CREATE THEM
+
+include/
+
+    include/user_pages
+    include/prooduct_pages
+    (above are the default pages for our flagship templates)
+    
+   include/<TEMPLATE>/ (<TEMPLATE> == your chosen template)
+	  include/user_pages
+	  include/prooduct_pages
+	  (these are your template speciific files...beware not all files files may have a custom entry in this file...but if it does not then
+	  simply copy the default file mentioned before to your template folder)
+	  
+	  
+	  
+EXAMPLE
+
+You wish to customize http://example.com/index.php for the "PAS flagship" template
+
+index.php is a special psuedo case in this instance handled by main.php
+
+you would find it in include/pas/main.php 
+if this file does not exist for your template then you would copy it from include/main.php to include/pas/main.php 
+
+AUCTION BOXES ARE FAR EASIER TO CUSTOMIZE BY EDITING THE CSS...ALL AUCTION BOXES ARE HANDLED BY THE CLASS 'auction-item'
+THE ONES ARRANGED HORIZONTALLY ARE HANDLED BY THE CSS ID => '#horizontal-auctions-box' VERTICAL ONES ARE CONTROLLED BY => '#vertical-auctions-box'
+
+
+
+
+
+
+
+
+AUCTION BOXES 
+
+IN MOST CASES THE AUCTION BOXES ARE WITHIN THE FILES FOR THE TEMPLATE EXCEPT IN CERTAIN CASES WHERE THEY ARE AN ADDON(WE HOPE TO SOON OFFER SUPPORT
+FOR MIXING AND MATCHING AUCTION BOXES, ICONS AND MORE)

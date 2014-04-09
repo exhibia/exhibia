@@ -1,0 +1,4232 @@
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, str {
+				margin : 0;
+				padding : 0;
+				border : 0;
+				outline : 0;
+				font-size : 100%;
+				vertical-align : baseline;
+				background : transparent;
+	}
+	ol, ul {
+				list-style : none;
+				margin : 0;
+	}
+	h1, h2, h3, h4, h5, h6, h18, h19, .edit, h50, li, p, div, span {
+				margin : 0;
+	}
+	h2 {
+				color : #fff;
+	}
+	blockquote, q {
+				quotes : none;
+	}
+	table {
+				border-collapse : collapse;
+				border-spacing : 0;
+	}
+	
+	 button {
+				font : normal 16px "Vidaloka";
+	}
+	 {
+				background : #f1f1f1;
+				border : 1px solid #f1f1f1;
+				padding : 3px;
+	}
+	a {
+				color : #fff;
+				text-decoration : none;
+	}
+	:focus {
+				outline : 0;
+	}
+	.clearfix:before, .clearfix:after, #header:before, #header:after, #container:before, #container:after, .box-heading:before, .box-heading:after, .box-content:before, .box-content:after, #payment-inform {
+				content : "";
+				display : table;
+	}
+	.clearfix:after, #header:after, #container:after, .box-heading:after, .box-content:after, #payment-information ul:after {
+				clear : both;
+	}
+	.clearfix, #header, #container, .box-heading, .box-content, #payment-information ul {
+				zoom : 1;
+	}
+	.clear {
+				clear : both;
+				height : 0;
+	}
+	.m-top10 {
+				margin-top : 10px;
+	}
+	.m-top15 {
+				margin-top : 15px;
+	}
+	body {
+				background : url('falconbids/backgrounds/bg.jpg');
+				background-repeat : no-repeat;
+				background-position : center top;
+				background-color : #000000;
+				color : #fff;
+				font-family : "Arial", Helvatica, sans-serif;
+				font-size : 12px;
+	}
+	#main {
+				margin : 0 auto;
+				position : relative;
+				width : 980px;
+	}
+	#support_container {
+				z-index : 100;
+				position : absolute;
+				right : 24px;
+				width : 100px;
+				top : 0px;
+	}
+	#btn-support {
+				background : url('falconbids/buttons/support.gif') no-repeat left bottom;
+				color : #FFF;
+				display : block;
+				height : 23px;
+				font-size : 11px;
+				padding : 10px 20px 0 0;
+				text-align : right;
+				text-shadow : 1px 1px #0d5b98;
+				text-transform : uppercase;
+				width : 172px;
+	}
+	#btn-support.offline {
+				background : url('falconbids/buttons/support.gif') no-repeat left top;
+				text-shadow : 1px 1px #2f2f2f;
+	}
+	#btn-support span {
+				color : #01eaff;
+	}
+	#btn-support.offline span {
+				color : #ebffcf;
+	}
+	#header {
+				height : 100px;
+				padding-top : 20px;
+				position : relative;
+	}
+	#logo {
+				position : absolute;
+				left : 0;
+				top : 0px;
+				z-index : 9999;
+				margin-bottom : 20px;
+	}
+	#logo a {
+				background : url('falconbids/logo.png') no-repeat left top;
+				display : block;
+				height : 135px;
+				width : 300px;
+				text-indent : -9999em;
+	}
+	#login-area {
+				background : url('falconbids/backgrounds/bg-login-area.png') no-repeat 0 -23px;
+				height : 67px;
+				width : 468px;
+				position : absolute;
+				right : 15px;
+				bottom : 0;
+	}
+	#list-lenguages {
+				background-color : #FFFFFF;
+				border-radius : 3px 3px 0 0;
+				direction : rtl;
+				display : block;
+				height : 28px;
+				left : 500px;
+				position : relative;
+				text-align : center;
+				top : 30px;
+				width : 125px;
+	}
+	#list-lenguages li {
+				border-right : 1px dotted #8c8c8c;
+				display : inline;
+	}
+	#list-lenguages li:last-child {
+				border : 0;
+	}
+	#list-lenguages li a {
+				margin : 0 5px;
+	}
+	#list-lenguages li img {
+				position : relative;
+				top : 3px;
+	}
+	#twitter-area {
+				left: 180px;
+position: relative;
+top: -15px;
+	}
+	#copyright {
+  position: relative;
+  top: -20px;
+}
+	#twitter-area h5 {
+				color : #1685e1;
+				margin : 0 0 3px 0;
+				text-transform : uppercase;
+	}
+	#twitter-area p {
+				color : #8c8c8c;
+				font-size : 11px;
+	}
+	#login-form {
+				position : absolute;
+				top : 32px;
+				left : 6px;
+	}
+	#login-form #username, #login-form #password {
+				background : #1f1c19;
+				border : 1px solid #6a5e56;
+				border-radius : 5px;
+				height : 28px;
+				padding : 0 5px;
+				width : 169px;
+				color : #fff;
+	}
+	#login-form #password {
+				margin : 0 5px;
+	}
+	#login-form #userinfo {
+				height : 30px;
+				width : 344px;
+				line-height : 30px;
+				padding-left : 26px;
+				vertical-align : middle;
+				overflow : hidden;
+				display : inline-block;
+	}
+	#login-form p button {
+				background : url(falconbids/buttons/menu-categories.png) no-repeat center top;
+				height : 30px;
+				line-height : 30px;
+				width : 77px;
+				color : #fff!important;
+	}
+	#login-form p #btn_logout {
+				width : 85px;
+				position : relative;
+				right : 5px;
+	}
+	.flashbanner {
+				float : left;
+				background : #fff;
+				width : 150px;
+				height : 200px;
+				margin : 20px 0px 0px 0px;
+	}
+	.flashbanner1 {
+				float : left;
+				background : #fff;
+				width : 150px;
+				height : 300px;
+				margin : 20px 0px 0px 0px;
+	}
+	#container {
+				padding : 20px;
+				background : #211c19;
+				margin : 0 auto;
+	}
+	.homepage #column-left, .single #column-left {
+				float : left;
+				margin-right : 15px;
+				width : 220px;
+				position : relative;
+	}
+	.homepage #column-right, .single #column-right {
+				float : right;
+				width : 700px;
+				position : relative;
+	}
+	#column-left div.box, #column-right div.box {
+				margin-bottom : 10px;
+	}
+	#column-left div.box h3 {
+				text-align : center;
+				background : url('falconbids/title-latest-winners.png') no-repeat left top;
+				height : 42px;
+				line-height : 42px;
+				padding : 0 15px;
+				margin : 0px;
+				color : #fff;
+				font-size : 15px;
+				font-weight : normal;
+				font-family : 'Vidaloka';
+				text-transform : uppercase;
+				position : relative;
+	}
+	#column-left div.box-content {
+				padding : 17px 15px 12px 15px;
+	}
+	#navigation {
+				background : url('falconbids/bg_main_nav.png') no-repeat 0 0;
+				height : 57px;
+				font : 17px "Vidaloka";
+				color : #fff;
+				position : relative;
+	}
+	#navigation ul {
+				float : left;
+				position : relative;
+				left : 250px;
+	}
+	#navigation ul li {
+				background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent;
+background-image: url("falconbids/backgrounds/headerlinks_sep.png");
+background-origin: padding-box;
+background-position: right 0;
+background-repeat: no-repeat;
+background-size: 2px 56px !important;
+float: left;
+padding: 0 2px 0 0;
+height: 56px;
+	}
+	#navigation ul li a {
+				height : 57px;
+				top : 20px;
+				position : relative;
+				line-height : 15px;
+				padding : 0 15px;
+				font : normal 15px "Vidaloka";
+				color : #b69786;
+				text-decoration : none;
+				text-transform : uppercase;
+	}
+	#navigation ul li:hover a, #navigation ul li.active a {
+				color : #fff;
+	}
+	#navigation ul li:first-child a:hover, #navigation ul li:first-child.active a {
+				background : url(falconbids/backgrounds/headerlinks_active.png) 0 0 no-repeat;
+				color : #fff;
+	}
+	#footer {
+				background : #211C19;
+				color : #B69785;
+				margin : 10px 0px 0px 0px;
+				position : relative;
+				padding : 15px 10px 15px 10px;
+	}
+	.payment_card {
+				float : left;
+				width : 450px;
+				margin : 0px 0px 8px 0px;
+				font-size : 16px;
+				color : #FFFFFF;
+				font-weight : bold;
+	}
+	.payment_card img {
+				vertical-align : middle;
+	}
+	.twitter {
+				float : right;
+				width : 500px;
+				font-size : 16px;
+				margin : 0px 0px 8px 0px;
+				text-align : right;
+				color : #FFFFFF;
+				font-weight : bold;
+	}
+	#footer ul {
+				width : 970px;
+				float : left;
+	}
+	#footer ul li {
+				display : inline;
+	}
+	#footer ul li#copyright {
+				margin : 0 0px 0 0;
+				float : right;
+	}
+	#footer ul li#designby {
+				margin : 0 0 0 180px;
+	}
+	#footer ul li a {
+				color : #B69785;
+				padding : 0 5px;
+	}
+	#title-category-content {
+				clear : both;
+				border-radius : 10px 10px 0 0;
+				margin-bottom : 20px;
+	}
+	#title-category-content #categories-menu {
+				position : relative;
+				top : 1px;
+	}
+	#categories-menu {
+				background : url('falconbids/buttons/menu-categories.png') no-repeat left top;
+				float : right;
+				width : 211px;
+	}
+	#categories-menu li a {
+				color : #FFF;
+				text-shadow : 1px 1px #333;
+				display : block;
+	}
+	#categories-menu > li {
+				height: 40px;
+position: relative;
+left: -40px;
+top: -15px;
+	}
+	#categories-menu > li > a {
+				padding : 14px 0 4px 40px;
+				font-size : 14px;
+				text-transform : uppercase;
+	}
+	#categories-menu li:hover > ul {
+				display : block;
+	}
+	#categories-menu li > ul {
+				background: none repeat scroll 0 0 #A69383;
+				display: none;
+				position: absolute;
+				top: 60px;
+				width: 171px;
+				z-index: 100;
+	}
+	#categories-menu li ul li {
+				border-bottom: 1px solid #473934;
+				border-top: 1px solid #473934;
+				height: auto;
+				margin: 0 0 0-40px!important;
+	}
+	#categories-menu li ul li:first-child {
+				border-top : 0;
+	}
+	#categories-menu li ul li:last-child {
+				border-bottom : 0;
+	}
+	#categories-menu li ul li a {
+				font-size : 13px;
+				padding-left : 30px;
+				text-align : left;
+				line-height : 30px;
+	}
+	#categories-menu li ul li a:hover {
+				background : #A69383;
+	}
+	#categories-menu li ul li:last-child a:hover {
+				-moz-border-radius-bottomleft : 6px;
+				-moz-border-radius-bottomright : 6px;
+	}
+	p.bid-title {
+				background : url('falconbids/icons/sale.png') no-repeat -5px 5px;
+				color : #fff;
+				padding : 15px 0 0 40px;
+				height : 27px;
+				font : 14px "Vidaloka";
+				font-weight : normal;
+	}
+	p.bid-title strong {
+				color : #fff;
+				letter-spacing : -0.05em;
+				font-size : 15px;
+				font-weight : normal;
+	}
+	#winnerBox.box h3 img {
+				position : absolute;
+				top : -5px;
+				right : -1px;
+				height : 45px;
+	}
+	#winnerBox.box div.box-content {
+				border-radius : 0;
+				background : #B69786;
+	}
+	#winnerBox.box div.box-content img {
+				float : left;
+				margin : 0 8px 0 0;
+	}
+	#winnerBox.box div.box-content p {
+				padding : 0 0 0.5em 0;
+	}
+	#winnerBox.box div.box-content p strong {
+				color : #000;
+	}
+	#winnerBox.box div.box-content p a {
+				color : #640d0d;
+				text-decoration : underline;
+	}
+	#winnerBox.box p.box-bottom {
+				padding : 10px;
+				background : #493c36;
+				border : 1px solid #2A2522;
+				border-top : none;
+				border-radius : 0 0 5px 5px;
+				color : #fff;
+	}
+	#newsBox div.box-content .show {
+				visibility : visible;
+				display : block;
+	}
+	#newsBox div.box-content .hide {
+				visibility : collapse;
+				display : none;
+	}
+	#newsBox div.box-content p a {
+				color : #fff;
+	}
+	#newsBox div.box-content p {
+				line-height : 1.4em;
+				margin : 0 0 0.5em 0;
+	}
+	#newsBox div.box-content p a.more {
+				height : 30px !important;
+				display : inline-block;
+				padding : 0 11px;
+				background : url(falconbids/bttns.png) 0 0 repeat-x;
+				border : none;
+				font : normal 14px "Vidaloka" !important;
+				color : #b69785 !important;
+				text-decoration : none !important;
+				text-align : center;
+				cursor : pointer;
+				text-transform : uppercase;
+				-webkit-border-radius : 2px;
+				line-height : 29px!important;
+				-moz-border-radius : 2px;
+				border-radius : 2px;
+				-webkit-box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+				-moz-box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+				box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+	}
+	#newsBox div.box-content ul {
+				margin : 10px 0;
+				text-align : right;
+	}
+	#newsBox div.box-content ul li {
+				display : inline;
+	}
+	#newsBox div.box-content ul li a {
+				color : #FFF;
+				padding : 3px 6px;
+				-moz-border-radius : 3px;
+				-webkit-border-radius : 3px;
+	}
+	#payment {
+				float : right;
+				padding : -5px 0px 0px 0px !important;
+	}
+	#special {
+				padding : 15px 0px 3px 5px;
+	}
+	#socialBox h3 {
+				text-align : left;
+	}
+	#packagesBox h3 {
+				background : url('falconbids/block_title5.png') no-repeat left top;
+	}
+	#packagesBox div.box-content ul {
+				position : relative;
+				left : -35px;
+	}
+	#packagesBox div.box-content ul li {
+				color : #fff;
+				background : url("falconbids/categ_border.png") repeat-x scroll 0 bottom transparent;
+				padding : 10px 0px 10px 0px;
+				position : relative;
+	}
+	#packagesBox div.box-content ul li:last-child {
+				border : 0;
+				padding : 10px 0px 10px 0px;
+	}
+	#packagesBox div.box-content ul li strong {
+				color : #B69785;
+				position : absolute;
+				right : 0px;
+	}
+	#spcl_auction div.auction-item {
+				min-height : 100px!important;
+				padding-bottom : 10px!important;
+				width : 185px!important;
+	}
+	#banner-area {
+				background : url("falconbids/slider_bg.png") no-repeat scroll 0 0 transparent;
+				height : 255px;
+				overflow : hidden;
+				padding : 8px 0 0 15px;
+				width : 710px;
+				margin-left : -15px;
+	}
+#horizontal-auctions-box.auctions-box div.auction-item {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 6px 6px 6px 6px;
+  color: #333333;
+  float: left;
+  margin: 0 6px 8px 0;
+  min-height: 400px;
+  padding: 2px;
+  text-align: center;
+  width: 161px;
+  max-height: 400px!important;
+  overflow: hidden!important;
+}
+	#horizontal-auctions-box.auctions-box div.auction-item .button {
+				width : 98px;
+				margin-top : 5px;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item.last {
+				margin-right : 0px;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item p.prodtitle {
+				background : url("falconbids/buttons/menu-categories.png") repeat-y scroll 0 0 transparent;
+				color : #FFF;
+				font-size : 11px;
+				padding : 5px;
+				-moz-border-radius-topleft : 6px;
+				-moz-border-radius-topright : 6px;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item p.prodtitle span {
+				padding : 0 0 0 20px;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item img.bidimagebox {
+				height : 85px;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item h2.productname {
+				font-size : 12px;
+				padding : 10px 0;
+				height : 20px;
+				display : block;
+				color : #333;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item h2.productname a {
+				color : #000;
+	}
+	#horizontal-auctions-box .seat_panel {
+				height : 96px;
+	}
+	#horizontal-auctions-box .seat_bar {
+				width : 120px;
+				height : 10px;
+				margin : 3px auto;
+				display : block;
+				border : 1px solid #626562;
+				-moz-border-radius-topleft : 3px;
+				-moz-border-radius-topright : 3px;
+				-moz-border-radius-bottomleft : 3px;
+				-moz-border-radius-bottomright : 3px;
+				background-image : url('falconbids/backgrounds/seat_bg.png');
+				background-position : -120px 0px;
+	}
+	#horizontal-auctions-box .seat_count {
+				font-size : 24px;
+				font-weight : bold;
+				margin-top : 3px;
+				margin-bottom : 3px;
+				color : #002356;
+	}
+	.seat_text1 {
+				font-size : 14px;
+				font-weight : bold;
+				color : #010101;
+	}
+	.seat_text2 {
+				font-size : 8px;
+				font-weight : bold;
+				color : #010000;
+	}
+	.seat_text3 {
+				font-size : 9px;
+				font-weight : bold;
+				color : #010000;
+	}
+	.seat_text3 span {
+				color : #b06a0e;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item p.timerbox {
+				font-size: 24px;
+font-weight: bold;
+padding: 20px 0 10px;
+max-height: 20px!important;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item p.bidprice {
+				background : #ffee85;
+				color : #b06a0e;
+				font-size : 18px;
+				margin : 0 3px;
+				padding : 8px 6px;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item small.bidvalue {
+				color : #5f5549;
+				display : block;
+				font-size : 11px;
+				margin : 6px 0;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item ol.top-bidders {
+				background : #f0f7f7;
+				text-align : left;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item ol.top-bidders li {
+				border-bottom : 1px solid #cfe6e6;
+				font-size : 11px;
+				padding : 7px;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item ol.top-bidders li a {
+				color : #2d584d;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item ol.top-bidders li label {
+				padding : 3px 0;
+				display : inline-block;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item ol.top-bidders li input {
+				width : 139px;
+				margin : 4px 0;
+				height : auto;
+	}
+	button, .button {
+				height : 30px !important;
+				padding : 0 15px;
+				display : inline-block;
+				background : url(falconbids/bttns.png) 0 0 repeat-x;
+				border : none;
+				font : normal 14px "Vidaloka" !important;
+				color : #b69785 !important;
+				text-decoration : none !important;
+				text-align : center;
+				cursor : pointer;
+				text-transform : uppercase;
+				-webkit-border-radius : 2px;
+				line-height : 29px!important;
+				-moz-border-radius : 2px;
+				border-radius : 2px;
+				-webkit-box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+				-moz-box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+				box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+	}
+	button:hover, .button:hover {
+				background-position : 0 -34px;
+				color : #fff !important;
+				text-decoration : none !important;
+	}
+	#horizontal-auctions-box.auctions-box div.auction-item a.button92 {
+				background : url('falconbids/buttons/green-small.gif') no-repeat left top;
+				color : #FFFFFF;
+				display : block;
+				height : 26px;
+				margin : 5px 0 0 0px;
+				padding : 10px 0 0 0;
+				text-align : center;
+				text-shadow : 1px 1px #486a1b;
+				text-transform : uppercase;
+				cursor : pointer;
+				border : none;
+				width : 157px;
+	}
+	#column-left h3.title-more-auction {
+				background : url('falconbids/icons/tag.gif') no-repeat left top;
+				color : #1465c2;
+				font-size : 18px;
+				font-weight : normal;
+				margin : 0.5em 0;
+				padding : 8px 0 8px 50px;
+	}
+	#vertical-auctions-box.auctions-box {
+				background : #dff5ff;
+				border : 1px solid #d3eaf2;
+				overflow : hidden;
+				padding : 5px;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item {
+				background : #FFF;
+				border : 1px solid #add5e5;
+				overflow : hidden;
+				padding : 8px;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+	}
+	#vertical-auctions-box .seat_panel {
+				text-align : center;
+				margin-top : 10px;
+	}
+	#vertical-auctions-box .seat_bar {
+				width : 120px;
+				height : 10px;
+				margin : 3px auto;
+				display : block;
+				border : 1px solid #626562;
+				-moz-border-radius-topleft : 3px;
+				-moz-border-radius-topright : 3px;
+				-moz-border-radius-bottomleft : 3px;
+				-moz-border-radius-bottomright : 3px;
+				background-image : url('falconbids/backgrounds/seat_bg.png');
+				background-position : -120px 0px;
+	}
+	#vertical-auctions-box .seat_count {
+				font-size : 24px;
+				font-weight : bold;
+				margin-top : 3px;
+				margin-bottom : 3px;
+				color : #002356;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item img.bidimagebox {
+				float : left;
+				width : 150px;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.bidimagebox {
+				float : left;
+				width : 140px;
+				margin : 0px;
+				text-align : center;
+				vertical-align : middle;
+				padding : 15px 0 0 0;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.bidimagebox img {
+				width : 120px;
+				height : 90px;
+				margin : 0px;
+				padding : 0px;
+				text-align : center;
+				vertical-align : middle;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content {
+				width : 330px;
+				float : left;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content h2.productname {
+				font-size : 14px;
+				padding : 3px 0 0 0;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content h2.productname a {
+				color : #3a77a1;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content div.left {
+				float : left;
+				width : 157px;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content div.left p.timerbox {
+				font-size : 24px;
+				font-weight : bold;
+				padding : 30px 0 10px 0;
+				text-align : center;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content div.left p.bidprice {
+				background : #ffee85;
+				color : #b06a0e;
+				font-size : 18px;
+				margin : 0 3px;
+				padding : 8px 6px;
+				text-align : center;
+				width : 145px;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content div.right {
+				float : right;
+				width : 157px;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content div.right small.bidvalue {
+				color : #5f5549;
+				display : block;
+				font-size : 11px;
+				padding : 40px 0 10px 0;
+				text-align : center;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content div.right small.bidvalue_unique {
+				color : #5f5549;
+				display : block;
+				font-size : 11px;
+				padding : 8px 0 8px 0;
+				text-align : center;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item div.auction-content div.right a.button {
+				background : url('falconbids/buttons/place-bid.gif') no-repeat left top;
+				color : #FFFFFF;
+				display : block;
+				height : 26px;
+				margin : 5px 0 0 0;
+				padding : 10px 0 0 0;
+				text-align : center;
+				text-shadow : 1px 1px #486a1b;
+				text-transform : uppercase;
+				width : 157px;
+				cursor : pointer;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item ol.top-bidders {
+				background : #f0f7f7;
+				float : left;
+				margin : 20px 0 0 15px;
+				text-align : left;
+				width : 165px;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item ol.top-bidders li {
+				border-bottom : 1px solid #cfe6e6;
+				font-size : 11px;
+				padding : 7px;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item ol.top-bidders li:last-child {
+				border : 0;
+	}
+	#vertical-auctions-box.auctions-box div.auction-item ol.top-bidders li a {
+				color : #2d584d;
+	}
+	#navigationBox div.box-content {
+				border-color : #2A2522;
+				border-style : solid;
+				border-width : 0 1px;
+				border-bottom : solid 1px #2A2522 !important;
+				padding : 1px 0 12px 0!important;
+	}
+	#navigationBox div.box-content h4 {
+				background : #F7F7F7;
+				padding : 10px;
+				text-transform : uppercase;
+				-moz-border-radius-topleft : 6px;
+				-moz-border-radius-topright : 6px;
+				display : none;
+	}
+	#navigationBox.box div.box-content ul li h5 {
+				background : url("falconbids/buttons/menu-categories.png") repeat-y scroll 0 0 transparent;
+				color : #FFF;
+				padding : 12px 10px;
+				text-transform : uppercase;
+				Width:200px;
+				text-indent:35px;
+	}
+	#navigationBox.box div.box-content ul li h5 a {
+				color: #FFFFFF;
+display: block;
+margin-left: 0px;
+	}
+	#navigationBox.box div.box-content ul li ul {
+				margin-bottom : 10px;
+				margin-left:-30px;
+	}
+	#navigationBox.box div.box-content ul li ul li {
+				padding : 2px 0 0 0;
+				background : url(falconbids/categ_border.png) 0 0 repeat-x;
+				position : relative;
+	}
+	#navigationBox.box div.box-content ul li ul li a, #navigationBox.box div.box-content ul li ul li span {
+				height : 27px;
+				display : block;
+				padding : 10px 0 0 49px;
+				background : url(falconbids/categ_bullet.png) 0 0 no-repeat;
+				font-size : 14px;
+				color : #B69785;
+	}
+	#navigationBox.box div.box-content ul li ul li a:hover,
+#navigationBox.box div.box-content ul li ul li a.selected,
+#navigationBox.box div.box-content ul li ul li span {
+				background : url(falconbids/categ_bullet_active.png) 0 0 no-repeat;
+				color : #fff;
+	}
+	#searchForm {
+				position: absolute;
+right: 0;
+top: 5px;
+	}
+	#searchForm input {
+				background : #1f1c19;
+				border : 1px solid #6a5e56;
+				border-radius : 5px;
+				width : 200px;
+				height : 32px;
+				padding : 0 10px;
+				float : left;
+				color : #fff;
+	}
+	#searchForm button {
+				background : url('falconbids/backgrounds/search_btn.png') no-repeat -3px -2px;
+				width : 34px;
+				height : 34px!important;
+				text-indent : -9999em;
+				float : left;
+				margin : 0 0 0 8px;
+				border : 1px solid #6a5e56;
+				border-radius : 5px;
+	}
+	p.bid-title em {
+				color : #fff;
+				display : block;
+				font-style : normal;
+				font-weight : bold;
+				line-height : 1em;
+				text-transform : uppercase;
+				margin:0px 0px 0px 10px;
+	}
+	p.bid-title small {
+				color : #fff;
+				font-size : 11px;
+				font-family : Arial, Helvetica, sans-serif;
+				position : relative;
+				top : -2px;
+	}
+	#all_auctions {
+				position : relative;
+	}
+	#all_auctions p.bid-title {
+				position : absolute;
+				left : 10px;
+				top : -42px;
+	}
+	#buybids-box {
+				background : url("falconbids/block_content.png") repeat-x scroll 0 0 #1F1C19;
+				border : solid 1px #2A2522;
+				border-top : none;
+				border-radius : 0 0 5px 5px;
+				padding : 0px;
+				overflow : hidden;
+	}
+	#buybids-box p {
+				margin : 1em 0.5em;
+	}
+	#buybids-box p strong {
+				color : #c32525;
+	}
+	#buybids-box div.bid-box {
+				background : #211C19;
+				border : 1px solid #3A3330;
+				border-radius : 6px;
+				float : left;
+				height : 156px;
+				margin : 2px;
+				padding : 6px;
+				width : 325px;
+	}
+	#buybids-box div.bid-box div.bix-pack {
+				float : left;
+				height : 143px;
+				text-align : center;
+				text-transform : uppercase;
+				width : 143px;
+	}
+	#buybids-box div.bid-box div.bix-pack h4 {
+				font-size : 18px;
+				padding : 10px 0 0 0;
+	}
+	#buybids-box div.bid-box div.bix-pack p {
+				color : #FFF;
+				font-size : 24px;
+				margin : 0;
+	}
+	#buybids-box div.bid-box div.bix-pack small {
+				color : #000;
+				font-size : 14px;
+				font-weight : bold;
+	}
+	#buybids-box div.bid-box div.pack-description {
+				float : right;
+				width : 170px;
+	}
+	#buybids-box div.bid-box div.pack-description h3 {
+				color : #fff;
+				font-size : 16px;
+	}
+	#buybids-box div.bid-box div.pack-description ul {
+				margin : 1.2em 0;
+	}
+	#buybids-box div.bid-box div.pack-description ul li {
+				font-weight : bold;
+				margin : 3px 0;
+	}
+	#buybids-box div.bid-box div.pack-description p {
+				margin : 0 0 0.5em 0;
+	}
+	#buybids-box div.bid-box div.pack-description button {
+				width : 119px;
+	}
+	#buybids-box div.buytipinfo {
+				float : left;
+				width : 300px;
+				margin-left : 20px;
+				padding-top : 30px;
+	}
+	#buybids-box div.buytipinfo h4 {
+				font-size : 18px;
+				color : #fff;
+	}
+	#buybids-box div.buytipinfo h5 {
+				font-size : 14px;
+				color : #fff;
+	}
+	#buybids-box div.buytipinfo input {
+				width : 190px;
+				display : inline;
+	}
+	#buybids-box div.buytipinfo #couponinfo {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				border : 1px solid #add5e5;
+				display : none;
+				position : absolute;
+				padding : 10px;
+				margin-top : 5px;
+	}
+	#buybids-box div.buytipinfo button {
+				width : 90px;
+				float : right;
+	}
+	#buybids-box div.buytipinfo .error {
+				color : red;
+				font-size : 11px;
+	}
+	#buybids-box div.bid-box div.xs {
+				background : url('falconbids/backgrounds/bg-box-xs.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.xs h4 {
+				color : #540909;
+	}
+	#buybids-box div.bid-box div.xs p {
+				color : #ce5d0c;
+	}
+	#buybids-box div.bid-box div.u {
+				background : url('falconbids/backgrounds/bg-box-u.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.u h4 {
+				color : #FFF;
+	}
+	#buybids-box div.bid-box div.u p {
+				color : #fed9d9;
+	}
+	#buybids-box div.bid-box div.xxl {
+				background : url('falconbids/backgrounds/bg-box-xxl.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.xxl h4 {
+				color : #2e4408;
+	}
+	#buybids-box div.bid-box div.xl {
+				background : url('falconbids/backgrounds/bg-box-xl.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.xl h4 {
+				color : #3c045f;
+	}
+	#buybids-box div.bid-box div.s {
+				background : url('falconbids/backgrounds/bg-box-s.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.s h4 {
+				color : #182c64;
+	}
+	#buybids-box div.bid-box div.m {
+				background : url('falconbids/backgrounds/bg-box-m.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.m h4 {
+				color : #4e4009;
+	}
+	#buybids-box div.bid-box div.m2 {
+				background : url('falconbids/backgrounds/bg-box-m2.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.m2 h4 {
+				color : #0b4f7b;
+	}
+	#buybids-box div.bid-box div.l {
+				background : url('falconbids/backgrounds/bg-box-l.gif') no-repeat left top;
+	}
+	#buybids-box div.bid-box div.l h4 {
+				color : #000;
+	}
+	#answer {
+				background : url("falconbids/block_content.png") repeat-x scroll 0 0 #1F1C19;
+				border : 1px solid #2A2522;
+				padding : 10px 10px 0;
+	}
+	#answer .entry {
+				clear : both;
+				border-top : 1px solid #2A2522;
+				padding : 10px 0;
+	}
+	#answer .entry:first-child {
+				border-top : none!important;
+	}
+	.entry h2#help-title {
+				margin : 0 0 0.5em 0;
+				font : 15px "Vidaloka";
+				color : #FFF;
+				padding : 10px 0 10px 40px;
+	}
+	.entry p {
+				line-height : 1.5em;
+				font-family : Arial, Helvetica, sans-serif;
+				color : #FFFFFF;
+	}
+	#mybids-box div.bid-box {
+				border-radius : 6px;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				color : #333;
+				overflow : hidden;
+				margin : 0 2px 4px 2px;
+				padding : 6px;
+	}
+	#mybids-box div.avatar_box {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				overflow : hidden;
+				margin : 0 2px 4px 2px;
+				padding : 6px;
+				color : #333;
+	}
+	#mybids-box div.avatar_box h2 {
+				color : #333;
+				font-size : 14px;
+	}
+	#mybids-box .seat_panel {
+				text-align : center;
+				margin-top : 5px;
+	}
+	#mybids-box .seat_bar {
+				width : 120px;
+				height : 10px;
+				margin : 2px auto;
+				display : block;
+				border : 1px solid #626562;
+				-moz-border-radius-topleft : 3px;
+				-moz-border-radius-topright : 3px;
+				-moz-border-radius-bottomleft : 3px;
+				-moz-border-radius-bottomright : 3px;
+				background-image : url('falconbids/backgrounds/seat_bg.png');
+				background-position : -120px 0px;
+	}
+	#mybids-box .seat_count {
+				font-size : 24px;
+				font-weight : bold;
+				margin-top : 0px;
+				margin-bottom : 0px;
+				color : #002356;
+	}
+	#mybids-box div.avatar_box .left {
+				padding-right : 190px;
+	}
+	#mybids-box div.avatar_box .right {
+				float : right;
+				width : 160px;
+				text-align : center;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				border : 1px solid #B69786;
+				overflow : hidden;
+				margin : 0 2px 4px 2px;
+				padding : 6px;
+	}
+	#mybids-box div.bid-box div.bid-image {
+				float : left;
+				width : 118px;
+	}
+	#mybids-box div.bid-box div.bid-image a.button {
+				width : 88px;
+				margin-top : 5px;
+	}
+	#mybids-box div.bid-box div.bid-content {
+				float : left;
+				margin : 0 15px;
+				width : 340px;
+				height : 150px;
+	}
+	#mybids-box div.bid-box div.bid-content h2 {
+				margin : 0.5em 0 1.6em 0;
+	}
+	#mybids-box div.bid-box div.bid-content h2 a {
+				color : #000;
+	}
+	#mybids-box div.bid-box div.bid-content h3 {
+				color : #003066;
+				font-size : 11px;
+				margin : 0 0 0.8em 0;
+	}
+	#mybids-box div.bid-box div.bid-content p {
+				font-size : 11px;
+				margin : 0 0 2em 0;
+	}
+	#mybids-box div.bid-box div.bid-content p a {
+				color : #000;
+				text-decoration : underline;
+	}
+	#mybids-box div.bid-box div.bid-content p.bidder {
+				background : url('falconbids/icons/user.gif') no-repeat left center;
+				font-size : 12px;
+				margin : 0;
+				padding : 10px 0 10px 30px;
+	}
+	#mybids-box div.bid-box div.bid-content p.bidder strong {
+				color : #ff8400;
+	}
+	#mybids-box div.bid-box div.bid-content p.bidder a {
+				font-weight : bold;
+				text-decoration : none;
+	}
+	#mybids-box div.bid-box div.bid-countdown {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				border : 1px solid #B69785;
+				float : left;
+				width : 168px;
+	}
+	#mybids-box div.bid-box div.bid-redem {
+				float : right;
+				width : 130px;
+				text-align : right;
+	}
+	#mybids-box div.bid-box div.bid-redem a.button {
+				background : url('falconbids/buttons/buy-bids.gif');
+				color : #FFF;
+				float : none;
+				display : block;
+				height : 26px;
+				padding : 10px 0 0 0;
+				text-align : center;
+				text-shadow : 1px 1px #486a1b;
+				text-transform : uppercase;
+				width : 119px;
+				cursor : pointer;
+	}
+	#mybids-box div.bid-box div.bid-countdown p.timerbox {
+				background : #B69785;
+				padding : 10px;
+				text-align : center;
+				text-transform : uppercase;
+	}
+	#mybids-box div.bid-box div.bid-countdown p.timerbox strong {
+				display : block;
+				font-size : 26px;
+	}
+	#mybids-box div.bid-box div.bid-countdown p.instead {
+				color : #787878;
+				padding : 10px 20px;
+				text-transform : uppercase;
+	}
+	#mybids-box div.bid-box div.bid-countdown p.instead strong {
+				color : #B69785;
+				display : block;
+				font-size : 24px;
+	}
+	#bid-products {
+				background : url("falconbids/block_content.png") repeat-x scroll 0 0 #1F1C19;
+				border : solid 1px #2A2522;
+				border-top : none;
+				border-radius : 0 0 5px 5px;
+				padding : 10px;
+	}
+	#bid-products div.bid-box {
+				border-radius : 6px;
+				background : #211C19;
+				border : 1px solid #3A3330;
+				float : left;
+				overflow : hidden;
+				margin : 2px;
+				padding : 6px;
+				width : 288px;
+	}
+	#bid-products div.bid-box div.bid-image {
+				float : left;
+				width : 107px;
+	}
+	#bid-products div.bid-box div.bid-image a {
+				height : 100%;
+				display : block;
+	}
+	#bid-products div.bid-box div.bid-image img {
+				max-width : 100%;
+	}
+	#bid-products div.bid-box div.bid-content {
+				float : left;
+				margin : 0 0 0 10px;
+				width : 171px;
+	}
+	#bid-products div.bid-box div.bid-content h2 {
+				margin : 0.1em 0 1em;
+	}
+	#bid-products div.bid-box div.bid-content h2 a {
+				color : #fff;
+	}
+	#bid-products div.bid-box div.bid-content p {
+				margin : 0 0 1em 0;
+	}
+	#bid-products div.bid-box div.bid-content p.timebox {
+				color : #78b82e;
+				float : right;
+				text-align : center;
+				width : 74px;
+	}
+	#bid-products div.bid-box div.bid-content p.timebox strong span {
+				color : rgb(255, 255, 255)!important;
+				display : block;
+				font-size : 14px;
+	}
+	#bid-products div.bid-box div.bid-content a.button {
+				width : 75px;
+				font-size : 14px;
+				padding : 0 10px;
+	}
+	#payment-information {
+				clear : both;
+				margin-top : 15px;
+	}
+	#payment-information h3 {
+				background : url(falconbids/col_title.png) no-repeat top center;
+				color : white;
+				font : 15px "Vidaloka";
+				height : 42px;
+				line-height : 42px;
+				padding : 0 10px;
+				border-radius : 10px 10px 0 0;
+	}
+	#payment-information ul {
+				background : #211C19;
+				border : 1px solid #3A3330;
+				padding : 10px;
+				border-radius : 5px;
+	}
+	#payment-information ul li {
+				display : block;
+				float : left;
+				font-size : 10px;
+				margin : 0 0 0 10px;
+				width : 173px;
+	}
+	#payment-information ul li strong {
+				display : block;
+				font-size : 12px;
+				margin : 0 0 6px 0;
+	}
+	#payment-information ul li a {
+				color : #fff;
+				text-decoration : underline;
+	}
+	#payment-information .pro_detail {
+				background : url("falconbids/block_content.png") repeat-x scroll 0 0 #1F1C19;
+				border : solid 1px #2A2522;
+				border-top : none;
+				border-radius : 0 0 5px 5px;
+				padding : 10px;
+	}
+	#payment-information .pro_detail span {
+				color : #fff!important;
+	}
+	#product-details {
+				float : left;
+				overflow : hidden;
+				margin : 0 0 1em 0;
+				width : 643px;
+				margin-right : 10px;
+	}
+	#product-details p.auctions-id {
+				background : url('falconbids/icons/cart.gif') no-repeat left center;
+				font-size : 13px;
+				font-weight : bold;
+				margin : 1em 0 1em 0.5em;
+				padding : 10px 0 10px 45px;
+				color : #FFFFFF;
+	}
+	#product-details h2 {
+				color : #fff;
+				font-size : 18px;
+				margin : 0 0 0.5em 0.5em;
+	}
+	#product-details p.description {
+				margin : 0 0 1em 0.5em;
+				color : #FFFFFF;
+				font-size : 13px;
+				line-height : 24px;
+	}
+	#product-gallery {
+				border-radius : 6px;
+				background : #2A2622;
+				border : 1px solid #3C3530;
+				width : 372px;
+				clear : both;
+				float : left;
+				overflow : hidden;
+				padding : 2px;
+	}
+	#product-gallery div.main-product {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				overflow : hidden;
+				margin : 3px;
+				padding : 6px;
+				min-height : 300px;
+	}
+	#product-gallery div.product-small {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				float : left;
+				overflow : hidden;
+				margin : 3px;
+				padding : 6px;
+				width : 75px;
+	}
+	#product-information {
+				float : left;
+				margin : 0 0 0 10px;
+				width : 255px;
+	}
+	#product-information .seat_panel {
+				text-align : center;
+				margin-top : 20px;
+				padding-bottom : 20px;
+	}
+	#product-information .seat_bar {
+				width : 120px;
+				height : 10px;
+				margin : 2px auto;
+				display : block;
+				border : 1px solid #626562;
+				-moz-border-radius-topleft : 3px;
+				-moz-border-radius-topright : 3px;
+				-moz-border-radius-bottomleft : 3px;
+				-moz-border-radius-bottomright : 3px;
+				background-image : url('falconbids/backgrounds/seat_bg.png');
+				background-position : -120px 0px;
+	}
+	#product-information .seat_count {
+				font-size : 24px;
+				font-weight : bold;
+				margin-top : 0px;
+				margin-bottom : 0px;
+				color : #002356;
+	}
+	#product-information div.product-box {
+				border-radius : 6px;
+				background : #2A2622;
+				border : 1px solid #3C3530;
+				clear : both;
+				overflow : hidden;
+				padding : 2px;
+				margin : 0 0 8px 0;
+	}
+	#product-information div.product-box div.product-content {
+				overflow : hidden;
+				padding : 6px;
+	}
+	#product-information div.product-box p.pricebox {
+				float : right;
+				margin : 0;
+				width : 130px;
+	}
+	#product-information div.product-box p.pricebox input {
+				width : 125px;
+	}
+	#product-information div.product-box p.pricebox span {
+				color : #B69785;
+				font-size : 20px;
+				vertical-align : middle;
+	}
+	#product-information div.product-box a.button {
+				width : 168px;
+	}
+	.auction_type_picture {
+				float : left;
+				padding-right : 1px;
+	}
+	#product-information div.product-box p.timebox {
+				font-size : 28px;
+				margin : 10px auto;
+				padding : 8px;
+				text-align : center;
+	}
+	#product-information div.product-box p.timebox span {
+				color : #fff!important;
+	}
+	#product-information div.product-box p.winner {
+				margin : 10px 0;
+				text-align : center;
+	}
+	#product-information div.product-box p.winner strong {
+				color : #f67400;
+				margin : 0;
+	}
+	#product-information div.product-box p a {
+				color : #000;
+				font-weight : bold;
+	}
+	#product-information div.product-box p small {
+				color : #999;
+				font-size : 11px;
+				display : block;
+				text-align : center;
+	}
+	#product-information div.product-box div small {
+				color : #999;
+				font-size : 11px;
+				display : block;
+				text-align : center;
+				margin-right : 15px;
+	}
+	#product-information div.product-box h3.savings {
+				background : url('falconbids/icons/money.gif') no-repeat left center;
+				font-size : 16px;
+				padding : 10px 0 10px 40px;
+	}
+	#product-information div.product-box h4 {
+				color : #B69785;
+				font-size : 14px;
+	}
+	#product-information div.product-box .buynowprice {
+				color : #B69785;
+	}
+	#product-information div.product-box ul li {
+				margin : 10px 0;
+	}
+	#product-information div.product-box ul li em {
+				font-style : normal;
+				font-weight : bold;
+				text-align : right;
+	}
+	#product-information div.product-box ul li span {
+				display : inline-block;
+				width : 180px;
+	}
+	#product-information div.product-box ul li .innerspan {
+				display : inline-block;
+				width : auto;
+	}
+	#product-information div.product-box p.result {
+				border-top : 1px solid #999;
+				margin : 10px 0;
+				padding : 10px 0 0 0;
+	}
+	#product-information div.product-box p.result span {
+				display : inline-block;
+				width : 180px;
+	}
+	#product-information div.product-box p.result .innerspan {
+				display : inline-block;
+				width : auto;
+	}
+	#product-information div.product-box p.result em {
+				font-style : normal;
+				font-weight : bold;
+	}
+	#bid-information {
+				float : right;
+				width : 287px;
+				position : relative;
+				top : 125px;
+	}
+	#bid-information ul.nav-button {
+				overflow : hidden;
+				margin : 10px 0;
+	}
+	#bid-information ul.nav-button li {
+				display : inline;
+	}
+	#bid-information ul.nav-button li a {
+				color : #FFF;
+				display : block;
+				float : left;
+				font-size : 24px;
+				line-height : 2em;
+				height : 50px;
+				margin : 0 5px;
+				text-align : center;
+				text-shadow : 1px 1px #29090a;
+				width : 50px;
+	}
+	#bid-information ul.nav-button li a img {
+				height : 50px;
+				width : 50px;
+	}
+	#added_watchlist {
+				margin-bottom : 10px;
+				text-align : center;
+	}
+	#bid-information div.tabBox {
+				border-radius : 0 0 6px 6px;
+				background : #2A2622;
+				border : 1px solid #3C3530;
+				overflow : hidden;
+				padding : 10px;
+	}
+	#bid-information div.tabBox ul {
+				padding : 0;
+	}
+	#bid-information div.tabBox ul li {
+				border : 1px solid #3A3330;
+				display : inline-block;
+				font-size : 12px;
+				padding : 10px 0px;
+				cursor : pointer;
+	}
+	#bid-information div.tabBox ul li a.tabheader {
+				padding : 10px 20px;
+	}
+	#bid-information div.tabBox ul li.current {
+				background : #211C19;
+				border : 1px solid #3A3330;
+				border-bottom-color : #211C19;
+				font-weight : bold;
+	}
+	#bid-information div.tabBox div.tab-content {
+				background : #211C19;
+				border : 1px solid #3A3330;
+				overflow : hidden;
+				margin : -1px 0 4px 0;
+				padding : 6px;
+	}
+	#bid-information div.tabBox div.hide {
+				display : none;
+	}
+	#bid-information div.tabBox div.tab-content table {
+				color : #fff;
+				font-size : 11px;
+				width : 100%;
+	}
+	#bid-information div.tabBox div.tab-content table thead tr {
+				background : #2A2622;
+				text-transform : uppercase;
+	}
+	#bid-information div.tabBox div.tab-content table thead tr th {
+				padding : 5px;
+				color : #fff;
+	}
+	#bid-information div.tabBox div.tab-content table tbody tr td {
+				padding : 10px 5px;
+				text-align : center;
+	}
+	#bid-information div.tabBox div.tab-content table tbody tr td input {
+				width : 50px;
+	}
+	#bid-information div.tabBox div.tab-content p {
+				margin : 0.8em 0;
+	}
+	#bid-information div.tabBox div.tab-content a.button {
+				float : right;
+				width : 80px;
+	}
+	#bid-information div.tabBox div.tab-content a.alert {
+				background : url('falconbids/icons/alert.gif') no-repeat left center;
+				padding : 0 0 0 20px;
+	}
+	#registerBox h2 {
+				font-size : 14px;
+				font-weight : normal;
+				border-bottom : 1px solid #3C3530;
+				padding-bottom : 5px;
+				margin-bottom : 10px;
+	}
+	#registerBox ul {
+				padding : 15px 0 15px 35px;
+				display : block;
+				border-radius : 6px;
+				background : #2A2622;
+				border : 1px solid #3C3530;
+	}
+	#registerBox ul li {
+				color : #9a672f;
+				list-style : disc;
+				padding : 5px 0;
+	}
+	#registerBox ul li span {
+				color : #664a23;
+	}
+	#registerBox #errorMsg {
+				color : red;
+	}
+	#registerBox #errorMsg ul {
+				height : auto;
+				background : none;
+				width : auto;
+				padding : 0 0 10px 40px;
+	}
+	#registerBox #errorMsg ul li {
+				color : red;
+				list-style : upper-alpha;
+				margin-top : 5px;
+	}
+	#registerBox h3 {
+				font-size : 14px;
+				font-weight : normal;
+				border-bottom : 1px solid #3C3530;
+				padding-bottom : 5px;
+				margin : 30px 0 10px;
+	}
+	#registerBox form {
+				border-radius : 6px;
+				color : #000;
+				background : #2A2622;
+				border : 1px solid #3C3530;
+				overflow : hidden;
+				padding : 15px;
+	}
+	#registerBox form div.left {
+				float: left;
+				width: 680px;
+	}
+	#registerBox form div.left h4, #registerBox form div.right h4 {
+				color : #fff;
+				font-size : 14px;
+				margin : 0 0 5px;
+				text-transform : uppercase;
+	}
+	
+	#registerBox .left p label {
+	    color: #fff;
+	    float: left;
+	    width: 200px;
+	  }
+	#registerBox form div.left fieldset, #registerBox form div.right fieldset {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #211C19;
+				border : 1px solid #3A3330;
+				overflow : hidden;
+				margin : 0;
+				padding : 6px;
+	}
+	#registerBox form div.left fieldset p {
+				margin : 15px 0;
+				overflow : hidden;
+				color:#fff;
+	}
+	#registerBox form div.left fieldset p label small {
+				color : red;
+				display : inline;
+				margin : 0px;
+				padding-left : 5px;
+	}
+	#registerBox form div.left fieldset p span {
+				float : left;
+				display : inline;
+				width : 200px;
+	}
+	#registerBox form div.left fieldset p span span.PASS {
+				float : left;
+				font-size : 8px;
+				width : 23px;
+	}
+	#registerBox form div.left fieldset p span span.FAIL {
+				float : left;
+				font-size : 8px;
+				width : auto;
+	}
+	#registerBox fieldset p span input[type="text"],#registerBox fieldset p span input[type="password"] {
+				  background: none repeat scroll 0 0 #F1F1F1;
+				  border: 1px solid #F1F1F1;
+				  float: right;
+				  padding: 3px;
+				  width: 160px;
+	}
+	#registerBox fieldset p span input[type="checkbox"]{
+				float:left;
+	
+	}
+	#registerBox fieldset p span button {
+	float:right;
+	}
+	#registerBox .left .row > div {
+	  color: #FFFFFF;
+	}
+	#registerBox .row > div:last-child {
+	  left: 122px;
+	  position: relative;
+	}
+	#registerBox .left img {
+	  position: relative;
+	  left: 32px;
+	}
+	#registerBox fieldset p span select {
+				float : left;
+				width : 170px;
+				padding : 3px;
+				background : #f1f1f1;
+				border : 1px solid #f1f1f1;
+	}
+	#column-right #categories-menu {
+		position: relative;
+		top: 20px;
+	      }
+	#registerBox form div.left fieldset p span.label-birtday {
+				width : 200px;
+	}
+	#registerBox form div.right {
+				width : 340px;
+				float : right;
+	}
+	#registerBox form div.right fieldset p {
+				margin : 20px 0;
+				overflow : hidden;
+	}
+	#registerBox form div.right fieldset p span {
+				float : left;
+				display : inline;
+				width : 220px;
+	}
+	#registerBox form div.right fieldset p span span {
+				float : none;
+	}
+	#registerBox form div.right fieldset p label {
+				float : left;
+				font-weight : bold;
+				display : block;
+				width : 100px;
+	}
+	#registerBox form div.right fieldset p label small {
+				color : red;
+				display : inline;
+				margin : 0px;
+				padding-left : 5px;
+	}
+	#registerBox form div.right fieldset p span span.PASS {
+				float : left;
+				width : 23px;
+				font-size : 8px;
+	}
+	#registerBox form div.right fieldset p span span.FAIL {
+				float : left;
+				width : auto;
+				font-size : 8px;
+	}
+	#registerBox form div.right fieldset p span input {
+				float : left;
+				width : 160px;
+	}
+	#registerBox form div.right fieldset p span select {
+				float : left;
+				width : 170px;
+	}
+	#registerBox form div.right fieldset p span small {
+				float : none;
+				display : block;
+				color : #999;
+				font-size : 11px;
+				font-weight : normal;
+	}
+	#registerBox form div.right fieldset p span img {
+				vertical-align : middle;
+	}
+	#registerBox form div.right fieldset p button {
+				background : url(falconbids/bttns.png) 0 0 repeat-x;
+				text-transform : uppercase;
+				-webkit-border-radius : 2px;
+				-moz-border-radius : 2px;
+				border-radius : 2px;
+				-webkit-box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+				-moz-box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+				box-shadow : 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+				color : #FFF;
+				height : 43px;
+				float : right;
+				width : 137px;
+				cursor : pointer;
+	}
+	#buybidBox {
+				padding : 2px;
+	}
+	#buybidBox form {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				border : 1px solid #add5e5;
+				overflow : hidden;
+				padding : 2px;
+	}
+	#buybidBox form p img {
+				vertical-align : middle;
+				border : none;
+	}
+	#buybidBox form p .label {
+				display : inline-block;
+				width : 200px;
+				text-align : right;
+				font-weight : bold;
+	}
+	#buybidBox form p button {
+				width : 119px;
+	}
+	#buybidBox form p span {
+				color : red;
+	}
+	#buybidBox h4 {
+				color : #fff;
+				font-size : 14px;
+				margin : 1em 0.5em;
+				text-transform : uppercase;
+	}
+	.buttonmake {
+				background : url('falconbids/buttons/buy-bids.gif');
+				border : 0;
+				color : #FFF;
+				height : 36px;
+				text-shadow : 1px 1px #486a1b;
+				text-transform : uppercase;
+				width : 119px;
+				cursor : pointer;
+				display : block;
+				line-height : 36px;
+	}
+	.buttonmake1 {
+				font-size : 12px;
+				background : url('falconbids/buttons/buy-bids.gif');
+				border : 0;
+				color : #FFF;
+				height : 36px;
+				text-shadow : 1px 1px #486a1b;
+				text-transform : uppercase;
+				width : 119px;
+				display : block;
+				line-height : 36px;
+				cursor : pointer;
+	}
+	.auction_subtitle {
+				font-size : 17px;
+	}
+	.button140 {
+				width : 140px;
+	}
+	ul.error {
+				color : red;
+	}
+	ul.error li {
+				margin-top : 10px;
+	}
+	.detailslist {
+				margin : 0 auto;
+				margin-left : 40px;
+	}
+	.detailslist p {
+				line-height : 30px;
+	}
+	.detailslist p strong {
+				width : 120px;
+				display : inline-block;
+	}
+	.password {
+				background-image : url('falconbids/backgrounds/bg-password-s.png');
+				background-position : left center;
+				background-repeat : no-repeat;
+	}
+	.normal_text {
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 11px;
+				font-weight : normal;
+				color : #5e5e5e;
+	}
+	#registerBox form .normal_text {
+				color : #fff;
+	}
+	.table1 {
+				border-collapse : collapse;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background-color : #1468C5;
+				color : #333;
+				width : 100%;
+	}
+	.table1 th {
+				padding-top : 8px;
+				padding-bottom : 8px;
+				background-color : #B69786;
+				color : #ffffff;
+	}
+	.table1 tr.even {
+				background : #e3e5e6;
+	}
+	.table1 tr.odd {
+				background : #ffffff;
+	}
+	.table1 td {
+				border : 1px solid #e3e5e6;
+				padding-top : 6px;
+				padding-bottom : 6px;
+				padding-left : 2px;
+				padding-right : 2px;
+				color : #333;
+	}
+	.table1 td.vcenter {
+				vertical-align : middle;
+	}
+	.table1 td.hcenter {
+				text-align : center;
+	}
+	.table2 {
+				border-collapse : collapse;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background-color : #ffffff;
+				width : 100%;
+	}
+	.table2 th {
+				padding-top : 8px;
+				padding-bottom : 8px;
+				border-top : 1px solid #d3eaf2;
+				border-left : 1px solid #d3eaf2;
+				border-right : 1px solid #d3eaf2;
+				background-color : #1468C5;
+				color : #ffffff;
+	}
+	.table2 tr.even {
+				background : #e3e5e6;
+	}
+	.table2 tr.odd {
+				background : #ffffff;
+	}
+	.table2 td {
+				border : 1px solid #e3e5e6;
+				padding-top : 6px;
+				padding-bottom : 6px;
+				padding-left : 2px;
+				padding-right : 2px;
+	}
+	#register-now-box, #already-registered {
+				background : #2A2622;
+				border : 1px solid #3C3530;
+				border-radius : 5px;
+				min-height : 245px;
+				padding : 20px;
+	}
+	#register-now-box {
+				background: url("../images/voucher02.gif") no-repeat scroll bottom right transparent;
+color: #333333;
+float: left;
+height: 250px;
+width: 435px;
+	}
+	#register-now-box ul {
+				list-style-type : square;
+				margin-left : 40px;
+	}
+	#register-now-box ul li {
+				margin-top : 10px;
+	}
+	#already-registered {
+				float : right;
+				width : 390px;
+	}
+	#already-registered form a {
+				text-decoration : underline;
+	}
+	#already-registered .title, #register-now-box .title {
+				font-size : 18px;
+				font-weight : bold;
+				margin-bottom : 20px;
+				
+	}
+	#already-registered .title1, #register-now-box .title1 {
+				font-size : 14px;
+				font-weight : normal;
+				border-bottom : 1px solid #3C3530;
+				padding-bottom : 5px;
+				margin : 0 0 5px;
+	}
+	#already-registered form input {
+				width : 180px;
+	}
+	#already-registered form label {
+				font-size : 14px;
+				font-weight : bold;
+				width : 100px;
+				text-align : left;
+				display : inline-block;
+	}
+	#already-registered .error {
+				color : red;
+	}
+	.greenfont {
+				font-family : Arial, Helvetica, sans-serif;
+				font-size : 12px;
+				font-weight : normal;
+				color : green;
+	}
+	.redfont {
+				font-size : 12px;
+				color : #C82C2F;
+				font-weight : bold;
+	}
+	.forummain {
+				text-align : left;
+				min-height : 300px;
+	}
+	.forummainbutton1 {
+				background : url('falconbids/buttons/buy-bids.gif') no-repeat left top;
+				color : #FFFFFF;
+				display : block;
+				height : 36px;
+				line-height : 36px;
+				text-align : center;
+				text-shadow : 1px 1px #486a1b;
+				text-transform : uppercase;
+				cursor : pointer;
+				border : none;
+				width : 119px;
+	}
+	.forummain .forummaintitle {
+				border-left : solid 1px #1468C5;
+				border-right : solid 1px #1468C5;
+				color : #FFFFFF;
+				padding-left : 5px;
+				padding-top : 5px;
+				padding-bottom : 5px;
+				background-color : #1468C5;
+				font-weight : bold;
+	}
+	.forummain .content {
+				padding-top : 15px;
+				padding-right : 5px;
+				padding-bottom : 10px;
+				border-left : solid 1px #e5e7e8;
+				border-right : solid 1px #e5e7e8;
+				border-bottom : solid 1px #e5e7e8;
+				padding-left : 5px;
+				text-align : justify;
+	}
+	.forumsubmain {
+				background : url("falconbids/block_content.png") repeat-x scroll 0 0 #1F1C19;
+				border : solid 1px #2A2522;
+				border-top : none;
+				border-radius : 0 0 5px 5px;
+				padding : 10px;
+	}
+	.forumtitle {
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 12px;
+				font-weight : bold;
+				-moz-border-radius-topleft : 6px;
+				-webkit-border-radius-topleft : 6px;
+				text-decoration : none;
+				width : 528px!important;
+				padding-top : 10px;
+				padding-bottom : 10px;
+				padding-left : 10px;
+				float : left;
+				border-bottom : solid 1px #add5e5;
+				background-color : #B69786;
+				color : #ffffff;
+	}
+	.forumtitletopic {
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 12px;
+				font-weight : bold;
+				text-decoration : none;
+				width : 95px;
+				padding-top : 10px;
+				padding-bottom : 10px;
+				padding-left : 10px;
+				float : left;
+				border-left : solid 1px #CCCCCC;
+				border-bottom : solid 1px #add5e5;
+				background-color : #B69786;
+				color : #ffffff;
+				text-align : center;
+	}
+	.forumtitlepost {
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 12px;
+				font-weight : bold;
+				text-decoration : none;
+				width : 95px;
+				border-left : solid 1px #CCCCCC;
+				border-bottom : solid 1px #add5e5;
+				padding-top : 10px;
+				padding-bottom : 10px;
+				padding-left : 10px;
+				background-color : #B69786;
+				float : left;
+				color : #ffffff;
+				text-align : center;
+	}
+	.forumtitlelastpost {
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 12px;
+				font-weight : bold;
+				text-decoration : none;
+				width : 165px;
+				border-left : solid 1px #CCCCCC;
+				border-bottom : solid 1px #add5e5;
+				padding-top : 10px;
+				padding-bottom : 10px;
+				padding-left : 10px;
+				float : left;
+				background-color : #B69786;
+				color : #ffffff;
+	}
+	.cat_sub_heading {
+				color : #1468C5;
+				font-weight : bold;
+				padding-left : 5px;
+				padding-top : 5px;
+				padding-bottom : 5px;
+				border : 1px solid #1468C5;
+				background-color : #1468C5;
+				float : left;
+				text-align : left;
+				width : 979px;
+	}
+	.forumbox {
+				background-color : #f9f8f8;
+				float : left;
+				width : 979px;
+				padding-left : 5px;
+				border-bottom : 1px solid #e5e7e8;
+				border : 1px solid #ebebeb;
+	}
+	.forumauthor {
+				height : auto;
+				float : left;
+				width : 140px;
+				padding-left : 4px;
+				padding-right : 10px;
+				text-align : center;
+				padding-top : 10px;
+	}
+	.forumviewmessage {
+				padding : 5px;
+				text-align : justify;
+				min-height : 50px;
+				padding-left : 10px;
+				padding-top : 10px;
+				padding-right : 5px;
+				padding-bottom : 10px;
+				float : left;
+				width : 668px;
+				height : auto;
+				border-left : solid 1px #CCCCCC;
+	}
+	.forummessage {
+				border : 1px solid #CCCCCC;
+				width : 600px;
+				height : 230px;
+	}
+	.forumtitletext {
+				width : 568px;
+				padding-top : 15px;
+				padding-bottom : 5px;
+				padding-left : 30px;
+				border-bottom : solid 1px #e5e7e8;
+				float : left;
+				height : auto;
+				min-height : 70px;
+	}
+	.forumtitletopictext {
+				width : 95px;
+				padding-top : 15px;
+				padding-left : 10px;
+				padding-bottom : 5px;
+				float : left;
+				border-left : solid 1px #CCCCCC;
+				border-bottom : solid 1px #e5e7e8;
+				background-color : #f2f2f2;
+				height : auto;
+				min-height : 70px;
+				text-align : center;
+	}
+	.forumtitleposttext {
+				width : 95px;
+				padding-top : 15px;
+				padding-left : 10px;
+				padding-bottom : 5px;
+				float : left;
+				border-left : solid 1px #CCCCCC;
+				border-bottom : solid 1px #e5e7e8;
+				height : auto;
+				min-height : 70px;
+				text-align : center;
+	}
+	.forumtitlelastposttext {
+				width : 165px;
+				border-left : solid 1px #CCCCCC;
+				border-bottom : solid 1px #e5e7e8;
+				padding-top : 15px;
+				padding-bottom : 5px;
+				padding-left : 10px;
+				background-color : #f2f2f2;
+				float : left;
+				height : auto;
+				min-height : 70px;
+	}
+	.greymenuforum {
+				color : #999999;
+				font-weight : bold;
+				text-decoration : none;
+				font-size : 12px;
+	}
+	.commentbox {
+				background-color : #f9f8f8;
+				float : left;
+				width : 634px;
+				padding-left : 5px;
+				border : 1px solid #e5e7e8;
+	}
+	.commentdesc {
+				float : left;
+				width : 140px;
+				padding-left : 4px;
+				padding-right : 10px;
+				text-align : left;
+				padding-top : 5px;
+	}
+	.commentdate {
+				background-color : #999999;
+				color : #FFFFFF;
+				border : 1px solid #e5e7e8;
+				clear : both;
+				width : 630px;
+				text-align : right;
+				padding-right : 10px;
+				padding-top : 2px;
+				padding-bottom : 2px;
+	}
+	.commentdetail {
+				padding : 5px;
+				float : left;
+				width : 445px;
+				text-align : justify;
+				border-left : 1px solid #e5e7e8;
+				min-height : 50px;
+	}
+	.thumb_uprate {
+				background : url('falconbids/thumbup_02.png') no-repeat left;
+				height : 24px;
+				width : 79px;
+				float : left;
+				color : #FFFFFF;
+				font-size : 12px;
+				font-weight : bold;
+				padding-left : 5px;
+	}
+	.thumb_downrate {
+				background : url('falconbids/thumbdown_02.png') no-repeat left;
+				height : 24px;
+				width : 79px;
+				float : left;
+				color : #01265A;
+				padding-left : 5px;
+				font-size : 12px;
+				font-weight : bold;
+	}
+	.may_imagetext {
+				background-color : #B69786;
+				float : left;
+				width : 673px;
+				margin-top : 5px;
+				padding-top : 7px;
+				padding-bottom : 7px;
+				padding-left : 8px;
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 12px;
+				font-weight : normal;
+				text-decoration : none;
+				color : #ffffff;
+	}
+	.may_textimage {
+				text-align : center;
+				float : left;
+				width : 120px;
+	}
+	.smollimagebox {
+				background-color : #FFFFFF;
+				padding : 0px;
+				padding-top : 2px;
+				float : left;
+				height : 77px;
+				width : 102px;
+				border : 1px solid #e5e7e8;
+	}
+	.may_description {
+				text-align : left;
+				float : left;
+				width : 200px;
+	}
+	.may_textprise {
+				text-align : center;
+				float : left;
+				width : 100px;
+	}
+	.may_textbidder {
+				text-align : center;
+				float : left;
+				width : 130px;
+	}
+	.may_countdown {
+				text-align : center;
+				float : left;
+				width : 110px;
+	}
+	.may_bidbox {
+				background-color : #f9f8f8;
+				color : #333;
+				float : left;
+				width : 670px;
+				padding-top : 10px;
+				padding-bottom : 10px;
+				padding-left : 10px;
+				margin-top : 10px;
+	}
+	.may_bidbox a {
+				color : #333;
+	}
+	.may_drestext {
+				float : left;
+				width : 200px;
+				padding-top : 8px;
+				padding-left : 10px;
+	}
+	.may_drestext a {
+				color : #333;
+	}
+	.countbox {
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 22px;
+				font-weight : bold;
+				color : #213f5b;
+				text-decoration : none;
+				float : left;
+				width : 132px;
+				padding-top : 15px;
+				text-align : center;
+	}
+	.overpaymenttext {
+				font-size : 12px;
+				color : green;
+	}
+	.paymentdate {
+				font-size : 12px;
+				color : red;
+	}
+	.prisebox {
+				float : left;
+				width : 110px;
+				padding-top : 20px;
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 14px;
+				font-weight : bold;
+				color : #263452;
+				text-decoration : none;
+				padding-left : 8px;
+	}
+	.counbitbut {
+				float : left;
+				padding-top : 7px;
+				padding-left : 25px;
+	}
+	.bidderbox {
+				font-family : Verdana, Arial, Helvetica, sans-serif;
+				font-size : 12px;
+				font-weight : bold;
+				color : red;
+				text-decoration : none;
+				float : left;
+				width : 140px;
+				padding-top : 20px;
+	}
+	#bidhistory_bid_history {
+				width : 300px;
+				height : auto;
+				float : right;
+				padding-bottom : 5px;
+				padding-top : 33px;
+				padding-right : 5px;
+	}
+	.buybiddate {
+				text-align : center;
+				float : left;
+				width : 150px;
+	}
+	.buybiddesc {
+				text-align : left;
+				float : left;
+				width : 400px;
+	}
+	.buybidbids {
+				text-align : center;
+				float : left;
+				width : 100px;
+	}
+	.buybidbox {
+				float : left;
+				border-right : 1px solid #e3e5e6;
+				border-left : 1px solid #e3e5e6;
+				border-bottom : 1px solid #e3e5e6;
+				border-top : 1px solid #e3e5e6;
+				color : #333;
+	}
+	.buybids-row-even {
+				width : 679px;
+				padding : 5px 0px 0px 0px;
+				background-color : #F9F8F8;
+				height : 35px;
+	}
+	.buybids-row-odd {
+				width : 679px;
+				background-color : #FFFFFF;
+				border-bottom : 1px solid #e3e5e6;
+				border-top : 1px solid #e3e5e6;
+				padding : 5px 0px 0px 0px;
+				height : 35px;
+	}
+	#historytop {
+				background-image : url(falconbids/backgrounds/hg_gbkdetails_t.png);
+				background-repeat : no-repeat;
+				height : 14px;
+				width : 300px;
+				float : right;
+				position : relative;
+	}
+	#historydetails {
+				height : auto;
+				width : 298px;
+				position : relative;
+				float : right;
+				border-left : 1px solid;
+				border-right : 1px solid;
+				border-color : #DD0000;
+				background-color : #FFFFFF;
+				margin-top : -10px;
+	}
+	#historybot {
+				background-image : url(falconbids/backgrounds/hg_gbkdetails_b.png);
+				background-repeat : no-repeat;
+				height : 5px;
+				width : 300px;
+				position : relative;
+				float : right;
+	}
+	#detailsimage {
+				background-image : url(falconbids/backgrounds/detailline.png);
+				background-repeat : no-repeat;
+				height : 65px;
+				width : 10px;
+				float : right;
+				position : relative;
+				margin-right : -12px;
+				margin-top : -12px;
+	}
+	.feedback_form_login {
+				height : auto;
+				border : 1px solid #CCCCCC;
+	}
+	.feedback_form_login_info {
+				margin-bottom : 10px;
+				border-bottom : 1px solid;
+				border-color : #CCCCCC;
+				font-size : 13px;
+				padding : 3px 10px;
+				color : #30302D;
+				font-weight : bold;
+	}
+	.feedback_form_login_inner {
+				padding-left : 10px;
+				width : 380px;
+				margin : 0 auto;
+	}
+	.pagenumber ul {
+				margin : 10px 0;
+				text-align : center;
+	}
+	.pagenumber ul li {
+				display : inline;
+	}
+	.pagenumber ul li a {
+				background : #9074b6;
+				color : #FFF;
+				padding : 3px 6px;
+				-moz-border-radius : 3px;
+				-webkit-border-radius : 3px;
+	}
+	.auctiontype_panel {
+				border : 1px solid #666666;
+				width : 260px;
+				display : block;
+				background : #EDEDED;
+				color : #000000;
+				padding-bottom : 8px;
+				padding-top : 8px;
+				height : 90px;
+				position : absolute;
+				margin-left : 10px;
+	}
+	.auctiontype_panel .flag {
+				font-size : 18px;
+	}
+	#buyproduct-box {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #dff5ff;
+				border : 1px solid #d3eaf2;
+				overflow : hidden;
+				padding : 2px;
+	}
+	#buyproduct-box .productimage {
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				background : #FFF;
+				border : 1px solid #add5e5;
+				float : left;
+				overflow : hidden;
+				margin : 2px;
+				padding : 6px;
+				width : 200px;
+	}
+	#buyproduct-box .productinfo {
+				padding-left : 240px;
+				padding-top : 20px;
+	}
+	#buyproduct-box div.productinfo h5 {
+				font-size : 14px;
+				color : #1469c6;
+	}
+	#buyproduct-box .productinfo1 {
+				padding-left : 20px;
+				padding-top : 20px;
+	}
+	#buyproduct-box div.productinfo1 h5 {
+				font-size : 14px;
+				color : #1469c6;
+	}
+	#buyproduct-box p {
+				margin : 1em 0.5em;
+	}
+	#buyproduct-box p strong {
+				color : #1469c6;
+	}
+	.avatarlist {
+				text-align : center;
+				margin : auto;
+	}
+	.avatarlist .avatar_outter {
+				border : 2px solid #B7B7B7;
+				margin : 5px;
+				padding : 3px;
+				float : left;
+	}
+	.avatarlist .avatar_outter:hover {
+				border : 2px solid #156ECB;
+	}
+	.avatarlist .avatar_outter.selected {
+				border : 2px solid red;
+	}
+	.auction_option {
+				color : red;
+				font-size : 12px;
+	}
+	.corner_image1 {
+				position : absolute;
+				float : left;
+				margin-top : -2px;
+				margin-left : -2px;
+				z-index : 10;
+	}
+	.corner_imagev {
+				position : absolute;
+				float : left;
+				margin-top : -8px;
+				margin-left : -8px;
+				z-index : 10;
+	}
+	.corner_imagev1 {
+				position : absolute;
+				float : left;
+				margin-top : -6px;
+				margin-left : -6px;
+				z-index : 10;
+	}
+	.corner_imagev2 {
+				position : absolute;
+				float : left;
+				margin-top : -10px;
+				margin-left : -10px;
+				z-index : 10;
+	}
+	.corner_imagev_detail {
+				position : absolute;
+				float : left;
+				margin-top : -6px;
+				margin-left : -6px;
+				z-index : 10;
+	}
+	.information {
+				padding : 20px 20px 20px 20px;
+				text-align : left;
+	}
+	.information h4 {
+				font-size : 16px;
+				padding : 10px 0px;
+				text-align : left;
+	}
+	#map_container {
+				margin : 15px auto;
+	}
+	#map_container #map-title {
+				background : url(falconbids/col_title.png) no-repeat top center;
+				color : white;
+				font : 15px "Vidaloka";
+				height : 42px;
+				line-height : 42px;
+				padding : 0 10px;
+				border-radius : 10px 10px 0 0;
+	}
+	#title-category-content, .box-heading {
+background: url("falconbids/col_title.png") no-repeat scroll center top transparent;
+color: #FFFFFF;
+font: 15px/42px "Vidaloka";
+height: 42px;
+padding: 0 20px;
+position: relative;
+	}
+	.rounded_corner, #mybids-box, .box-content {
+				background : url("falconbids/block_content.png") repeat-x scroll 0 0 #1F1C19;
+				border : solid 1px #2A2522;
+				border-top : none;
+				border-radius : 0 0 5px 5px;
+				padding : 10px;
+	}
+	.rounded_corner div.content {
+				clear : both;
+				padding : 20px;
+				line-height : 24px;
+				font-size : 13px;
+	}
+	.all-auctions #title-category-content {
+				background : none;
+	}
+	.all-auctions .bid-title {
+				margin-top : 15px;
+	}
+	.all-auctions #mybids-box {
+				background : #1F1C19;
+				border : solid 1px #2A2522;
+	}
+	#column-right #testimonials_form_inner {
+				position : relative;
+				top : 0px;
+	}
+	#column-right .right #testimonials_form_inner {
+				position : relative;
+				top : 20px;
+	}
+	#testimonials_form_inner ul li .left_img img {
+				height : 55px;
+				width : auto;
+				max-width : 100px;
+				float : left;
+				margin-right : 15px;
+				padding-right : 15px;
+	}
+	#testimonials_form_inner ul li .right_img img {
+				height : 55px;
+				width : auto;
+				max-width : 100px;
+				float : right;
+				margin-left : 15px;
+				padding-left : 15px;
+	}
+	#testimonials_form_inner h3 {
+				background : url('falconbids/title-latest-winners.png') no-repeat left top;
+				color : #fff;
+				font-size : 14px;
+				height : 23px;
+				padding : 13px 13px 0 0;
+				text-align : center;
+				text-transform : uppercase;
+	}
+	#testimonials_form_inner ul {
+				padding-left : 10px;
+				list-style : none;
+				width : 240px;
+				text-align : left;
+	}
+	.right #testimonials_form_inner ul {
+				padding-left : 10px;
+				list-style : none;
+				width : 225px;
+				text-align : left;
+				border : 2px solid #c6b7da;
+	}
+	#testimonials_form_inner ul li {
+				width : 200px;
+				margin-top : 5px;
+				list-style : none;
+				margin-bottom : 15px;
+	}
+	.right #testimonials_form_inner ul li {
+				width : 220px;
+				margin-top : 5px;
+				list-style : none;
+				margin-bottom : 15px;
+	}
+	#testimonials_form_inner ul li span {
+				font-style : italic;
+				font-weight : normal;
+				list-style : none;
+				margin-bottom : 15px;
+				width : 400px;
+				height : auto;
+				min-height : 80px;
+				text-align : left;
+	}
+	#testimonials_form_inner ul li p {
+				font-style : normal;
+				font-weight : bold;
+	}
+	#watchextdelete {
+				float : right;
+	}
+	#steps {
+				background: #332d27;
+height: 145px;
+margin: 30px 0 0;
+padding-top: 4px;
+border-radius: 10px;
+position: relative;
+top: -15px;
+	}
+	#steps ul {
+				margin : 5px 0 0 22px;
+	}
+	#steps li {
+				width : 225px;
+				height : 126px;
+				float : left;
+				margin-left : -20px;
+	}
+	#steps li h3 {
+				height : 0;
+				line-height : 0;
+				font-size : 1em;
+				overflow : hidden;
+	}
+	#steps li span {
+				width : 128px;
+				float : right;
+				text-align : right;
+				margin : 50px 19px 0 0;
+				font-size : .83em;
+				color : #585858;
+				display : inline-block;
+	}
+	#steps li#step1 {
+				background : url(../include/addons/steps_box/step1-bg.png) 0 0 no-repeat;
+	}
+	#steps li#step2 {
+				background : url(../include/addons/steps_box/step2-bg.png) 0 0 no-repeat;
+	}
+	#steps li#step3 {
+				background : url(../include/addons/steps_box/step3-bg.png) 0 0 no-repeat;
+	}
+	#step1-p1 {
+				position : relative;
+				margin-left : 25px;
+				font-size : 12px;
+				font-weight : bold;
+				left : 20px;
+				top : 10px;
+				color : red;
+	}
+	#step1-p2 {
+				position : relative;
+				left : 120px;
+				top : 20px;
+				color : #ff3200;
+				font-weight : bold;
+				font-size : 16px;
+	}
+	#step1-span {
+				position : relative;
+				top : -20px;
+				left : 5px;
+	}
+	#step2-p1 {
+				position : relative;
+				margin-left : 25px;
+				font-size : 12px;
+				font-weight : bold;
+				left : 20px;
+				top : 10px;
+				color : red;
+	}
+	#step2-p2 {
+				position : relative;
+				left : 60px;
+				color : #ff3200;
+				font-weight : bold;
+				font-size : 16px;
+				top : 20px;
+	}
+	#step2-span {
+				position : relative;
+				top : -20px;
+				left : 13px;
+	}
+	#step3-p1 {
+				position : relative;
+				margin-left : 25px;
+				font-size : 12px;
+				font-weight : bold;
+				left : 20px;
+				top : 10px;
+				color : red;
+	}
+	#step3-p2 {
+				position : relative;
+				left : 100px;
+				color : #ff3200;
+				font-weight : bold;
+				font-size : 16px;
+				top : 20px;
+	}
+	#step3-span {
+				position : relative;
+				top : -20px;
+	}
+	#bid-win {
+				position : relative;
+				top : -20px;
+	}
+	#step1-vert {
+				max-width : 100px;
+				font-weight : bold;
+				text-align : right;
+				margin-left : 140px;
+				top : 80px;
+				position : relative;
+				font-size : 10px;
+				color : #585858;
+	}
+	#step2-vert {
+				max-width : 100px;
+				font-weight : bold;
+				text-align : right;
+				margin-left : 140px;
+				top : 160px;
+				position : relative;
+				font-size : 10px;
+	}
+	#step3-vert {
+				max-width : 100px;
+				padding-bottom : 20px;
+				text-align : right;
+				margin-left : 140px;
+				top : 250px;
+				position : relative;
+				font-size : .83em;
+	}
+	a.button.butseat-button-link:link {
+				font-size : 8px;
+	}
+	#slider_box .jshowoff {
+				-webkit-border-top-left-radius : 6px;
+				-webkit-border-top-right-radius : 6px;
+	}
+	#slider_box div.sliderLeft {
+				width : 695px;
+				height : 225px;
+				-webkit-border-top-left-radius : 6px;
+				-webkit-border-top-right-radius : 6px;
+	}
+	#slider_box div.images img {
+				width : 695px;
+				height : 225px;
+				-webkit-border-top-left-radius : 6px;
+				-webkit-border-top-right-radius : 6px;
+	}
+	#slider_box div.auction-item-slider {
+	width : 695px!important;
+	overflow:hidden!important;
+				height : 225px!important;
+				-webkit-border-top-left-radius : 6px;
+				-webkit-border-top-right-radius : 6px;
+				margin:0;
+				padding:0;
+				background:#fefefe!important;
+	
+	}
+	
+	#slider_box div.auction-item-slider img {
+				margin : 10px;
+				width : 200px;
+				height : auto;
+	}
+	#slider_box div.auction-item span.sliderRight {
+				width : 450px;
+				position : absolute;
+				top : 10px;
+				left : 220px;
+				height : auto;
+	}
+	#slider_box div.auction-item-slider span.sliderRight h2 {
+				margin : 0 0 5px 0;
+				font-size : 16px;
+				font-weight : bold;
+	}
+	.bigbannerinfo {
+				color : red;
+				position : absolute;
+				top : 80px;
+				left : 20px;
+				
+	}
+	.bannerprice {
+				color: #000000;
+left: 170px;
+position: absolute;
+top: 20px;
+	}
+	.retailvalue {
+				position : absolute;
+				top : 100px;
+				left : 270px;
+				color:#000;
+	}
+	#slider_box div.auction-item span.sliderRight .current-winner {
+				font-weight : bold;
+				position : absolute;
+				top : 60px;
+	}
+	#slider_box div.auction-item span.sliderRight .avatar img {
+				width : 85px;
+				height : auto;
+				position : absolute;
+				top : 80px;
+				left : 185px;
+	}
+	#slider_box div.auction-item span.sliderRight .button {
+				background : url("../img/buttons/place-bid.gif") no-repeat scroll left top transparent;
+				border : medium none;
+				color : #FFFFFF;
+				cursor : pointer;
+				display : block;
+				height : 26px;
+				margin : 5px 0 0 2px;
+				padding : 10px 0 0;
+				text-align : center;
+				text-shadow : 1px 1px #486A1B;
+				text-transform : uppercase;
+				width : 157px;
+				position : absolute;
+				right : 20px;
+				top : 150px;
+	}
+	.timer01 {
+				color: red;
+font-size: 25px;
+font-weight: bolder;
+left: 270px;
+position: absolute;
+top: 55px;
+	}
+	#slider_box  #basicFeatures {
+				-webkit-border-radius : 0;
+				-moz-border-radius : 0;
+	}
+	#slider_box .jshowoff.basicFeatures {
+				-webkit-border-radius : 0;
+				-moz-border-radius : 0;
+	}
+	#slider_box .jshowoff.basicFeatures img {
+				-webkit-border-radius : 0;
+				-moz-border-radius : 0;
+	}
+	#slider_box .jshowoff.basicFeatures div {
+				-webkit-border-radius : 0;
+				-moz-border-radius : 0;
+	}
+	#slider_box .jshowoff div p {
+				background-color : #efefef;
+	}
+	#slider_box .jshowoff div h2 {
+				background-color : #efefef;
+	}
+	#slider_box .jshowoff h2 {
+				font-size : 23px;
+				padding : 15px 20px 0px;
+				margin : 0;
+	}
+	#slider_box .jshowoff p {
+				font-size : 19px;
+				line-height : 15px;
+	}
+	#slider_box .eddie {
+				float : right;
+				padding : 15px 20px 15px 20px;
+	}
+	p.jshowoff-slidelinks {
+				position : absolute;
+				top : 220px;
+				left : 15px;
+				margin : 0 0 20px 0;
+				padding : 0;
+	}
+	p.jshowoff-slidelinks a {
+				display : block;
+				background-color : #1c97e1;
+				color : #fff;
+				padding : 5px 7px 5px;
+				margin : 5px 0 0 5px;
+				float : left;
+				text-decoration : none;
+				-moz-border-radius : 6px;
+				-webkit-border-radius : 6px;
+				border : 1px solid #fff;
+				outline : 2px solid #1c97e1;
+				font-size : 11px;
+				line-height : 14px;
+	}
+	#slider_box .jshowoff-controls a {
+				display : block;
+				background-color : #000;
+				color : #fff;
+				padding : 5px 7px 5px;
+				margin : 5px 0 0 5px;
+				float : left;
+				text-decoration : none;
+				-moz-border-radius : 4px;
+				-webkit-border-radius : 4px;
+				outline : none;
+				font-size : 11px;
+				line-height : 14px;
+	}
+	a.jshowoff-prev {
+				position : absolute;
+				top : 80px;
+				left : 5px;
+				height : 50px;
+				width : 50px;
+				background-repeat : no-repeat;
+				background-image : url(../include/slider_images/blue/previous.png);
+				background-size : 50px 50px;
+	}
+	a.jshowoff-next {
+				position : absolute;
+				top : 80px;
+				right : 12px;
+				height : 50px;
+				width : 50px;
+				background-repeat : no-repeat;
+				background-image : url(../include/slider_images/blue/next.png);
+				background-size : 50px 50px;
+	}
+	#registerBox .normal_text, #registerBox p, #registerBox p b {
+				color : #000;
+	}
+	#toolbar {
+				background : #b69786;
+				position : fixed;
+				bottom : 0px;
+				z-index : 500;
+				width : 100%;
+	}
+	#connection-strength-bg {
+				
+				width : 24px;
+				height : 15px;
+				margin-top : 5px;
+	}
+	#connection-strength {
+				height : 15px;
+				width : 24px;
+				z-index : 1001;
+				
+	}
+	.h-main .links li.connection {
+				padding : 0 0 0 9px;
+	}
+	.h-main .links li.notifications-link {
+				padding : 0 0 0 5px;
+	}
+	.h-main .links img {
+				display : block;
+	}
+	.h-main .watch {
+				font-size : 12px;
+				margin : 14px 0 0 3px;
+				float : left;
+				padding : 0 24px 0 0;
+				
+				text-decoration : none;
+	}
+	.h-main .watch strong {
+				color : #fbb415;
+				padding : 0 0 0 18px;
+				
+	}
+	.h-main .btn-notifications {
+				
+				font-size : 12px;
+				font-weight : bold;
+				height : 27px;
+				margin : 0 180px 0 10px;
+				padding : 13px 0 0 11px;
+				text-decoration : none;
+				width : 120px;
+				float : right;
+	}
+	.h-main .btn-notifications .light {
+				width : 25px;
+				height : 25px;
+				
+				position : relative;
+				bottom : 6px;
+				float : left;
+				color : #ccc;
+	}
+	.h-main .btn-notifications .light div {
+				margin : 4px 0 0 35px;
+	}
+	.h-main .btn-notifications .light-on {
+				background-position : 0 -25px;
+	}
+	.h-main .btn-notifications .light-on div {
+				color : #fff;
+	}
+	.h-main .user {
+				float : left;
+				line-height : 28px;
+	}
+	.h-main .user img {
+				float : left;
+				margin-left : 150px;
+				padding-top : 10px;
+	}
+	.h-main .user .name {
+				float : left;
+				font-size : 12px;
+				color : #fbb415;
+				margin : 5px 0 0 9px;
+	}
+	.h-main .user .name a {
+				color : #f09018;
+	}
+	.h-main .user .name a:hover {
+				color : #fba31b;
+	}
+	.h-main .user ul {
+				display : inline;
+				float : left;
+				list-style : none outside none;
+				margin : 0 0 2px 20px;
+				overflow : hidden;
+	}
+	.h-main .user ul li {
+				display : inline;
+				float : left;
+				margin : 6px 0 2px 0;
+				padding : 0 6px 0 6px;
+	}
+	.h-main .user ul li:hover {
+				background : #484848;
+	}
+	.h-main .user ul li.highlight {
+				background : #636363;
+	}
+	.h-main .credits {
+				border-left : 0 none;
+	}
+	.megawin-box {
+				width : 221px;
+				margin : 0 auto;
+	}
+	.megawin-box:after {
+				content : "";
+				display : block;
+				clear : both;
+	}
+	.megawin {
+				width : 221px;
+				height : 38px;
+				margin : 0 0 -38px;
+				float : left;
+				position : relative;
+	}
+	#megawin-empty {
+				display : block;
+				width : 171px;
+				height : 19px;
+				background-position : 0 0;
+				cursor : pointer;
+	}
+	#megawin-fill {
+				display : block;
+				height : 19px;
+				background-position : 0 -19px;
+	}
+	.megawin .holder {
+				height : 32px;
+				text-align : center;
+				padding : 6px 15px 0 15px;
+	}
+	.question-help {
+				position : relative;
+				left : 96px;
+				top : 6px;
+	}
+	.megawin .holder:after {
+				content : "";
+				display : block;
+				clear : both;
+	}
+	.megawin .frame {
+				height : 1%;
+				position : relative;
+	}
+	.megawin .meter {
+				float : left;
+	}
+	.megawin .help {
+				float : right;
+				width : 14px;
+				height : 14px;
+				text-indent : -9999px;
+				overflow : hidden;
+				margin : -16px 0 0 0;
+	}
+	.bonus-credits {
+				width : 500px;
+				margin : 0 auto;
+				display : none;
+	}
+	.bonus-credits img {
+				height : 90px;
+				width : 90px;
+				vertical-align : top;
+				position : absolute;
+				z-index : 9999;
+	}
+	.bonus-credits div {
+				height : 38px;
+				line-height : 34px;
+				width : 190px;
+				background : #555;
+				color : #fff;
+				font-size : 12px;
+				font-weight : bold;
+				margin : 30px auto 0;
+				text-align : center;
+	}
+	.bonus-credits div span {
+				font-size : 20px;
+				color : #f8981f;
+	}
+	.w-main {
+				width : 962px;
+				margin : 0 auto;
+				position : relative;
+				padding : 204px 0 0;
+				z-index : 2;
+	}
+	div.product-box.buynowbackground {
+				border-radius : 10px;
+				background : url('../img/buy-it-now-bg.png') no-repeat #fff;
+				height : 150px;
+				color : #000;
+	}
+	div.product-box div.product-content {
+				overflow : hidden;
+				margin : 2px;
+				padding : 6px;
+				float : left;
+	}
+	div.product-box div.product-content.buynowbox {
+				overflow : hidden;
+				margin : 2px;
+				padding : 6px;
+				float : right;
+	}
+	div.product-box p.pricebox {
+				float : right;
+				margin : 0;
+				width : 151px;
+	}
+	div.product-box p.pricebox span {
+				color : #167dda;
+				font-size : 20px;
+				vertical-align : middle;
+	}
+	.invite ul li a {
+				color : #000000;
+				font-weight : bold;
+	}
+	.invite ul {
+				bottom : 10px;
+				color : #000000;
+				left : 500px;
+				position : absolute;
+	}
+.box-content > ul {
+  position: relative;
+  left: -35px;
+  width: 190px;
+}
+#register-now-box button {
+position:relative;
+top:-20px;
+left:-100px;
+}
+
+#register-now-box > div:first-child {
+  left: -30px;
+  position: relative;
+}
+
+#howItWorks h3 {
+  position: relative!important;
+  top: 50px!important;
+}
+#howItWorks table tr:last-child td:last-child div:last-child {
+  position: relative;
+  top: 50px !important;
+}
+#support > h2 a {
+  font-size: 22px;
+  color:#000;
+}
+#howItWorks table {
+  position: relative;
+  top: 80px!important;
+  left:60px!important;
+}
+#badges > div:first-child {
+ top: 10px !important;
+left: 300px!important;
+width: 400px;
+text-align: left;
+}
+#badges > div:first-child span:first-child {
+  font-size: 22px;
+}
+#badges > div:last-child {
+ top: 20px !important;
+width: 300px;
+}
+#howItWorks table tr:nth-child(1) td:last-child {
+ position: absolute !important;
+text-align: left;
+top: 15px !important;
+left: 450px;
+}
+#slider_box .content {
+background-size: 695px 220px !important;
+border-radius: 10px 10px 10px 10px;
+height: 220px !important;
+left: 0px !important;
+position: relative;
+top: 0px !important;
+width: 695px!important;
+margin-bottom:8px;
+color:#000!important;
+}
+
+
+
+#slider_box .how {
+
+width : 695px;
+				max-height : 225px;
+overflow:hidden;
+background-size:695px 225px;
+border-radius:10px;
+}
+
+
+
+#slider_box .how-uk {
+width : 695px;
+				height : 225px;
+background:url(../img/how-uk.jpg) #fff left top no-repeat;
+background-size:695px 225px;
+border-radius:10px;
+}
+
+
+
+#slider_box .badges {
+width : 695px;
+				height : 225px;
+background:url(../img/badges-new.jpg) #fefbc4 left top no-repeat;
+background-size:695px 225px;
+border-radius:10px;
+}
+
+
+
+#slider_box .chatlive {
+width : 695px;
+				height : 225px;
+background:url(../img/chatlive-bg.jpg) #fff left top no-repeat;
+
+}
+
+
+
+#slider_box .halloween-contest {
+width : 695px;
+				height : 225px;
+background:url(../img/halloween2.jpg) #fff left top no-repeat!important;
+
+}
+
+
+
+#slider_box .halloween-contest .halloween-link {
+
+width:400px;
+
+height:200px;
+
+display:block;
+
+position:relative;
+
+left:200px;
+
+top:50px;
+
+text-indent:-9999px;
+
+}
+
+
+
+#slider_box .winners {
+width : 695px;
+				height : 225px;
+background:url(../img/winners-bg.jpg) #1a83c5 left top no-repeat;
+
+}
+
+
+
+#slider_box .winners a.signup {
+
+width:180px;
+
+height:62px;
+
+display:block;
+
+overflow:hidden;
+
+text-indent:-9999px;
+
+position:absolute;
+
+top:185px;
+
+right:80px;
+
+background:url(../img/signup-big2-o.png) left center no-repeat;
+
+outline:0;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+#slider_box .winners a.learnmore {
+
+width:180px;
+
+height:62px;
+
+display:block;
+
+overflow:hidden;
+
+text-indent:-9999px;
+
+position:absolute;
+
+top:185px;
+
+right:80px;
+
+background:url(../img/learnmore-big-o.png) left center no-repeat;
+
+outline:0;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+#slider_box .bbb {
+background: url("../img/grant-thornton-bbb.jpg") no-repeat scroll left top #0C7699 !important;
+border-radius: 10px 10px 10px 10px;
+height: 220px!important;
+width: 695px!important;
+background-size: 695px 220px!important;
+}
+
+
+
+#slider_box .bbb-international {
+width : 695px;
+				height : 225px;
+background:url(quibids-1.0/grant-thornton-bbb.jpg) #0c7699 left top no-repeat;
+
+
+}
+
+
+
+#slider_box .bbb .right {
+
+float:left;
+
+width:285px;
+
+text-align:center;
+
+padding:185px 0 0 30px;
+
+}
+
+
+
+#slider_box .bbb .left {
+
+float:left;
+
+width:285px;
+
+text-align:center;
+
+padding:185px 0 0 30px;
+
+}
+
+
+
+#slider_box .refer {
+height:100%!important;
+background:url(../img/refer-bg.jpg) #1981ca left top no-repeat;
+
+}
+
+
+
+#slider_box .refer .right {
+
+padding-top:60px;
+
+}
+
+
+
+#slider_box .refer h1 {
+
+font-size:22px;
+
+color:#fff;
+
+margin:10px 0 -5px;
+
+padding:0;
+
+}
+
+
+
+#slider_box .refer p {
+
+color:#fff;
+
+font-size:14px;
+
+line-height:18px;
+
+}
+
+
+
+#slider_box .tips {
+
+background:url(../img/tips.jpg) #ffbf47 left top no-repeat;
+
+}
+
+
+
+#slider_box .tips-us {
+width : 695px;
+				height : 225px;
+background:url(../img/carouselgames.jpg) #ffbf47 left top no-repeat;
+
+}
+
+
+
+#slider_box .tips-us a {
+
+text-indent:-9999px;
+
+width:660px;
+
+height:260px;
+
+display:block;
+
+}
+
+
+
+#slider_box .tips a {
+
+width:660px;
+
+height:260px;
+
+display:block;
+
+
+
+overflow:hidden;
+
+outline:0;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+#slider_box .support {
+
+background:url(../img/support-bg.jpg) #fff left top no-repeat;
+width : 695px;
+				height : 225px;
+
+}
+
+
+
+#slider_box .support h1 {
+
+font-size:26px;
+
+color:#333;
+
+font-weight:400;
+
+margin:10px 0;
+
+padding:0;
+
+}
+
+
+
+#slider_box .support h1 span.blue {
+
+color:#1980cc;
+
+font-weight:700;
+
+}
+
+#slider_box {
+position:relative;
+	left:0px!important;
+	float:left;
+}
+
+#slider_box .support h2 {
+color: #EE6700;
+font-size: 18px !important;
+margin: 0 0 0 250px;
+padding: 10px 0 0;
+text-align: left;
+
+}
+#slider_box .support h2 a {
+text-decoration:none;
+cursor:pointer;
+}
+
+#howItWorks > h2 {
+  padding-top: 10px;
+}
+#slider_box .support p {
+
+color:#333;
+
+font-size:14px;
+
+line-height:18px;
+
+}
+
+
+
+#slider_box .support ul {
+text-align:left;
+display: block;
+float: left;
+list-style: none outside none;
+margin: 15px 0;
+padding: 0;
+float: right;
+margin-left: 300px!important;
+
+}
+
+
+
+#slider_box .support li {
+
+width:100%;
+
+font-size:14px;
+
+display:block;
+
+float:left;
+
+background:url(../img/arrow.png) left 2px no-repeat;
+
+margin:3px 0;
+
+padding:0 0 0 18px;
+
+}
+
+
+
+#slider_box .support a.btn {
+
+clear:both;
+
+}
+
+
+
+#slider_box .auction a.signup {
+
+width:260px;
+
+height:62px;
+
+display:block;
+
+overflow:hidden;
+
+text-indent:-9999px;
+
+position:absolute;
+
+top:190px;
+
+left:15px;
+
+background:url(../img/signup-big-o.png) left center no-repeat;
+
+outline:0;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+#slider_box .auction a.learnmore {
+
+width:118px;
+
+height:38px;
+
+display:block;
+
+overflow:hidden;
+
+text-indent:-9999px;
+
+position:absolute;
+
+top:190px;
+
+left:25px;
+
+background:url(../img/learnmore-o.png) left center no-repeat;
+
+outline:0;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+#slider_box .auction a.watch {
+
+width:260px;
+
+height:38px;
+
+display:block;
+
+overflow:hidden;
+
+text-indent:-9999px;
+
+position:absolute;
+
+top:190px;
+
+left:155px;
+
+background:url(../img/addto-watch.png) left center no-repeat;
+
+outline:0;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+#slider_box .the-link {
+
+display:block!important;
+
+width:400px;
+
+height:250px;
+
+margin:0 auto;
+
+}
+
+
+
+#slider_box .november-us {
+
+background:url(../img/Thanksgiving-slider-US.jpg) #fff left top no-repeat!important;
+
+}
+
+
+
+#slider_box .november-ca {
+
+background:url(../img/Thanksgiving-slider-CA.jpg) #fff left top no-repeat!important;
+
+}
+
+
+
+#slider_box .november-uk {
+
+background:url(../img/Thanksgiving-slider-UK2.jpg) #fff left top no-repeat!important;
+
+}
+
+
+
+#slider_box .november-au {
+
+background:url(../img/spring-slider-au.jpg) #fff left top no-repeat!important;
+
+}
+
+
+
+#slider_box .specialevent {
+
+background:url(../img/valentines-bg2.jpg) #fff left top no-repeat;
+
+}
+
+
+
+.promo a {
+
+margin:0!important;
+
+}
+
+
+
+#slider_box .how a,#slider_box .badges a,#slider_box .chatlive a,#slider_box .specialevent a {
+
+width:660px;
+
+height:260px;
+
+display:block;
+
+overflow:hidden;
+
+word-wrap:break-word;
+
+margin:0;
+
+padding:0;
+
+}
+#payment-info h2{
+  padding-right:10px;
+}
+
+
+#slider_box .chatlive .halloween-link,#slider_box .halloween-contest .left,#slider_box .halloween-contest .right,#slider_box .auction a.none {
+
+display:none;
+
+}
+#badges img {
+  float: right;
+margin-top: -1px!important;
+ 
+}
+
+#winnersDaily ul {
+  position: relative;
+  left: 100px;
+}
+#winnersDaily > div:first-child {
+  left: 30px !important;
+position: relative;
+top: 0 !important;
+text-align: left;
+}
+
+
+
+
+#slider_box div.auction-item .sliderRight .current-winner {
+				font-weight : bold;
+				position : absolute;
+				top : 60px;
+	}
+	
+	#slider_box .auction-item-slider img:nth-child(1) {
+  float: left;
+  height: 180px;
+  margin: 20px 10px 0 20px;
+  width: auto;
+}
+.slider-product-thumbs {
+left: 80px;
+position: relative;
+top: 140px;
+}
+.pricedetail {
+  float: right !important;
+  font-size: 32px;
+  left: 320px;
+  list-style: none outside none;
+  position: absolute;
+  top: 55px;
+  width: 200px;
+}
+
+.auction-item-slider .avatar {
+  float: right;
+  position: relative !important;
+  top: -100px !important;
+}
+.auction-item-slider .avatar > img {
+  height: 80px !important;
+  width: auto !important;
+}
+
+	.auction-item-slider .buynow02.buttons.bid-button-link {
+background: url("falconbids/buttons/place-bid.gif") no-repeat scroll 0 0 transparent;
+color: #FFFFFF;
+cursor: pointer;
+display: block;
+font-family: Arial;
+font-size: 18px;
+font-weight: bold;
+height: 44px;
+left: 160px;
+line-height: 37px;
+margin: 0 auto;
+position: relative;
+text-align: center;
+text-transform: uppercase;
+top: -90px;
+width: 158px;
+	}
+.timer01 span {
+  font-size: 25px!important;
+}	
+
+.pricedetail {
+  float: right !important;
+  font-size: 32px;
+  left: 320px;
+  list-style: none outside none;
+  position: absolute;
+  top: 35px;
+  width: 200px;
+}
+
+.auction-item-slider .avatar {
+  float: right;
+  position: relative !important;
+  top: -100px !important;
+}
+.auction-item-slider .avatar > img {
+  height: 80px !important;
+  width: auto !important;
+}
+.images img {
+  position:relative;
+  left:0px!important;
+  width:695px;
+  height:225px;
+}
+#slider_box div.auction-item-slider span.sliderRight h2, #slider_box div.auction-item-slider span.sliderRight p {
+  color: #000000 !important;
+ 
+}
+#slider_box div.auction-item-slider span.sliderRight h2 {
+ font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  
+}
+
+.ui-widget-header {
+  background:url('') #100c0b!important;
+  border: 1px solid #32A90E;
+  color: #FFFFFF!important;
+  font-weight: bold;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background:url('') #d6451d!important;
+  border: 1px solid #DDDDDD;
+  color: #fff!important;
+  font-weight: bold;
+}
+.user_menu1 {
+  margin: 0px 0px 0px -30px;
+}
+
+.user_menu2 {
+  margin: 0px 0px 0px -30px;
+}
+
+.user_menu3 {
+  margin: 0px 0px 0px -30px;
+}
+
+.user_menu4 {
+  margin: 0px 0px 0px -30px;
+}
+
+.user_menu5 {
+  margin: 0px 0px 0px -30px;
+}

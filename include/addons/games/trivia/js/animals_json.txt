@@ -1,0 +1,10 @@
+[
+ {"que":"What family of animals is the moose a member of?", "ca":"Deer", "ia":["Cow", "Horse", "Goat"]},
+ {"que":"Moose are big, so they need to eat...a lot. Which of these things do moose turn their nose up at and NOT eat?", "ca":"Fish", "ia":["Grass", "Aquatic plants", "Tree branches"]},
+ {"que":"Who is included in a moose family group?", "ca":"A female moose and her young", "ia":["A male moose and his young", "A male/female mating couple", "A male/female mating couple and their young"]},
+ {"que":"While Bullwinkle always had loads to say, what is the main mode of communication?", "ca":"Vocally by grunting", "ia":["Olfactory, by scent", "Visually by gestures and body language", "By stamping their feet in code"]},
+ {"que":"Do all moose have antlers? ", "ca":"No", "ia":["Yes"]},
+ {"que":"What exactly are moose antlers made of?", "ca":"Hardened bone", "ia":["Ivory", "Hardened hide", "Teeth"]},
+ {"que":"What is the material covering the antlers called?", "ca":"Velvet", "ia":["Lanugo", "Slough", "Chaff"]},
+ {"que":"What state would you be least likely to find a moose in?", "ca":"Rhode Island", "ia":["New Hampshire", "Maine", "Vermont"]}
+]

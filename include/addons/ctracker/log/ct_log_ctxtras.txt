@@ -1,0 +1,13 @@
+<?php
+$ct_install_time	= '1249272643';
+$ct_install_all_attacks	= '6';
+$version_number	= '1.5';
+$revision_number	= '07';
+$updatetime_iplist = '1249272643';
+$updatetime_spamlist = '1249362028';
+$updatemd5_iplist = 'b7160fbcc90125e9b09fc3d236429834';
+$updatemd5_spamlist = '6772ab0181b0ce8b8f022c86a27ff03c';
+$last_login2 = '1249272708';
+$last_login1 = '1366438371';
+$false_login = '0';
+?>

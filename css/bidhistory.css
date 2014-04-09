@@ -1,0 +1,53 @@
+#bidhistory_bid_history
+{
+    width: 300px;
+    height: auto;
+    float:right;
+    padding-bottom: 5px;
+    margin-top:-20px;
+    padding-right: 5px;
+}
+
+
+#historytop
+{
+    background-image: url(../img/backgrounds/hg_gbkdetails_t.png);
+    background-repeat: no-repeat;
+    height: 14px;
+    width: 300px;
+    float: right;
+    position: relative;
+}
+
+#historydetails
+{
+    height:auto;
+    width: 298px;
+    position: relative;
+    float: right;
+    border-left: 1px solid;
+    font-size:11px;
+    border-right: 1px solid;
+    border-color: #DD0000;
+    background-color: #FFFFFF;
+    margin-top: -10px;
+}
+#historybot
+{
+    background-image: url(../img/backgrounds/hg_gbkdetails_b.png);
+    background-repeat: no-repeat;
+    height: 5px;
+    width: 300px;
+    position:relative;
+    float: right;
+}
+#detailsimage
+{
+    background-image: url(../img/backgrounds/detailline.png);
+    background-repeat: no-repeat;
+    height: 65px;
+    width: 10px;
+    float: right;
+    position: relative;
+    margin-right: -8px;
+}

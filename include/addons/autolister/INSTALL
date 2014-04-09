@@ -1,0 +1,11 @@
+INSTALLATION INSTRUCTIONS FOR PAS AUTOLISTER
+
+
+Extract the contents of this file to /<web-root>/include/addons/autolister
+
+chmod 775 /<web-root>/include/addons/autolister/ -R
+
+
+mysql needed
+
+update sitesetting set value = 'autolister:6.5.2' where name = 'version';

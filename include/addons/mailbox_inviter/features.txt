@@ -1,0 +1,61 @@
+Contact Inviter 
+
+After many thorough searches not finding a contact list inviter script that can utilize an entire contact list, I have NOW created a complete contact list inviter script.
+You can add this script to your site easily and fastly. Php codes are very clean and object oriented.Your visitors can invite their friends and you approve your traffic !
+
+Contact Inviter is a template based friend inviter application which uses technologies like jQuery and PHP . Easy to customize and using. This script is one of a kind.  You cannot find another one like this.
+Clean coded <img src="http://www.servisin.com/inviter/codes.gif" vspace="2" hspace="2">
+
+
+. 18 email account is supported. ( gmail, hotmail, yahoo and AOL )
+
+. Your email account is secured with Password Encryption.
+
+. No database required.
+
+. All browsers support.
+
+. Help file and sample codes.
+
+. Uses standard server features for a no-hassle installation.
+
+. Cross-Browser Compatible (IE6+, FF, Safari)
+
+. Clean Coded
+
+. Updated the Documentation
+
+. Customisable email message that you receive.
+
+. Customisable email subject.
+
+. Customisable form design.
+
+
+
+These accounts are avilable .Contact Inviter which can fetch these accounts.
+
+* Hotmail
+* MSN.com
+* GMail
+* Yahoo
+* AOL
+* Lycos
+* Mail.com
+* Rediffmail
+* Indiatimes
+* MobileMe (.Mac)
+* FastMail
+* GMX
+* Web.de
+* IcqMail
+* LinkedIn
+* MyNet.com
+* Data.bg
+* Ig.com.br
+
+
+Online Demo : 
+
+http://www.servisin.com/test/inviter/mailbox_inviter/test.php
+

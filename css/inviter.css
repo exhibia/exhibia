@@ -1,0 +1,54 @@
+/* 
+    Document   : inviter
+    Created on : Oct 8, 2010, 11:45:00 PM
+    Author     : fedora
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#registerBox .inviterform{
+    padding:20px 30px;
+    background:none;
+}
+
+.thTable{
+}
+
+#formtable .thTableRow{
+    height:30px;
+}
+
+.thTableHeader{
+    font-size:13px;
+    font-weight:bold;
+}
+
+.thTableDesc{
+    font-weight:bold;
+    text-align: left;
+}
+
+.thTextbox,.thSelect{
+    width:200px;
+}
+
+#registerBox .inviterform label{
+    width:100px;
+    padding-right:10px;
+    font-weight: bold;
+    display: block;
+}
+
+.thTableOddRow td,.thTableEvenRow td{
+    text-align:left;
+}
+
+.thTableFooter td{
+    height:40px;
+    text-align: center;
+}

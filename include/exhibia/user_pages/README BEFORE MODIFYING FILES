@@ -1,0 +1,16 @@
+############################### PENNY AUCTION SOTWARE USER PAGES #################################################
+
+
+This Folder contains the default layouts of logged in user pages
+
+If the template you are using has a record for the page you are looking for in
+
+<SERVER ROOT>/include/<TEMPLATE>/user_pages/<YOUR PAGE>/ 
+
+then you need to do your edits there, infact the preferred place to make
+these edits IS IN THAT FOLDER....these files are loaded by our flagship templates
+such as falconbids, or pas-flagship as well as sticky, wavee and a few others
+if you wish to modify one of these template's user pages then move the file you 
+wish to edit to the user_pages folder insode that template(create the folder if
+it does not exist) and the new page when you refrsh will in fact be the content
+that you are working on

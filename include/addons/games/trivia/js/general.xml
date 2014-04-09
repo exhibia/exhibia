@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trivia>
+ <quiz>
+  <que>What is a Yellow-shafted Flicker?</que>
+  <ca>Bird</ca>
+  <ia>Snake</ia>
+  <ia>Fish</ia>
+  <ia>Cougar</ia>
+ </quiz>
+ <quiz>
+  <que>On which southern continent can the Thorny Yellowwood tree be found?</que>
+  <ca>Australia</ca>
+  <ia>North America</ia>
+  <ia>Asia</ia>
+  <ia>Europe</ia>
+ </quiz>
+ <quiz>
+  <que>What is the domain name in this URL: http://coursesweb.net/</que>
+  <ca>coursesweb.net</ca>
+  <ia>http</ia>
+  <ia>coursesweb</ia>
+  <ia>net</ia>
+ </quiz>
+ <quiz>
+  <que>Some of the North American plant, Goldenrod, can be consumed as food.</que>
+  <ca>True</ca>
+  <ia>False</ia>
+ </quiz>
+ <quiz>
+  <que>What is yellowcake?</que>
+  <ca>Concentrated uranium oxide</ca>
+  <ia>Madeira sponge cake</ia>
+  <ia>Stage make-up for actors</ia>
+  <ia>A soil colour in Tasmania</ia>
+ </quiz>
+ <quiz>
+  <que>What is added to fireworks to make them yellow when they explode?</que>
+  <ca>Sodium</ca>
+  <ia>Oxygen</ia>
+  <ia>Nitrogen</ia>
+  <ia>Aluminium</ia>
+ </quiz>
+ <quiz>
+  <que>Which ancient class of Chinese people were the only people allowed the use of the colour yellow?</que>
+  <ca>The Imperial family</ca>
+  <ia>The Geisha girls</ia>
+  <ia>The monks</ia>
+  <ia>The leaders of the army</ia>
+ </quiz>
+ <quiz>
+  <que>Psychics who do aura readings ascribe which cerebral characteristic to people with yellow auras? </que>
+  <ca>Intellectual acumen</ca>
+  <ia>Great dramatic flair</ia>
+  <ia>Weakness of character</ia>
+  <ia>Money making skills</ia>
+ </quiz>
+ <quiz>
+  <que>The story of Jesus' birth is told in two of the Gospels. Do you know which two?</que>
+  <ca>Matthew and Luke</ca>
+  <ia>Luke and John</ia>
+  <ia>Mark and Matthew</ia>
+  <ia>John and Mark</ia>
+ </quiz>
+ <quiz>
+  <que>What was the name of the angel who visited Mary to tell her she was going to have a baby by the Holy Spirit?</que>
+  <ca>Gabriel</ca>
+  <ia>Michael</ia>
+  <ia>Raphael</ia>
+  <ia>Roger</ia>
+ </quiz>
+ <quiz>
+  <que>Who were the first people to visit Mary and Jesus after the baby was born?</que>
+  <ca>shepherds</ca>
+  <ia>Mary's mother</ia>
+  <ia>the wise men</ia>
+  <ia>Joseph's mother</ia>
+ </quiz>
+ <quiz>
+  <que>While in Bethany, Jesus brought a good friend of his back to life. What was that man's name? </que>
+  <ca>Lazarus</ca>
+  <ia>Simon</ia>
+  <ia>Paul</ia>
+  <ia>Nicodemus</ia>
+ </quiz>
+ <quiz>
+  <que>How many times did Jesus come back to wake the disciples when they were caught sleeping while Jesus was praying in the garden of Gethsemane?</que>
+  <ca>Three</ca>
+  <ia>Five</ia>
+  <ia>Once</ia>
+  <ia>Twice</ia>
+ </quiz>
+ <quiz>
+  <que>What sea did Jesus calm in Mark 4 with just the words, `Peace be still`?</que>
+  <ca>Sea of Galilee</ca>
+  <ia>Wadden Sea</ia>
+  <ia>Flores Sea</ia>
+  <ia>Black Sea</ia>
+ </quiz>
+ <quiz>
+  <que>When Jesus was baptized in the Jordan River, what bird came down from Heaven?</que>
+  <ca>Dove</ca>
+  <ia>Eagle</ia>
+  <ia>Cardinal</ia>
+  <ia>Robin</ia>
+ </quiz>
+ <quiz>
+  <que>Which disciple was not in Bethany when Jesus ascended into Heaven in Luke 24?</que>
+  <ca>Judas</ca>
+  <ia>Peter</ia>
+  <ia>Matthew</ia>
+  <ia>Thomas</ia>
+ </quiz>
+ <quiz>
+  <que>How old was Jesus when he first talked to the elders at the temple in Jerusalem? </que>
+  <ca>Twelve</ca>
+  <ia>Thirteen</ia>
+  <ia>Ten</ia>
+  <ia>Five</ia>
+ </quiz>
+</trivia>

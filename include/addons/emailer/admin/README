@@ -1,0 +1,129 @@
+=============================================================================
+// Description:	 W3MAIL - A PHP IMAP mail reader.
+// Developed by: Alexander Djourik <sasha@iszf.irk.ru>
+//		 Anton Gorbunov <anton@iszf.irk.ru>
+//		 Pavel Zhilin <pzh@iszf.irk.ru>
+//
+// Copyright (c) 2002,2003,2004,2005 Alexander Djourik. All rights reserved.
+//
+// Initially based on code from 6XMailer - A PHP POP3 mail reader,
+// Copyright 2001 6XGate Systems, Inc. All rights reserved.
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License.
+//
+// Please see the file LICENSE in this directory for full copyright
+// information.
+=============================================================================
+
+W3MAIL - fast and small webmail client written in PHP5. It provides easy
+webmail access to IMAP accounts and has very few requirements to install.
+Features multi-language support, simple contacts manager, MIME attachments,
+displays HTML messages. W3MAIL supports leading open-source database engines,
+PostgreSQL and MySQL. The lastest version of this document can be obtained
+from http://w3mail.sf.net
+
+Requirements
+============
+
+These are the following requirements to use W3MAIL:
+
+    * OS: Linux, Windows all 
+    * WWW Server: Apache 1.3 or better 
+    * PHP: The latest version PHP with the IMAP extensions.
+    * MySQL or PostgreSQL database engine
+
+Installation
+============
+
+1. Obtaining and installing W3MAIL
+
+First fetch the W3MAIL sources, and put them into a web-accessible location,
+default - /home/httpd/sites/webmail.
+
+2. Setting up IMAP
+
+Three open-source IMAP servers are available now: University of Washington
+(UW), Cyrus IMAP, and Courier IMAP. Setting up procedure depends a lot on
+the server your choose. See the documentation that comes with your server
+to install it. We strongly recommend you to use the UW IMAP server.
+
+3. Installing and configuring Apache webserver
+
+Install the Apache webserver and lastest version of PHP. Then go into your
+webserver configuration and make the following changes to execute W3MAIL:
+
+Alias /mail /home/httpd/sites/webmail/
+
+<Directory "/home/httpd/sites/webmail/">
+    Options ExecCGI
+    AllowOverride all
+    Order allow,deny
+    Allow from all
+</Directory>
+
+If your webserver does not already have PHP you must configure it to work with
+PHP. You can find PHP at http://www.php.net. See the documentation that comes
+with PHP for instructions how to set it up.
+
+4. Enable the PHP IMAP extensions
+
+You must also enabled the IMAP extensions in PHP to use this program.
+First make sure that the extensions are compiled acording to the PHP documents.
+Then, open you php.ini file and find a line (if you compiled the extensions as
+a seperate module) that reades ;extension=imap.so or ;extension=php_imap.dll
+if you are running your webserwer under Windows, and remove the ";" from in
+front of the line. Then restart your web-server if necessary.
+
+5. Configuration
+
+Go into your php.ini file and find a setting called "File Uploads". Then find
+the file_uploads parameter and set it to On. Here to define the maximum
+allowed size for uploaded files also. Restart your web-server if necessary
+and browse to http://www.example.com/mail/ to continue your installation.
+
+Configuration parameters
+========================
+
+Most of the W3MAIL configuration parameters are controlled by the config.php
+script.
+
+1. Database Information
+
+These are other parameters in the config.php file that will allow you specify
+the settings to access an SQL server with the databases beeded to run W3MAIL.
+
+$SQLDriver      : The name of the database engine (mysql or postgresql).
+$SQLHostname    : Hostname and port (or socket path) of you SQL server.
+$SQLUsername    : The username needed to access your SQL server.
+$SQLPassword    : The password needed to access your SQL server.
+$SQLDatabase    : The name of the database to use for the per-user settings.
+
+2. Server information
+
+$IMAPHostname   : This is the IP address or a fully qualified host name of your
+                  IMAP server.
+$IMAPPort       : This is the port that your IMAP server is listening on, this
+                  usually defaults to 143.
+$IMAPFlags      : IMAP optional connect flags.
+$SMTPDomain     : This value is used to add the domain part of the e-mail address
+                  to the end of usernames.
+$DEFCharset     : System default charset.
+$SENTFolder     : Sent folders location.
+
+3. Other settings
+
+These are other settings in the config.php file that will allow you to customize
+and configure the mailer.
+
+$Language       : This is the language that the mailer will be in; this helps to
+                  define the labels, help documentation, and about page. Language
+		  files and scripts or stored in the lang directory.
+		  This defaults to English.
+$RefreshList    : This is the number of seconds that the browser will wait before
+                  automatically reloading the Mail List.
+
+$AttachmentSize : This lets the administrator limit the size of the files that can
+                  be attached to mail. If this size ends in a "M", or "k" then the
+		  the size will be based on a Megabyte or kilobyte. Zero value
+		  means no limit.

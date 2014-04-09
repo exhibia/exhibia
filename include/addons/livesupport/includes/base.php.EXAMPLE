@@ -1,0 +1,14 @@
+<?php
+
+// change the values below to your own database login details
+
+$dbhost = ""; // db host, normally localhost
+$dbuser = ""; // db username
+$dbpass = ""; // db password
+$dbname = ""; // db name
+
+
+$conn = db_connect($dbhost, $dbuser, $dbpass) or die ("Error connecting to database");
+db_select_db($dbname);
+
+?>

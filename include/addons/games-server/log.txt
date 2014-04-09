@@ -1,0 +1,1 @@
+select * from in_game where gameID = '52ec33dc98f07' and username = 'edward.goodnow.t' order by id desc limit 1http:///include/addons/games-client/take_bids.php?username=&game=&take_bids=true&&gameID=52ec33dc98f07&take_from=free_bids&take=10&api_token=delete from in_game where username = 'joelsteele' and domain = 'ochuna.com' and gameID = '52ec33dc98f07'

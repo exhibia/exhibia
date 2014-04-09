@@ -1,0 +1,18 @@
+<Files *.inc>
+Deny from all
+</Files> 
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.php
+
+RewriteEngine on
+
+
+
+RewriteRule SITE_URLinclude/slider_images/(.*)/(.*)$ SITE_URLinclude/addons/design_suite/img/buttons/BUTTONSET/$2
+
+

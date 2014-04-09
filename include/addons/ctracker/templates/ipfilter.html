@@ -1,0 +1,50 @@
+<table style="width:800px; border:1px solid #999999; background-color:#c2e7d8" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="10px">&nbsp;</td>
+		<td style="text-align:left; line-height:20px"><b>!--txt_ipfilter3--</b></td>
+	</tr>
+</table>
+<table style="width:800px; height:50px; border:1px solid #999999; background-color:#E7E7E7" cellspacing="8" cellpadding="0">
+	<tr>
+		<td style="vertical-align:top; text-align:left;">!--txt_ipfilter4--<br /><span style="font-weight:bold">!--txt_ipfilter5-- !--select_auto_iplist--</span> !--txt_ipfilter6--</td>
+	</tr>
+</table>
+<table style="width:800px; border:0px" cellspacing="0" cellpadding="0">
+	<tr>
+    	<td style="line-height:!--ct_block_space--px">&nbsp;</td>
+	</tr>
+</table>
+<table style="width:800px; height:150px; border:1px solid #999999; background-color:#E7E7E7" cellspacing="15" cellpadding="0">
+	<tr>
+		<td style="vertical-align:top; text-align:left;">
+			<b>!--count_ips-- !--txt_ipfilter7--</b>
+			<table style="width:340px" cellspacing="0" cellpadding="0">
+				<tr>
+					<td sytle="text-align:left; vertical-align:top">
+						<form action="index.php?ipfilter=true" method="post">
+							<textarea name="iplist" cols="40" rows="10">!--loggedips--</textarea><br />
+							  <input type="submit" name="submit_iplist" value="!--txt_ipfilter8--" /> !--info_speichern--  
+						</form>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td style="text-align:center; vertical-align:middle; width:55px">
+			<span style="font-size:20px">&larr;<br /><br />&larr;</span>
+		</td>
+		<td style="vertical-align:top; text-align:left;">
+			<b>!--session_online_ips-- !--txt_ipfilter9--</b>
+			<table style="width:350px" cellspacing="0" cellpadding="0">
+				<tr>
+					<td sytle="text-align:left; vertical-align:top">
+						<form action="index.php?ipfilter=true" method="post">
+							<textarea name="iplist_add" cols="40" rows="10" readonly="readonly" !--textarea_font_color-->!--chop--</textarea>	
+							!--online_iplist--
+						</form>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+						

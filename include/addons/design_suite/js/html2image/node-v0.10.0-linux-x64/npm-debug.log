@@ -1,0 +1,55 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'grunt.' ]
+2 info using npm@1.2.14
+3 info using node@v0.10.0
+4 verbose read json /usr/lib/package.json
+5 verbose read json /usr/lib/package.json
+6 verbose cache add [ 'grunt.', null ]
+7 verbose cache add name=undefined spec="grunt." args=["grunt.",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'grunt.',
+8 verbose parsed url   path: 'grunt.',
+8 verbose parsed url   href: 'grunt.' }
+9 silly lockFile 9f412411-grunt grunt.
+10 verbose lock grunt. /root/.npm/9f412411-grunt.lock
+11 silly lockFile 9f412411-grunt grunt.
+12 silly lockFile 9f412411-grunt grunt.
+13 verbose addNamed [ 'grunt.', '' ]
+14 verbose addNamed [ null, '' ]
+15 silly lockFile 556614e4-grunt grunt.@
+16 verbose lock grunt.@ /root/.npm/556614e4-grunt.lock
+17 silly addNameRange { name: 'grunt.', range: '', hasData: false }
+18 verbose url raw grunt.
+19 verbose url resolving [ 'https://registry.npmjs.org/', './grunt.' ]
+20 verbose url resolved https://registry.npmjs.org/grunt.
+21 info trying registry request attempt 1 at 20:53:04
+22 http GET https://registry.npmjs.org/grunt.
+23 http 404 https://registry.npmjs.org/grunt.
+24 silly registry.get cb [ 404,
+24 silly registry.get   { server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+24 silly registry.get     date: 'Mon, 18 Mar 2013 16:53:28 GMT',
+24 silly registry.get     'content-type': 'application/json',
+24 silly registry.get     'content-length': '52',
+24 silly registry.get     'cache-control': 'must-revalidate' } ]
+25 silly lockFile 556614e4-grunt grunt.@
+26 silly lockFile 556614e4-grunt grunt.@
+27 error 404 'grunt.' is not in the npm registry.
+27 error 404 You should bug the author to publish it
+27 error 404
+27 error 404 Note that you can also install from a
+27 error 404 tarball, folder, or http url, or git url.
+28 error System Linux 2.6.32-279.11.1.el6.x86_64
+29 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "grunt."
+30 error cwd /home/websitecommercesolutions/public_html/include/addons/design_suite/js/html2image/node-v0.10.0-linux-x64
+31 error node -v v0.10.0
+32 error npm -v 1.2.14
+33 error code E404
+34 verbose exit [ 1, true ]

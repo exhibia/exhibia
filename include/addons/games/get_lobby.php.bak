@@ -1,0 +1,92 @@
+<?php
+
+@db_query("CREATE TABLE if not exists `lobby` (
+  `id` int(11) NOT NULL auto_increment,
+  `userid` int(11) not null,
+  `in_game` varchar(30) NOT NULL default '',
+  `timestamp` datetime not null,
+  `status` varchar(30) NOT NULL default 'waitting',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;");
+
+@db_query("CREATE TABLE if not exists `chat_messages` (
+  `id` int(11) NOT NULL auto_increment,
+  `fromid` int(11) not null,
+  `toid` int(11) not null,
+  `room` varchar(30) NOT NULL default '',
+  `timestamp` datetime not null,
+  `message` varchar(30) NOT NULL default 'waitting',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;");
+
+
+if(empty($_REQUEST['connect'])){
+?>
+
+<script>
+
+function connect_to_lobby_two(){
+
+    $.ajax({
+      url:'<?php echo $SITE_URL; ?>include/addons/games/lobby.php',
+      timeout: 500,
+      data: { "userid": '<?php echo $_SESSION['userid']; ?>', "game": '<?php echo $_REQUEST['game']; ?>', "connect": 'true' },
+      type: 'post',
+      dataType: 'json',
+	  success: function(data){
+	    $.each(data, function(i, item) {
+	   
+	      if(data.partner != ''){
+		  if(!document.getElementById('in_game_now')){
+		       //window.location.href = siteurl + 'games.php?connected=true&game=' + '<?php echo $_REQUEST['game']; ?>';
+		  }
+		
+	      }else{
+		  
+	      }
+	      
+	      setTimeout(function(){connect_to_lobby_two();},3000);
+	      
+	    });
+	}
+     
+     });
+     
+      
+}
+
+connect_to_lobby_two();
+</script>
+<?php
+   if(db_num_rows(db_query("select * from lobby where userid = '$_REQUEST[userid]' and partner = ''")) >= 1){
+
+	db_query("delete * from lobby where userid = '$_REQUEST[userid]'");
+	
+    }
+    
+}else{
+      include("../../../config/config.inc.php");
+      
+	  if(db_num_rows(db_query("select * from lobby where userid = '$_REQUEST[userid]' and in_game = '$_REQUEST[game]'")) == 0){
+	  
+	    db_query("insert into lobby (id, userid, in_game, status) values(null, '$_REQUEST[userid]', '$_REQUEST[game]', 'waitting');");
+	  }
+	  
+	  if(db_num_rows(db_query("select * from lobby where userid != '$_REQUEST[userid]' and in_game = '$_REQUEST[game]' and status like '%waitting%'")) >= 1){
+	    
+	      $partner = db_fetch_object(db_query("select * from lobby where userid != '$_REQUEST[userid]' and in_game = '$_REQUEST[game]' and status like '%waitting%' order by id desc limit 1"));
+	     
+	      db_query("update lobby set status = 'connected', partner = '$_REQUEST[userid]' where id = '" . $partner->id . "'");
+	      db_query("update lobby set status = 'connected', partner = '" . $partner->userid . "' where userid = '$_REQUEST[userid]' and in_game = '$_REQUEST[game]'");
+	   
+	     
+	  }
+	  echo db_error();
+	  db_query("update lobby set timestamp = NOW() where userid = '$_REQUEST[userid]' and in_game = '$_REQUEST[game]'");
+	  
+	       $data = db_fetch_array(db_query("select * from lobby where userid = '$_REQUEST[userid]' and in_game = '$_REQUEST[game]' order by id desc limit 1"));
+	      
+	      
+	       echo json_encode($data);
+
+}

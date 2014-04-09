@@ -1,0 +1,301 @@
+#invite {
+    height: 87px;
+    width: 140px;
+    background: url(../img/invite-bg.jpg) 0 0 no-repeat;
+    margin: 0 0 0 10px;
+    padding: 126px 0 0 77px;
+    float: left;
+    font-weight: bold;
+}
+* html #invite {
+    margin: 0 0 0 5px;
+}
+a#invite-btn {
+    float: left;
+    display: block;
+    width: 91px;
+    height: 27px;
+    margin: 10px 0 0 12px;
+    text-align: center;
+    color: white;
+    font: bold 1.17em/27px Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    background: url(../img/invite-btn-bg.png) 0 0 no-repeat;
+}
+a#invite-btn:hover {
+    background: url(../img/invite-btn-bg.png) right 0 no-repeat;
+    text-decoration: none;
+}
+#myqb-nav {
+    display: block;
+    width: 964px;
+    height: 46px;
+    background: url(../img/myQuibids-top-bg.png) bottom no-repeat;
+    margin: 5px 0 0 8px;
+    padding-left: 16px;
+}
+#myqb-nav li {
+    float: left;
+    margin-right: 7px;
+}
+#myqb-nav li a {
+    margin-top: 4px;
+    padding-left: 29px;
+    float: left;
+    display: block;
+    height: 26px;
+    background: url(../img/myQuibids-nav-bg.png) 0 0 no-repeat;
+}
+#myqb-nav li a span {
+    padding-right: 29px;
+    float: left;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    cursor:pointer;
+    background: url(../img/myQuibids-nav-bg.png) top right no-repeat;
+    color: #3e3e3e;
+}
+#myqb-nav li a:hover {
+    text-decoration: none;
+}
+#myqb-nav li a:hover span {
+    color: #0486c9;
+    cursor: pointer;
+}
+#myqb-nav li a.active {
+    margin-top: 1px;
+    padding-left: 22px;
+    float: left;
+    display: block;
+    height: 29px;
+    background: url(../img/myQuibids-nav-bg-active.png) 0 0 no-repeat;
+}
+#myqb-nav li a.active span {
+    padding-right: 22px;
+    float: left;
+    display: block;
+    height: 29px;
+    line-height: 29px;
+    background: url(../img/myQuibids-nav-bg-active.png) top right no-repeat;
+    color: white;
+    font-weight: bold;
+}
+#myqb-nav li a.active:hover span,#myqb-nav li a.active:hover {
+    cursor: default;
+    color: white;
+}
+#myqb-wrap {
+    width: 980px;
+    margin-left: 8px;
+    background: url(../img/myQuibids-bg.gif);
+   /* position: relative;*/
+}
+#myqb {
+    float: right;
+    width: 735px;
+    min-height: 740px;
+    margin-right: 12px;
+}
+* html #myqb {
+    height: 400px;
+    margin-right: 6px;
+}
+#myqb h1 {
+    font: bold 1.5em Arial,Helvetica,sans-serif;
+    color: #565555;
+    margin: 0 5px;
+    padding: 9px 0;
+    background: url(../img/myQuibids-h1-bg.gif) bottom repeat-x;
+}
+#myqb-auctions {
+    width: 735px;
+    margin-top: 15px;
+    background: url(../img/myqb-auctions-bg.gif);
+}
+#myqb-auctions-head {
+    background: url(../img/myqb-auctions-head-bg.png) 0 0 no-repeat;
+    height: 31px;
+}
+#myqb-auctions .live-auction {
+    width: 733px;
+    margin-left: 1px;
+    background: url(../img/myQuibids-liveauctions-bg.gif) 0 0 repeat-x;
+    float: none;
+}
+#myqb-auctions .grid {
+    background: #f7f7f7!important;
+}
+#myqb-auctions a.buy {
+    width: 121px;
+    height: 26px;
+    padding-top: 5px;
+    display: -moz-inline-box;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 15px;
+    background: url(../img/pay-now-btn.png) left top no-repeat;
+}
+a.buypaynow {
+    width: 121px;
+    height: 26px;
+    padding-top: 5px;
+    display: -moz-inline-box;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 15px;
+    background: url(../img/pay-now-btn.png) left top no-repeat;
+}
+#myqb-auctions a.buy:hover {
+    width: 121px;
+    height: 26px;
+    padding-top: 5px;
+    display: -moz-inline-box;
+    display: inline-block;
+    margin-left: 10px;
+    background: url(../img/pay-now-btn.png) left bottom no-repeat;
+}
+#myqb-auctions .live-auction .live-a-content {
+    padding: 0;
+    width: 335px;
+}
+#myqb-auctions .live-auction .live-a-content h2 {
+    padding: 31px 0 0 0;
+}
+#myqb-auctions .live-auction .countdown {
+    margin-left: 45px;
+}
+#myqb-auctions .live-auction a.login {
+    background: url(../img/login-register-btn-bg.gif);
+}
+#myqb-auctions .live-auction .price-bidder {
+    margin-top: 2px;
+    width:100px;
+}
+
+#myqb-auctions #live-auctions-end {
+    width: 735px;
+    background: url(../img/myQuibids-liveauctions-bg-end.png);
+    height: 49px;
+    text-align: right;
+}
+
+#myqb-auctions-head #product_title{
+    width: 420px;
+    padding: 0 0 0 40px;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    font-size:12px;
+}
+
+#myqb-auctions-head #price_title {
+    width: 70px;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+}
+
+#myqb-auctions-head #countdown_title {    
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    color: #555;
+    float: left;
+    text-transform: uppercase;
+    margin-left: 87px;
+}
+
+
+#pagination {
+    padding: 15px 17px 0 0;
+    display: block;
+}
+#pagination a {
+    color: #5a5a5a;
+    font-size: 9px;
+    padding: 2px 5px 3px 6px;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+#pagination a:hover {
+    text-decoration: none;
+    background: #C0C0C0;
+}
+#pagination a.selected {
+    background: url(../img/selected-page-bg.gif) no-repeat center;
+    color: white;
+}
+#pagination a#prev {
+    background: url(../img/prev-link-bg.png) 0 0 no-repeat;
+    padding: 3px 8px;
+}
+#pagination a#next {
+    background: url(../img/next-link-bg.png) 0 0 no-repeat;
+    padding: 3px 10px 3px 7px;
+}
+#pagination a#prev:hover,#myqb-auctions #live-auctions-end #pagination a#next:hover {
+    color: black;
+}
+#left-nav {
+    float: left;
+    margin: 8px 0 0 12px;
+    background: url(../img/left-nav-bg.png) bottom no-repeat;
+    width: 207px;
+}
+* html #left-nav {
+    display: inline;
+}
+#left-nav h2 {
+    margin: 0;
+    padding: 0 0 0 20px;
+    background: url(../img/left-nav-head-bg.png) 0 0 no-repeat;
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    font-size: .82em;
+    color: #454343;
+    text-transform: uppercase;
+}
+#left-nav ul {
+    margin: 12px 18px 12px 14px;
+}
+#left-nav li {
+    padding-bottom: 1px;
+    background: url(../img/left-nav-dots.gif) bottom repeat-x;
+}
+#left-nav li a {
+    padding: 6px 6px 7px 16px;
+    color: #626262;
+    display: block;
+    background: url(../img/left-nav-arrow.gif) 1px 10px no-repeat;
+}
+
+#left-nav li a.selected{
+    font-weight: bold;
+}
+
+#left-nav li a:hover {
+    background: #f6f6f6 url(../img/left-nav-arrow.gif) 1px 10px no-repeat;
+    text-decoration: none;
+}
+#myqb-end {
+    height: 14px;
+    background: url(../img/myQuibids-end-bg.png) bottom no-repeat;
+}
+.error {
+    border: 1px solid #ec0000;
+    background: #fbf0ee;
+    color: #393939;
+    padding: 10px 18px;
+    font-size: .93em;
+    margin-bottom: 22px;
+}
+.error ul {
+    margin: 10px 0 0 20px;
+}
+.error li {
+    padding-left: 17px;
+    background: url(../img/red-dots.gif) 0 4px no-repeat;
+}

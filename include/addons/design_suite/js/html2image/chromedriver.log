@@ -1,0 +1,8 @@
+[0.000][INFO]:      ChromeDriver 26.0.1383.0 /home/websitecommercesolutions/public_html/include/addons/design_suite/js/html2image/chromedriver
+[0.412][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "javascriptEnabled": true,
+   "platform": "ANY",
+   "version": ""
+}
+

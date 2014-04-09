@@ -1,0 +1,75 @@
+.accordion {
+position:relative;
+top:-10px;
+text-align:left;
+padding: 2px 4px 2px 4px;
+border:1px dotted blue;
+background-color:#98adb0;
+}
+.accordion.max {
+  height:220px;
+  width:220px;
+}
+.accordion h3 {
+min-width:100px;
+background-color:#c9d0d0;
+border:1px solid blue;
+font-size:10px;
+margin:2px 0 4px 0!important;
+color:#000!important;
+max-height:14px!important;
+padding:0px 0px 0px 0px!important;
+
+}
+  
+  
+div.panel{
+  display:none;
+  margin-bottom:4px 0 10px 0!important;
+  min-height:30px!important;
+  max-height:100px!important;
+  height:auto!important;
+}
+div.open{
+  display:block;
+  min-height:30px!important;
+}
+.accordion input.other {
+  position:relative;
+  left:-30px;
+}
+div.gradient{
+  display:block;
+  min-height:30px!important;
+}
+
+.panel ul {
+  list-style:none;
+ 
+  min-width:150px;
+  width:100%;
+  max-width:170px;
+  text-align:left;
+  position:relative;
+  left:-40px;
+}
+
+.panel ul li{
+  list-style:none;
+  display:inline;
+ 
+}
+
+.panel ul li select {
+ width:35px;
+
+
+}
+ .panel ul li input{
+ width:25px;
+
+}
+
+.sp-dd{
+  display:none!important;
+}

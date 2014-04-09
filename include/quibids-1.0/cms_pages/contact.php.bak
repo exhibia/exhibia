@@ -1,0 +1,39 @@
+
+            	 <?php include_once('include/' . $template . '/header.php'); ?>
+	  <?php include_once("include/topmenu.php"); ?>
+<div class="clear"></div>
+               
+               
+        <div id="main">
+
+	<div id="container">
+	<?php include("include/topmenu.php"); ?>
+	<div class="tab-area">
+	<div id="column-right">
+	<?php include("include/searchbox.php"); ?>
+	<div id="title-category-content">
+	<?php include("include/categorymenu.php"); ?>
+	<p class="bid-title"><strong><?php echo CONTACT_US; ?> - <?php echo FILL_OUT_THE_FORM_BELOW; ?></strong></p>
+	</div><!-- /title-category-content -->
+	<div class="rounded_corner">
+	<div class="content">
+	<h2><?php echo CONTACT_US; ?></h2>
+      <?php 
+	 $qrysel = "select * from static_pages where id='3'";
+	 $rssel = db_query($qrysel);
+	 $obj = db_fetch_object($rssel);
+	 ?>
+	 <?=$obj->content;?>
+	<?php include("gbcf_form.php"); ?>
+	</div>
+	</div>
+	</div>
+	<div id="column-left">
+	<?php include("leftstatic.php"); ?>
+	
+	</div><!-- /column-left -->
+	</div>
+	</div>
+	
+	</div> 
+<?php include("include/footer.php");?>

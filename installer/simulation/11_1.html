@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PHP Setup Wizard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="expires" content="0"/>
+<meta name="robots" content="index,follow"/>
+<meta name="author" content="Thorsteinn Saevar" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+<!-- 
+	===================================================
+	PHP Setup Wizard uses "Nuvola Icon Theme" images:
+	===================================================
+	Title:	Nuvola Icon Theme For Kde 3.X
+	Author:	David Vignoni | Icon King
+	Site:	http://www.Icon-King.com
+	===================================================
+-->
+</head>
+<body>
+<div id="container">
+
+	<div id="steps">
+	<ul class="steps">
+<li class="okay"><a href="00.html">PHP Extension Test</a></li>
+<li class="okay"><a href="01.html">File Permissions Test</a></li>
+<li class="okay"><a href="02.html">Introduction</a></li>
+<li class="okay"><a href="03.html">Terms Of Use Agreement</a></li>
+<li class="okay"><a href="04.html">Select Language</a></li>
+<li class="okay"><a href="05.html">Select Timezone</a></li>
+<li class="okay"><a href="06_1.html">Server Connection [1]</a></li>
+<li class="okay"><a href="06_2.html">Server Connection [2]</a></li>
+<li class="okay"><a href="07.html">Database Selection</a></li>
+<li class="okay"><a href="08.html">Database Access Test</a></li>
+<li class="okay"><a href="09.html">Table Prefix</a></li>
+<li class="okay"><a href="10_1.html">Install Database Tables [1]</a></li>
+<li class="okay"><a href="10_2.html">Install Database Tables [2]</a></li>
+<li class="now"><a href="11_1.html">Create Administrator Account [1]</a></li>
+<li class="wait"><a href="11_2.html">Create Administrator Account [2]</a></li>
+<li class="wait"><a href="12.html">Create Configuration File</a></li>
+<li class="wait"><a href="13_1.html">All done! [1]</a></li>
+<li class="wait"><a href="13_2.html">All done! [2]</a></li>
+	</ul>&nbsp;
+	</div>
+
+	<div id="content">
+		<div id="installer">
+<h1 class="hicon rootuser">Create Administrator Account</h1>
+<div class="msg info">Usernames must be at least 4 characters long, you need <b>4</b> more characters</div>
+<div class="msg info">Passwords do not match, try again</div>
+<div class="msg info">Password is not secure enough, it must be 6 characters or longer and contain upper case character, digit or symbol as well.</div>
+<div class="msg info">You must specify the display name</div>
+<div class="msg info">Email address <b></b> is not valid email</div>
+
+<form name="form2" action="11_2.html" method="get">
+<input type="hidden" id="step" name="step" value="rootuser" />
+<input type="hidden" id="create" name="create" value="administrator" />
+<h3><span class="must">* </span>Username:</h3>
+<div class="textbox"><input type="text" id="admin_username" name="admin_username" value="" /></div>
+<h3><span class="must">* </span>Password:</h3>
+<div class="textbox"><input type="password" id="admin_password" name="admin_password" value="" /></div>
+<h3><span class="must">* </span>Repeat password:</h3>
+<div class="textbox"><input type="password" id="admin_passagain" name="admin_passagain" value="" /></div>
+<h2>Personal information:</h2>
+
+<h3>Display name:</h3>
+<div class="textbox"><input type="text" id="admin_realname" name="admin_realname" value="" /></div>
+<h3>Email address:</h3>
+<div class="textbox"><input type="text" id="admin_email" name="admin_email" value="" /></div>
+<h3>Phone number:</h3>
+<div class="textbox"><input type="text" id="admin_phonenr" name="admin_phonenr" value="" /></div>
+<button type="button" class="btn" name="button" onClick="javascript:location.href='10_2.html'" >Back</button>
+<input type="submit" class="btn" name="submit" value="Create administrator account" />
+</form>
+		</div>
+		<div id="footer">
+
+			&copy; Your company 2010 | PHP Setup Wizard
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

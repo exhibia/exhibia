@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PHP Setup Wizard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="expires" content="0"/>
+<meta name="robots" content="index,follow"/>
+<meta name="author" content="Thorsteinn Saevar" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+<!-- 
+	===================================================
+	PHP Setup Wizard uses "Nuvola Icon Theme" images:
+	===================================================
+	Title:	Nuvola Icon Theme For Kde 3.X
+	Author:	David Vignoni | Icon King
+	Site:	http://www.Icon-King.com
+	===================================================
+-->
+</head>
+<body>
+<div id="container">
+
+	<div id="steps">
+	<ul class="steps">
+<li class="okay"><a href="00.html">PHP Extension Test</a></li>
+<li class="okay"><a href="01.html">File Permissions Test</a></li>
+<li class="okay"><a href="02.html">Introduction</a></li>
+<li class="okay"><a href="03.html">Terms Of Use Agreement</a></li>
+<li class="okay"><a href="04.html">Select Language</a></li>
+<li class="okay"><a href="05.html">Select Timezone</a></li>
+<li class="okay"><a href="06_1.html">Server Connection [1]</a></li>
+<li class="okay"><a href="06_2.html">Server Connection [2]</a></li>
+<li class="okay"><a href="07.html">Database Selection</a></li>
+<li class="okay"><a href="08.html">Database Access Test</a></li>
+<li class="okay"><a href="09.html">Table Prefix</a></li>
+<li class="now"><a href="10_1.html">Install Database Tables [1]</a></li>
+<li class="wait"><a href="10_2.html">Install Database Tables [2]</a></li>
+<li class="wait"><a href="11_1.html">Create Administrator Account [1]</a></li>
+<li class="wait"><a href="11_2.html">Create Administrator Account [2]</a></li>
+<li class="wait"><a href="12.html">Create Configuration File</a></li>
+<li class="wait"><a href="13_1.html">All done! [1]</a></li>
+<li class="wait"><a href="13_2.html">All done! [2]</a></li>
+	</ul>&nbsp;
+	</div>
+
+	<div id="content">
+		<div id="installer">
+<h1 class="hicon sql">Install Database Tables</h1>
+<div class="msg warning">You are about to install tables on <b>usethisdb</b> though a valid install has been successfully done already.<br />&nbsp;<br />You can go back to <a href="07.html">Database Selection</a> and select a databases that has a valid installation.</div>
+<div class="msg warning">You have not specified a table prefix, and the database <b>usethisdb</b> contains <b>6</b> table(s).<br />&nbsp;<br />It is highly recommended and there is a much lower risk of table collision if you <a href="09.html">specify a table prefix</a>.</div>
+
+
+<p>The database <b>usethisdb</b> contains the following tables:</p>
+<table class="tablelist">
+<tr>
+<td>hj_activity</td>
+<td>hj_blog</td>
+<td>hj_category</td>
+</tr>
+<tr>
+<td>hj_comment</td>
+<td>hj_contact</td>
+<td>hj_user</td>
+</tr>
+</table>
+<p>Be completly sure that this is the database you want to use, even though it is not empty before continuing with installation.</p>
+
+<textarea class="codeblock" readonly>
+CREATE TABLE `prx_activity` (
+  `id` int(11) NOT NULL auto_increment,
+  `user_idfk` int(11) NOT NULL,
+  `timestamp` int(11) NOT NULL,
+  `pagekey` int(2) NOT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `user_idfk` (`user_idfk`)
+);
+
+CREATE TABLE `prx_blog` (
+  `id` int(11) NOT NULL auto_increment,
+  `user_idfk` int(11) NOT NULL,
+  `owner_idfk` int(11) NOT NULL,
+  `dateoftime` int(10) NOT NULL,
+  `clock` int(6) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `text` text NOT NULL,
+  `show` tinyint(1) NOT NULL,
+  `seo` varchar(110) NOT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `seo` (`seo`)
+);
+
+CREATE TABLE `prx_category` (
+  `id` int(11) NOT NULL auto_increment,
+  `manufacturer_idfk` int(11) NOT NULL default '-1',
+  `title` varchar(100) NOT NULL,
+  `desc` varchar(255) NOT NULL default '',
+  `lineup` mediumint(2) NOT NULL default '0',
+  `show` smallint(1) NOT NULL default '1',
+  `seo` varchar(110) NOT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `seo` (`seo`)
+);
+
+CREATE TABLE `prx_comment` (
+  `id` int(11) NOT NULL auto_increment,
+  `blog_idfk` int(11) NOT NULL,
+  `dateoftime` int(10) NOT NULL,
+  `clock` int(6) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `comment` text NOT NULL,
+  `show` tinyint(1) NOT NULL default '1',
+  `confirmed` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `prx_user` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(20) NOT NULL default '',
+  `password` varchar(32) NOT NULL default '',
+  `display` varchar(40) NOT NULL default '',
+  `email` varchar(255) NOT NULL,
+  `level` smallint(2) NOT NULL default '0',
+  `hashkey` char(32) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `display` (`display`),
+  UNIQUE KEY `email` (`email`)
+);</textarea>
+
+
+<form name="form2" action="10_2.html" method="get">
+<input type="hidden" id="step" name="step" value="installsql" />
+<input type="hidden" id="runsql" name="runsql" value="test_db2" />
+<button type="button" class="btn" name="button" onClick="javascript:location.href='09.html'" >Back</button>
+<input type="submit" class="btn" name="submit" value="Install Tables on [usethisdb]" />
+</form>
+
+		</div>
+		<div id="footer">
+			&copy; Your company 2010 | PHP Setup Wizard
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+[23-Nov-2013 18:45:36] PHP Parse error:  syntax error, unexpected T_INCLUDE in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 6
+[24-Nov-2013 07:08:23] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 46
+[24-Nov-2013 07:08:27] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 46
+[24-Nov-2013 12:06:19] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 71
+[24-Nov-2013 12:06:51] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 71
+[24-Nov-2013 15:52:27] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 103
+[24-Nov-2013 17:35:34] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 97
+[24-Nov-2013 18:02:14] PHP Parse error:  syntax error, unexpected $end in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 116
+[24-Nov-2013 19:09:04] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 101
+[24-Nov-2013 21:29:44] PHP Fatal error:  Call to undefined function delay_game() in /home/charityfunauctions/public_html/include/addons/bingo/update_records.php on line 72
+[25-Nov-2013 20:17:43] PHP Fatal error:  Call to undefined function notify_game() in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 101
+[25-Nov-2013 22:22:57] PHP Parse error:  syntax error, unexpected T_IS_EQUAL in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 50
+[25-Nov-2013 22:38:32] PHP Fatal error:  Call to undefined function payout() in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 57
+[26-Nov-2013 03:20:57] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 141
+[26-Nov-2013 05:15:39] PHP Parse error:  syntax error, unexpected '}' in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 180
+[10-Dec-2013 14:08:11] PHP Parse error:  syntax error, unexpected ';' in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 157
+[10-Dec-2013 16:32:07] PHP Parse error:  syntax error, unexpected ',' in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 150
+[10-Dec-2013 16:32:42] PHP Parse error:  syntax error, unexpected ',' in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 150
+[13-Dec-2013 14:04:10] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 316
+[13-Dec-2013 14:37:05] PHP Parse error:  syntax error, unexpected ';' in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 488
+[16-Dec-2013 21:01:25] PHP Parse error:  syntax error, unexpected ')' in /home/charityfunauctions/public_html/include/addons/bingo/update_bingo.php on line 218

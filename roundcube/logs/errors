@@ -1,0 +1,61 @@
+[21-Sep-2013 17:08:13 -0400]: IMAP Error: Login failed for support@lazybids.com from 50.169.255.130. Wrong startup greeting (localhost:110): +OK Dovecot ready. in /home/lazybids/public_html/roundcube/program/lib/Roundcube/rcube_imap.php on line 184 (POST /~lazybids/roundcube/?_task=login&_action=login)
+[21-Sep-2013 17:08:23 -0400]: IMAP Error: Login failed for support@lazybids.com from 50.169.255.130. Wrong startup greeting (localhost:110): +OK Dovecot ready. in /home/lazybids/public_html/roundcube/program/lib/Roundcube/rcube_imap.php on line 184 (POST /~lazybids/roundcube/?_task=login&_action=login)
+[21-Sep-2013 17:16:50 -0400]: IMAP Error: Login failed for support@lazybids.com from 50.169.255.130. Wrong startup greeting (localhost:110): +OK Dovecot ready. in /home/lazybids/public_html/roundcube/program/lib/Roundcube/rcube_imap.php on line 184 (POST /~lazybids/roundcube/?_task=login&_action=login)
+[21-Sep-2013 17:16:56 -0400]: IMAP Error: Login failed for support@lazybids.com from 50.169.255.130. Wrong startup greeting (localhost:110): +OK Dovecot ready. in /home/lazybids/public_html/roundcube/program/lib/Roundcube/rcube_imap.php on line 184 (POST /~lazybids/roundcube/?_task=login&_action=login)
+[21-Sep-2013 17:18:20 -0400]: IMAP Error: Login failed for support@lazybids.com from 50.169.255.130. Wrong startup greeting (174.122.222.85:110): +OK Dovecot ready. in /home/lazybids/public_html/roundcube/program/lib/Roundcube/rcube_imap.php on line 184 (POST /~lazybids/roundcube/?_task=login&_action=login)
+[21-Sep-2013 17:21:57] SMTP server does not support authentication (): 
+[21-Sep-2013 17:21:57 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /~lazybids/roundcube/?_unlock=loading1379798517144&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:42:04] SMTP server does not support authentication (): 
+[21-Sep-2013 17:42:04 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379799724403&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:51:05] SMTP server does not support authentication (): 
+[21-Sep-2013 17:51:05 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800265373&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:51:35] SMTP server does not support authentication (): 
+[21-Sep-2013 17:51:35 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800295537&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:57:09] SMTP server does not support authentication (): 
+[21-Sep-2013 17:57:09 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800629458&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:57:24] SMTP server does not support authentication (): 
+[21-Sep-2013 17:57:24 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800644262&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:57:37] SMTP server does not support authentication (): 
+[21-Sep-2013 17:57:37 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800657708&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:59:16] SMTP server does not support authentication (): 
+[21-Sep-2013 17:59:16 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800756366&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 17:59:19] SMTP server does not support authentication (): 
+[21-Sep-2013 17:59:19 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800759844&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:00:21] SMTP server does not support authentication (): 
+[21-Sep-2013 18:00:21 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800821573&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:00:38] SMTP server does not support authentication (): 
+[21-Sep-2013 18:00:38 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800838163&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:01:59] SMTP server does not support authentication (): 
+[21-Sep-2013 18:01:59 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800918861&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:02:23] SMTP server does not support authentication (): 
+[21-Sep-2013 18:02:23 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800942958&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:02:41] SMTP server does not support authentication (): 
+[21-Sep-2013 18:02:41 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379800961318&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:05:51] SMTP server does not support authentication (): 
+[21-Sep-2013 18:05:51 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379801151364&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:07:58] SMTP server does not support authentication (): 
+[21-Sep-2013 18:07:58 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379801278723&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:09:11] SMTP server does not support authentication (): 
+[21-Sep-2013 18:09:11 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379801351502&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:10:57] SMTP server does not support authentication (): 
+[21-Sep-2013 18:10:57 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379801456890&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:27:41] SMTP server does not support authentication (): 
+[21-Sep-2013 18:27:41 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379802460844&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:30:19] SMTP server does not support authentication (): 
+[21-Sep-2013 18:30:19 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379802619806&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:30:23] SMTP server does not support authentication (): 
+[21-Sep-2013 18:30:23 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379802623762&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:31:37] SMTP server does not support authentication (): 
+[21-Sep-2013 18:31:37 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379802697236&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:32:52] SMTP server does not support authentication (): 
+[21-Sep-2013 18:32:52 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379802772634&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:35:18] SMTP server does not support authentication (): 
+[21-Sep-2013 18:35:18 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379802918286&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:39:49] SMTP server does not support authentication (): 
+[21-Sep-2013 18:39:49 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379803189446&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:39:53] SMTP server does not support authentication (): 
+[21-Sep-2013 18:39:53 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379803192978&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:40:47] SMTP server does not support authentication (): 
+[21-Sep-2013 18:40:47 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379803246922&_lang=en?_task=mail&_action=send)
+[21-Sep-2013 18:44:14] SMTP server does not support authentication (): 
+[21-Sep-2013 18:44:14 -0400]: SMTP Error: SMTP error: Authentication failure: SMTP server does not support authentication (Code: ) in /home/lazybids/public_html/roundcube/program/include/rcmail.php on line 1035 (POST /roundcube/?_unlock=loading1379803453883&_lang=en?_task=mail&_action=send)

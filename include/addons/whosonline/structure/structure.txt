@@ -1,0 +1,8 @@
+CREATE TABLE online (  
+  oid int unsigned NOT NULL auto_increment,
+  user varchar(255) NOT NULL default '',
+  page varchar(500) NOT NULL,
+  time int unsigned NOT NULL,
+  ip varchar(20) NOT NULL,
+  PRIMARY KEY  (oid)
+ ) TYPE=MyISAM AUTO_INCREMENT=1;

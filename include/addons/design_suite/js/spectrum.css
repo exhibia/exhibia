@@ -1,0 +1,263 @@
+.ui-colorpicker,
+.ui-dialog.ui-colorpicker {
+	width:					400px;
+    white-space:			nowrap;
+
+
+	-webkit-touch-callout:	none;
+	-webkit-user-select:	none;
+	-khtml-user-select:		none;
+	-moz-user-select:		none;
+	-ms-user-select:		none;
+	user-select:			none;
+	
+}
+.ui-colorpicker-map-container, .ui-colorpicker-bar, .ui-colorpicker-swatches-container {
+  
+  position:relative;
+  top:10px;
+  left:30px;
+  border-top: 0;
+}
+.ui-colorpicker-swatches-container {
+    position:relative;
+  top:10px;
+  left:90px;
+}
+.ui-dialog.ui-colorpicker .ui-dialog-buttonpane {
+  border:0;
+}
+.ui-colorpicker-inline {
+    position:				relative;
+    top:20px;
+}
+
+.ui-colorpicker-buttonset {
+	float:					left;
+	margin-left:			.4em;
+	border-top: 0;
+}
+
+.ui-colorpicker-buttonset .ui-button {
+	margin:					.5em 0 .5em 0;
+	cursor:					pointer;
+}
+
+.ui-colorpicker-buttonpane {
+	background-image:		none;
+	margin:					.7em 0 0 0;
+	padding:				0 .2em;
+	border-left:			0;
+	border-right:			0;
+	border-bottom:			0;
+	border-top: 0;
+}
+
+.ui-colorpicker-buttonpane button {
+	float:					right;
+	
+	cursor:					pointer;
+	padding:				5px 5px 5px 5px;
+	width:					auto;
+	overflow:				visible;
+}
+
+
+/* Bar & map */
+.ui-colorpicker-map > * {
+	cursor:					crosshair;
+    position:				absolute;	
+}
+,
+.ui-colorpicker-bar > * {
+    position:				absolute;
+    cursor: crosshair;
+}
+
+.ui-colorpicker-map-pointer,
+.ui-colorpicker-bar-pointer {
+    position:				absolute;
+}
+/* Map */
+.ui-colorpicker-map,
+.ui-colorpicker-map > * {
+    display:				block;
+	width:					160px;
+	height:					160px;
+	overflow:				hidden;
+}
+
+.ui-colorpicker-map-layer-1,
+.ui-colorpicker-map-layer-2 {
+	
+	background:				url(images/map.png) no-repeat;
+
+}
+
+.ui-colorpicker-map-layer-alpha {
+	background:				url(images/map-opacity.png);
+}
+
+.ui-colorpicker-map-pointer {
+	display:				inline-block;
+	width:					15px;
+	height:					15px;
+	background:				url(images/map-pointer.png) no-repeat;
+	
+}
+
+/* Bar */
+.ui-colorpicker-bar,
+.ui-colorpicker-bar > * {
+    display:				inline-block;
+    position:relative;
+    right:-5px;
+   
+    width:					20px;
+    height:					160px;
+	overflow:				hidden;
+    background-repeat:		repeat-x;
+  
+}
+
+.ui-colorpicker-bar-layer-1,
+.ui-colorpicker-bar-layer-2,
+.ui-colorpicker-bar-layer-3,
+.ui-colorpicker-bar-layer-4 {
+	background:				url(images/bar.png) repeat-x;
+	display:block;
+}
+
+.ui-colorpicker-bar-layer-alpha {
+	background:				url(images/bar-opacity.png);
+	
+}
+
+.ui-colorpicker-bar-layer-alphabar {
+	background:				url(images/bar-alpha.png);
+}
+
+.ui-colorpicker-bar-pointer {
+	display:block;
+	height:100px;
+	width:100px;
+    position:relative;
+    right:-5px;
+	
+	z-index:999999999999999999;
+
+	background:gray url(images/logo.png) no-repeat;
+}
+
+/* Preview */
+.ui-colorpicker-preview {
+	text-align:				center;
+}
+
+.ui-colorpicker-preview-initial {
+    cursor:					pointer;
+}
+
+.ui-colorpicker-preview-initial,
+.ui-colorpicker-preview-current {
+    width:					50px;
+    height:					20px;
+    display:				none;
+}
+
+
+input.gradient{
+  
+border-radius:4px 4px 4px 4px;
+width:20px;
+height:35px;
+border:2px solid black;
+  
+}
+.ui-colorpicker-preview-initial-alpha,
+.ui-colorpicker-preview-current-alpha {
+    width:					50px;
+    height:					20px;
+    display:				none;
+	background:				url(images/preview-opacity.png) repeat;
+}
+
+/* Inputs */
+
+.ui-colorpicker-hsv-container,
+.ui-colorpicker-lab label,
+.ui-colorpicker-rgb label,
+.ui-colorpicker-hsv label,
+.ui-colorpicker-hsv-h label,
+.ui-colorpicker-hsl label,
+.ui-colorpicker-lab label,
+.ui-colorpicker-cmyk label,
+.ui-colorpicker-alpha label,
+.ui-colorpicker-hsv-container label,
+.ui-colorpicker-hex label {
+    width:				1.25em;
+    font-size:12px;
+    display:				inline-block;
+}
+
+
+/* Swatches */
+.ui-colorpicker-swatches {
+	height:					160px;
+	overflow:				auto;
+	background-color:		#f8f8f8;
+	position:relative;
+	left:-55px;
+	
+}
+
+.ui-colorpicker-swatch {
+	cursor:					pointer;
+	float:					left;
+	width:					11px;
+	height:					11px;
+	border-bottom:1px solid gray;
+	border-right:1px solid gray;
+   
+  
+}
+
+.ui-dialog.ui-colorpicker input{
+  height:20px;
+  width:20px;
+  font-size:11px;
+
+  
+  
+}
+.ui-dialog.ui-colorpicker label, .ui-dialog.ui-colorpicker span {
+  
+  font-size:12px;
+}
+.ui-dialog.ui-colorpicker label {
+}
+.ui-colorpicker-hsv-container, .ui-colorpicker-lab-container, .ui-colorpicker-rgb-container, .ui-colorpicker-cmyk, .ui-colorpicker-alpha-container {
+position:relative;
+top:10px;
+left:30px;
+  width:5px;
+  margin-right:20px;
+}
+.ui-colorpicker-hsv-container, .ui-colorpicker-lab-container,  .ui-colorpicker-cmyk {
+display:none;
+}
+.ui-colorpicker-hex {
+  position:relative;
+  top:50px;
+  left:-60px;
+}
+
+input.ui-colorpicker-hex-input {
+  width:80px;
+  
+}
+.ui-colorpicker-mode {
+  height:10px;
+  width:10px;
+ font-size:12px; 
+}

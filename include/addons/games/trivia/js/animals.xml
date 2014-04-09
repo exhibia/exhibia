@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trivia>
+ <quiz>
+  <que>What family of animals is the moose a member of?</que>
+  <ca>Deer</ca>
+  <ia>Cow</ia>
+  <ia>Horse</ia>
+  <ia>Goat</ia>
+ </quiz>
+ <quiz>
+  <que>Moose are big, so they need to eat...a lot. Which of these things do moose turn their nose up at and NOT eat?</que>
+  <ca>Fish</ca>
+  <ia>Grass</ia>
+  <ia>Aquatic plants</ia>
+  <ia>Tree branches</ia>
+ </quiz>
+ <quiz>
+  <que>Who is included in a moose family group?</que>
+  <ca>A female moose and her young</ca>
+  <ia>A male moose and his young</ia>
+  <ia>A male/female mating couple</ia>
+  <ia>A male/female mating couple and their young</ia>
+ </quiz>
+ <quiz>
+  <que>While Bullwinkle always had loads to say, what is the main mode of communication?</que>
+  <ca>Vocally by grunting</ca>
+  <ia>Olfactory, by scent</ia>
+  <ia>Visually by gestures and body language</ia>
+  <ia>By stamping their feet in code</ia>
+ </quiz>
+ <quiz>
+  <que>Do all moose have antlers? </que>
+  <ca>No</ca>
+  <ia>Yes</ia>
+ </quiz>
+ <quiz>
+  <que>What exactly are moose antlers made of?</que>
+  <ca>Hardened bone</ca>
+  <ia>Ivory</ia>
+  <ia>Hardened hide</ia>
+  <ia>Teeth</ia>
+ </quiz>
+ <quiz>
+  <que>What is the material covering the antlers called?</que>
+  <ca>Velvet</ca>
+  <ia>Lanugo</ia>
+  <ia>Slough</ia>
+  <ia>Chaff</ia>
+ </quiz>
+ <quiz>
+  <que>What state would you be least likely to find a moose in?</que>
+  <ca>Rhode Island</ca>
+  <ia>New Hampshire</ia>
+  <ia>Maine</ia>
+  <ia>Vermont</ia>
+ </quiz>
+</trivia>

@@ -1,0 +1,100 @@
+/* IMPORT ADDITIONAL CSS */
+@import url("reset.css");
+
+
+.admin {
+	background-color:#effcff;
+	padding:5px 5px 10px 5px;
+	border-bottom:1px solid #c4dde1;
+}
+.user {
+	background-color:#f4fdf1;
+	padding:5px 5px 10px 5px;
+	border-bottom:1px solid #c4dde1;
+}
+.notice {
+        padding:10px 5px 10px 5px;
+        background-color:#d0e5f9;
+        background-image:url(../images/icons/notice.png);
+        background-position:98% 50%;
+        background-repeat:no-repeat;
+	border-bottom:1px solid #c4dde1;
+}
+.text_block {
+	padding:10px 5px 5px 10px;
+}
+.error {
+        background-color:#fdc3c3;
+        border:1px solid #b10000;
+        padding:1px 1px 1px 45px;
+        margin: 10px 0px 10px 0px;
+        background-image:url(../images/icons/stop.png);
+        background-repeat:no-repeat;
+        background-position:10px 7px;
+        color:#000;
+	-moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+}
+
+/* ------ FORMS ------- */
+.thin { width:250px; }
+.wide { width:500px; }
+label {
+	font-size:15px;
+	margin:0px 0px 0px 10px;
+}
+.input_field {
+	margin:5px 0px 8px 10px;
+	background-color: #fff;
+	font-size: 14px;
+	color: #444;
+	padding: 6px;
+	border:1px solid #A8B9CB;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	font-family: Verdana, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 1.5em;
+}
+.input_field:focus {
+	-moz-box-shadow: 0px 1px 3px #a6c9e4;
+        -webkit-box-shadow: 0px 1px 3px #a6c9e4;
+        box-shadow: 0px 1px 3px #a6c9e4;
+	border:1px solid #6cb0e4;
+}
+.submit {
+	height:auto;
+	padding:5px;
+	border:1px solid #5ab9dc;
+	cursor:pointer;
+	background: #76aec3;
+	background: -webkit-gradient(linear, left top, left bottom, from(#edf6fb), to(#5ab9dc));
+	background: -moz-linear-gradient(top, #edf6fb, #5ab9dc);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#edf6fb, endColorstr=#5ab9dc);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#edf6fb, endColorstr=#5ab9dc)";
+
+	font-weight:600;
+	color:#2a4f64;
+
+}
+/* ------ TYPE ------ */
+
+/*p,h1,h2,h3,h4 {
+	margin:10px 0px 10px 0px;
+	font-family: Verdana, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: normal;
+	line-height: 1.5em;
+}
+
+h1 {font-size:36px;}
+h2 {font-size:30px;}
+h3 {font-size:22px;}
+h4 {font-size:18px;}*/

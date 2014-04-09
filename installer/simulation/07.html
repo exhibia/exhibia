@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PHP Setup Wizard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="expires" content="0"/>
+<meta name="robots" content="index,follow"/>
+<meta name="author" content="Thorsteinn Saevar" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+<!-- 
+	===================================================
+	PHP Setup Wizard uses "Nuvola Icon Theme" images:
+	===================================================
+	Title:	Nuvola Icon Theme For Kde 3.X
+	Author:	David Vignoni | Icon King
+	Site:	http://www.Icon-King.com
+	===================================================
+-->
+</head>
+<body>
+<div id="container">
+
+	<div id="steps">
+	<ul class="steps">
+<li class="okay"><a href="00.html">PHP Extension Test</a></li>
+<li class="okay"><a href="01.html">File Permissions Test</a></li>
+<li class="okay"><a href="02.html">Introduction</a></li>
+<li class="okay"><a href="03.html">Terms Of Use Agreement</a></li>
+<li class="okay"><a href="04.html">Select Language</a></li>
+<li class="okay"><a href="05.html">Select Timezone</a></li>
+<li class="okay"><a href="06_1.html">Server Connection [1]</a></li>
+<li class="okay"><a href="06_2.html">Server Connection [2]</a></li>
+<li class="now"><a href="07.html">Database Selection</a></li>
+<li class="wait"><a href="08.html">Database Access Test</a></li>
+<li class="wait"><a href="09.html">Table Prefix</a></li>
+<li class="wait"><a href="10_1.html">Install Database Tables [1]</a></li>
+<li class="wait"><a href="10_2.html">Install Database Tables [2]</a></li>
+<li class="wait"><a href="11_1.html">Create Administrator Account [1]</a></li>
+<li class="wait"><a href="11_2.html">Create Administrator Account [2]</a></li>
+<li class="wait"><a href="12.html">Create Configuration File</a></li>
+<li class="wait"><a href="13_1.html">All done! [1]</a></li>
+<li class="wait"><a href="13_2.html">All done! [2]</a></li>
+	</ul>&nbsp;
+	</div>
+
+	<div id="content">
+		<div id="installer">
+<h1 class="hicon dbselect">Database Selection</h1>
+<div class="msg success">You have selected <b>test_db2</b>, choose another database or proceed to the next step.</div>
+<div class="msg success">Database setup has been completed successfully on below highlighted database(s)</div>
+<p>Select a database from a list of databases whitin the server you have logged on</p>
+<h3>Database list:</h3>
+<form name="form2" action="08.html" method="get">
+<input type="hidden" id="step" name="step" value="dbaccesstest" />
+<table class="dblist">
+<tr>
+<td><div class="formrbt"  onclick="document.form2.rbt1.checked=true;"><input type="radio" id="rbt1" name="database" value="information_schema" /><span>information_schema <span class="descrete">(28)</span></span></div>
+
+</td>
+<td><div class="formrbt"  onclick="document.form2.rbt2.checked=true;"><input type="radio" id="rbt2" name="database" value="cdcol" /><span>cdcol <span class="descrete">(1)</span></span></div>
+</td>
+</tr>
+<tr>
+<td><div class="formrbt"  onclick="document.form2.rbt3.checked=true;"><input type="radio" id="rbt3" name="database" value="drupal_hax" /><span>drupal_db <span class="descrete">(56)</span></span></div>
+</td>
+<td><div class="formrbt"  onclick="document.form2.rbt4.checked=true;"><input type="radio" id="rbt4" name="database" value="emaildb" /><span>emaildb <span class="descrete">(1)</span></span></div>
+</td>
+</tr>
+<tr>
+
+<td><div class="formrbt"  onclick="document.form2.rbt5.checked=true;"><input type="radio" id="rbt5" name="database" value="fanndis_net" /><span>workshifter <span class="descrete">(17)</span></span></div>
+</td>
+<td><div class="formrbt newdb"  onclick="document.form2.rbt6.checked=true;"><input type="radio" id="rbt6" name="database" value="mynewdb" /><span>mynewdb <span class="descrete">(0)</span></span></div>
+</td>
+</tr>
+<tr>
+<td><div class="formrbt"  onclick="document.form2.rbt7.checked=true;"><input type="radio" id="rbt7" name="database" value="mysql" /><span>mysql <span class="descrete">(23)</span></span></div>
+</td>
+<td><div class="formrbt"  onclick="document.form2.rbt8.checked=true;"><input type="radio" id="rbt8" name="database" value="oliver_difn" /><span>somedbname <span class="descrete">(32)</span></span></div>
+</td>
+
+<tr>
+<td><div class="formrbt installdone"  onclick="document.form2.rbt13.checked=true;"><input type="radio" id="rbt13" name="database" value="phpmyadmin" checked /><span>usethisdb <span class="descrete">(8)</span></span></div>
+</td>
+<td><div class="formrbt"  onclick="document.form2.rbt14.checked=true;"><input type="radio" id="rbt14" name="database" value="scheduler" /><span>scheduler <span class="descrete">(9)</span></span></div>
+</td>
+</tr>
+<tr>
+<td><div class="formrbt"  onclick="document.form2.rbt15.checked=true;"><input type="radio" id="rbt15" name="database" value="test_db1" /><span>test_db1 <span class="descrete">(66)</span></span></div>
+
+</td>
+<td><div class="formrbt"  onclick="document.form2.rbt16.checked=true;"><input type="radio" id="rbt16" name="database" value="test_db2" /><span>test_db2 <span class="descrete">(66)</span></span></div>
+</td>
+</tr>
+<tr>
+<td><div class="formrbt"  onclick="document.form2.rbt17.checked=true;"><input type="radio" id="rbt17" name="database" value="test_db3" /><span>test_db3 <span class="descrete">(32)</span></span></div>
+</td>
+<td><div class="formrbt"  onclick="document.form2.rbt18.checked=true;"><input type="radio" id="rbt18" name="database" value="test_db4" /><span>test_db4 <span class="descrete">(128)</span></span></div>
+</td>
+</tr>
+</table>
+
+<button type="button" class="btn" name="button" onClick="javascript:location.href='06_2.html'" >Back</button>
+<input type="submit" class="btn" name="submit" value="Next" />
+</form>
+<p>&nbsp;</p>
+<h1 class="hicon dbnew">Create new database</h1>
+<div class="msg success">The database <b>mynewdb</b> has been created successfully!</div>
+<div class="msg info">Please specify a name for the database</div>
+<div class="msg warning">The database name <b>***</b> is not valid, please choose another one.</div>
+<div class="msg warning">There exists a database with the name <b>somedbname</b> already, please choose another one.</div>
+<div class="msg error">Installer was unable to create the database <b>problemdb</b>, either select database from a list or contact support.</div>
+
+<a name="newdb"></a><p>Create new database which the system will be installed on.</p>
+<form name="form3" action="07.html#newdb" method="get">
+<input type="hidden" id="step" name="step" value="dbselection" />
+<h3>Database name:</h3>
+<div class="textbox mediumbox"><input type="text" id="createdb" name="createdb" value="" /></div>
+<input type="submit" class="btn" name="submit" value="Create new" />
+</form>
+		</div>
+		<div id="footer">
+			&copy; Your company 2010 | PHP Setup Wizard
+		</div>
+
+	</div>
+</div>
+
+</body>
+</html>

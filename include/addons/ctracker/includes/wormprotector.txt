@@ -1,0 +1,130 @@
+<?php
+########################################
+#									   #
+#   (C) 2007 by CTXtra				   #
+#	http://www.ctxtra.de			   #
+#									   #
+#	Version: V1.5					   #
+#									   #
+#--------------------------------------#
+#									   #
+#	Wormprotector by schlumpfi		   #
+#	383 signaturen (12.07.07)		   #
+#									   #
+########################################
+
+$wormprotector = array(
+ 	//start
+ 	
+
+	// SZ
+	'<!- ', '->', '$_', '@@', '%22', '`', '"', '%00', '?hl=', '%3fhl=',
+	'<?php', '<?', '?>', '%3C%3Fphp', '%3F>', '%2527', '%27', '/**/', '/../',
+	
+	// A
+	'&aim', 'alert ', '<applet', 'admin_', 'and ',
+
+	// B	
+	'/bin/ps', '/bin/echo', '/bin/kill', '/bin/', 'bin/python', 'bin/tclsh', 'bin/nasm', '/bin/mail',
+	'bash_history', '.bash_history', '.bat', 'bulk', 'bulk ', 'behavior: url(xss.htc);',
+
+	// C
+	'chr(', 'chr=', 'chr ', ' chr', 'cmd=', ' cmd', 'cmd ', 'cp ', ' cp', 'cp(',
+	'chmod(', 'chmod ', ' chmod', 'chmod(', 'chmod=', 'chown ', 'chgrp ', 'chown(', 'chgrp(',
+	'/chgrp', '/chown', '.conf', 'config.php', 'cgi-', 'chunked', '.cmd', '.cgi', 'cgi',
+	'create ', 'cc ', 'cat ', 'char ', 'cat=31337+union',
+	
+	// D
+	'<div', 'diff ', 'db_mysql.inc', 'drop ', 'drop', 'delete ', 'delete', 'document.', 'dynsrc',
+	
+	// E
+	'echr(', ' echr', 'echr ', 'echr=', 'echo', '_env', 'esystem(', 'esystem ', 'etc/', '/etc/password', '/etc/shadow',
+	'/etc/groups', '/etc/gshadow', '.eml', '/etc/passwd', 'eval(', 'eval ', 'exec(', '.exe', '<emded', 'exec',
+	'expression ',  'email@', 'expression(a', 'eval(a+b+c+d);',
+	
+	// F
+	'fopen', 'fwrite', 'file\://', 'file\\://', 'ftp.exe', '~ftp', 'file%5c://', 'fromcharcode',
+	
+	// G
+	'grep ', 'grep(', '$_get', '$get', ' getenv', 'getenv ', 'g\\+\\+', 'g\+\+', 'getenv', '_global', 'global_',
+	'global[', '_globals', 'globals_', 'globals[', 'g%5c', 'g\\', '/groups', '/gshadow', 'goto=http', 'goto=',
+	
+	// H
+	' hack', 'http_', 'http_php', 'http_user_agent', 'http_host', 'http/1.', '.htpasswd', '.htaccess', '.history',
+	'halt ', '=halt', '/home/ftp', '/home/www', 'http_', 'http request', 'http-equiv',
+	
+	// I
+	'insert ', 'insert into', '&icq', '.inc.php', 'img src', '.inc', 'install.php', 'init ', '<iframe', '<img',
+	'innerhtml', 'innerjoin', 'inner join', 'id ', 'include ', 'include=', 'index.php?error=<',
+
+	// J
+	'javascript\://', 'javascript:', 'javascript.', 'javascript\\://', '.jsp', '.js', 'jsessionid',
+	
+	// K
+	'kill ', ' kill', 'kill', 'kill(', 'killall',
+    
+ 	// L
+ 	'locate ', 'locate(', ' like', 'like ', 'like', 'lsof ', 'load ', 'ls ', 'level=',
+    
+	// M
+	'mail ', 'mdir ', ' mdir', 'mdir(', 'mcd ', 'mrd ', ' mcd', ' mrd', 'mcd(', 'mrd(', 'mcd=', 'mrd=', 'mv ', 'mv(',
+	'motd ', 'mod_gzip_status', '/modules', 'modules/', '/mod', 'mod/', '<meta', 'msdasql','msys', '/mail',
+	'mocha:',		
+
+	// N
+	'nigga(', ' nigga', 'nigga ', 'nigga', 'new_password', 'nc.exe', '~nobody',
+    
+  	// O
+  	'org.apache', 'onabort', 'onblur', 'onchange', 'onclick', 'ondblclick', 'ondragdrop', 'onerror',
+	'onfocus', 'onkeydown', 'onkeypress', 'onload', 'onmouse', 'onmove', 'onreset', 'onresize', 'onselect', 'onsubmit',
+	'onunload', 'onreadystatechange', 'objectclass', 'objectcategory', '<object', 'or ', 'openquery', 'openrowset', 'onkeyup',
+	'order=', 'order',
+    
+  	// P
+  	'/password', 'passwd ', ' passwd', 'passwd(', 'passwd', 'perl ', 'perl', 'ping ', '.pl', 'powerdown ', '/perl',
+	'_php', 'php_', 'phpinfo()', 'phpadmin', 'passthru(', 'popen(', 'phpmyadmin', 'pwd ', 'phpinfo', 'php:',
+	'phpb8b4f2a0', 
+    
+  	// R
+	'rush=', ' rush', 'rush ', 'rush', 'rm ', ' rm', 'rm(', 'rmdir ', 'rmdir(', '$_request', '$request', '_request',
+	'~root', 'reboot ', '=reboot', '/robot.txt', 'root_path', 'Redirect 302 /a.jpg',
+	
+	// S
+	'select ', 'select', '.system', 'servlet', 'server-info', 'server-status', 'secure_site', '/servlet/con',
+	'select from', 'select from', 'sql=', '_server', 'server_', 'server[', '.system', 'system(', '.sh', 'setup.php',
+	'sysobjects', 'syscolums', 'syslogins', 'sysxlogins','<script', '<script>','sqloledb', 'secure_site, ok', 'style ', 'shell',
+	'scriptlet.', 'String.fromCharCode', 'says,', 'Set-Cookie', 'sid=<script', 'sid=http', 'sid=//',
+			
+	// T
+	'telnet ', 'traceroute ', 'tracert ', '<textarea', 'total ', 
+	
+	// U
+	'+UNION+', '/**/UNION', 'UNION/**/', 'union ', ' union', 'union', 'union(', 'union=', '/union', 'uname\\x20-a',
+	'uname\x20-a', '/usr/bin/id', '/usr/bin', '/usr/x11r6/bin/xterm', 'update ', 'uname ',
+	'url ', 'user_type', 'url=data:text/html;base64', 'URL=http://;URL=',
+
+	// V
+	'vi(', 'vi ', 'vbscript:', 'vbscript.', 'vbscript:msgbox',
+
+	// W
+	'wget ', ' wget', 'wget', 'wget(', 'window.open', 'wwwacl', 'www/',  
+
+	// X
+	'xp_enumdsn', 'xp_availablemedia', 'xp_filelist', 'xp_cmdshell', 'x5cx',  'xmlhttp', 'xp_filelist', 'xterm',
+
+    
+   		// Z
+
+
+	//special characters
+	'iso-8859', 'iso-8859-1', 'iso-8859-15', 'utf-8', 'iso-',
+
+	//special site
+	'yahoo.', 'lycos.', 'fireball.', 'google.',
+
+	//overall string
+	'phpbb_root_path=http://', 'absolute_path=http'
+
+	//end
+    );
+?>

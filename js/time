@@ -1,0 +1,92 @@
+ 
+	$sql = "select * from bid_account_bidding where user_id = $userid and bidpack_buy_date >= '" . date("Y-m-d H:i:s", strtotime("-3 months")) . "'";
+
+
+		if(db_num_rows(db_query($sql)) >=1){
+
+		$sql = "select * from bid_account_bidding where user_id = $userid and bidpack_buy_date >= '" . date("Y-m-d H:i:s", strtotime("-3 months")) . "' order by auction_id asc";
+
+		  $qry = $this->db->executeQuery($sql);
+		  echo db_error();
+		  $max_time_as_high_bidder = db_fetch_object(db_query("select * from user_ranking_rules where row_to_match = 'time_as_high_bidder' order by min_amount desc limit 1"));
+		  while($time_as_bidder <= $max_time_as_high_bidder->min_amount){
+		  while($row = db_fetch_array($qry)){
+		  
+		  
+		    if(db_num_rows($this->db->executeQuery("select * from bid_account_bidding where auction_id = $row[auction_id] and user_id != $userid and id > $row[id]")) >= 1){
+		    
+			$time_as_bidder = $time_as_bidder + $this->timeAsHighBidder($userid, $row['auction_id'], $now, '', $time_as_bidder);
+		    
+		    }else{
+			if(db_num_rows($this->db->executeQuery("select * from auction where auc_status = 2 and auctionID = $row[auction_id]")) > 0){
+			
+			$time1 = new DateTime($now);
+			$time2 = new DateTime($row['bidpack_buy_date']);
+			$interval = $time2->diff($time1);
+
+			      $time_diff = number_format($interval->format('%s'), 0, '', '');
+						  $time_as_bidder = $time_diff + $time_as_bidder;
+			      
+			      //$time_as_bidder = ( - strtotime()) + $time_as_bidder;
+			  }
+		    }
+		  
+		  }
+		  }
+
+		  echo db_error();
+		  
+		      $sql = "select * from user_ranking_rules where min_amount <= '" . $time_as_bidder . "' and row_to_match = 'time_as_high_bidder' order by min_amount desc limit 1";
+		    
+		      $qry = $this->db->executeQuery($sql);
+		      
+		      $row = db_fetch_array($qry);
+		    
+		      $high = $row;
+		      
+		      $this->setUserLevels($userid, $row);
+		  $level_data[$i] = $row;
+		  
+		  
+		  
+		  $time_as_bidder = number_format($time_as_bidder, 0, '', '');
+		  
+		  
+		  
+		
+		  if($time_as_bidder >= $max_time_as_high_bidder->min_amount){
+		  $level_data[$i]['maxed_out'] = 'Congratulations you have maxed out!';
+		  
+		  
+		  }else{	      
+		      
+		    $next_sql = $this->db->executeQuery("select * from user_ranking_rules where row_to_match = 'time_as_high_bidder' and min_amount > '" . $time_as_bidder . "' order by min_amount asc limit 1");
+		    $rowhb = db_fetch_array($next_sql);
+		
+		    $temp_spent = $this->secondsToTime($time_as_bidder);
+		  
+		
+		    $level_data[$i]['current_time'] = $now;
+		    $level_data[$i]['time_as_high_bidder'] = $time_as_bidder;
+		  
+		  
+		    
+		  // $level_data[$i]['time_as_high_bidder'] = $time_as_bidder['d'] . ':' . $time_as_bidder['h'] . ':' . $time_as_bidder['m'] . ':' . $time_as_bidder['s'];
+		    $next =  number_format($rowhb['min_amount'],0, '', '') - number_format($time_as_bidder,0, '', '');
+		    $next = $this->secondsToTime($next);
+		    
+		    $level_data[$i]['min_amount'] = $temp_spent['d'] . ':' . $temp_spent['h'] . ':' . $temp_spent['m'] . ':' . $temp_spent['s'];
+		    
+		    
+		    $level_data[$i]['next']['min_amount'] = $next['d'] . ':' . $next['h'] . ':' . $next['m'] . ':' . $next['s'];
+		    
+		    
+		    $level_data[$i]['next']['needed']=  $next['d'] . ':' . $next['h'] . ':' . $next['m'] . ':' . $next['s'];
+		    
+		    $level_data[$i]['next']['row_to_match'] = str_replace("time", "", str_replace("_", " ", $rowhb['row_to_match']));
+		    
+		    $level_data[$i]['next']['free_bids_awarded'] = $rowhb['free_bids_awarded'];
+		    $level_data[$i]['next']['bids_awarded'] = $rowhb['bids_awarded'];
+		    $level_data[$i]['next']['rank_name'] = $rowhb['rank_name'];	  
+	      }
+	    }

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PHP Setup Wizard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="expires" content="0"/>
+<meta name="robots" content="index,follow"/>
+<meta name="author" content="Thorsteinn Saevar" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+<!-- 
+	===================================================
+	PHP Setup Wizard uses "Nuvola Icon Theme" images:
+	===================================================
+	Title:	Nuvola Icon Theme For Kde 3.X
+	Author:	David Vignoni | Icon King
+	Site:	http://www.Icon-King.com
+	===================================================
+-->
+</head>
+<body>
+<div id="container">
+
+	<div id="steps">
+	<ul class="steps">
+<li class="okay"><a href="00.html">PHP Extension Test</a></li>
+<li class="okay"><a href="01.html">File Permissions Test</a></li>
+<li class="okay"><a href="02.html">Introduction</a></li>
+<li class="okay"><a href="03.html">Terms Of Use Agreement</a></li>
+<li class="okay"><a href="04.html">Select Language</a></li>
+<li class="now"><a href="05.html">Select Timezone</a></li>
+<li class="wait"><a href="06_1.html">Server Connection [1]</a></li>
+<li class="wait"><a href="06_2.html">Server Connection [2]</a></li>
+<li class="wait"><a href="07.html">Database Selection</a></li>
+<li class="wait"><a href="08.html">Database Access Test</a></li>
+<li class="wait"><a href="09.html">Table Prefix</a></li>
+<li class="wait"><a href="10_1.html">Install Database Tables [1]</a></li>
+<li class="wait"><a href="10_2.html">Install Database Tables [2]</a></li>
+<li class="wait"><a href="11_1.html">Create Administrator Account [1]</a></li>
+<li class="wait"><a href="11_2.html">Create Administrator Account [2]</a></li>
+<li class="wait"><a href="12.html">Create Configuration File</a></li>
+<li class="wait"><a href="13_1.html">All done! [1]</a></li>
+<li class="wait"><a href="13_2.html">All done! [2]</a></li>
+	</ul>&nbsp;
+	</div>
+
+	<div id="content">
+		<div id="installer">
+<h1 class="hicon timezone">Select Timezone</h1> 
+<p>Assuming that you have a "timezone" feature in your system already, you might want to design this step yourself to make it fit correctly with your system.</p> 
+<form name="form2" action="06_1.html" method="get"> 
+<input type="hidden" id="step" name="step" value="dbserverlogon" /> 
+<h3>Select timezone:</h3> 
+<select name="timezone"> 
+<option value="-1200">(GMT-12:00) International Date Line West</option> 
+<option value="-1100">(GMT-11:00) Coordinated Universal Time-11</option> 
+<option value="-1100">(GMT-11:00) Samoa</option> 
+<option value="-1000">(GMT-10:00) Hawaii</option> 
+<option value="-900">(GMT-09:00) Alaska</option> 
+<option value="-800">(GMT-08:00) Baja California</option> 
+<option value="-800">(GMT-08:00) Pacific Time (US & Canada)</option> 
+<option value="-700">(GMT-07:00) Arizona</option> 
+<option value="-700">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option> 
+<option value="-700">(GMT-07:00) Mountain Time (US & Canada)</option> 
+<option value="-6000">(GMT-06:00) Central America</option> 
+<option value="-600">(GMT-06:00) Central Time (US & Canada)</option> 
+<option value="-600">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option> 
+<option value="-600">(GMT-06:00) Saskatchewan</option> 
+<option value="-500">(GMT-05:00) Bogota, Lima, Quito</option> 
+<option value="-500">(GMT-05:00) Eastern Time (US & Canada)</option> 
+<option value="-500">(GMT-05:00) Indiana (East)</option> 
+<option value="-430">(GMT-04:30) Caracas</option> 
+<option value="-400">(GMT-04:00) Asuncion</option> 
+<option value="-400">(GMT-04:00) Atlantic Time (Canada)</option> 
+<option value="-400">(GMT-04:00) Cuiaba</option> 
+<option value="-400">(GMT-04:00) Georgetown, La Paz, Manaus, San Juan</option> 
+<option value="-400">(GMT-04:00) Santiago</option> 
+<option value="-330">(GMT-03:30) Newfoundland</option> 
+<option value="-300">(GMT-03:00) Brasilia</option> 
+<option value="-300">(GMT-03:00) Buenos Aires</option> 
+<option value="-300">(GMT-03:00) Cayenne, Fortaleza</option> 
+<option value="-300">(GMT-03:00) Greenland</option> 
+<option value="-300">(GMT-03:00) Montevideo</option> 
+<option value="-200">(GMT-02:00) Coordinated Universal Time-02</option> 
+<option value="-200">(GMT-02:00) Mid-Atlantic</option> 
+<option value="-100">(GMT-01:00) Azores</option> 
+<option value="-100">(GMT-01:00) Cape Verde Is.</option> 
+<option value="0">(GMT) Casablanca</option> 
+<option value="0">(GMT) Coordinated Universal Time</option> 
+<option value="0" selected>(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option> 
+<option value="0">(GMT) Monrovia, Reykjavik</option> 
+<option value="100">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option> 
+<option value="100">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option> 
+<option value="100">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option> 
+<option value="100">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option> 
+<option value="100">(GMT+01:00) West Central Africa</option> 
+<option value="200">(GMT+02:00) Amman</option> 
+<option value="200">(GMT+02:00) Athens, Bucharest, Istanbul</option> 
+<option value="200">(GMT+02:00) Beirut</option> 
+<option value="200">(GMT+02:00) Cairo</option> 
+<option value="200">(GMT+02:00) Harare, Pretoria</option> 
+<option value="200">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option> 
+<option value="200">(GMT+02:00) Jerusalem</option> 
+<option value="200">(GMT+02:00) Minsk</option> 
+<option value="200">(GMT+02:00) Windhoek</option> 
+<option value="300">(GMT+03:00) Baghdad</option> 
+<option value="300">(GMT+03:00) Kuwait, Riyadh</option> 
+<option value="300">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option> 
+<option value="300">(GMT+03:00) Nairobi</option> 
+<option value="330">(GMT+03:30) Tehran</option> 
+<option value="400">(GMT+04:00) Abu Dhabi, Muscat</option> 
+<option value="400">(GMT+04:00) Baku</option> 
+<option value="400">(GMT+04:00) Port Louis</option> 
+<option value="400">(GMT+04:00) Tbilisi</option> 
+<option value="400">(GMT+04:00) Yerevan</option> 
+<option value="430">(GMT+04:30) Kabul</option> 
+<option value="500">(GMT+05:00) Ekaterinburg</option> 
+<option value="500">(GMT+05:00) Islamabad, Karachi</option> 
+<option value="500">(GMT+05:00) Tashkent</option> 
+<option value="530">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option> 
+<option value="530">(GMT+05:30) Sri Jayawardenepura</option> 
+<option value="545">(GMT+05:45) Kathmandu</option> 
+<option value="600">(GMT+06:00) Astana</option> 
+<option value="600">(GMT+06:00) Dhaka</option> 
+<option value="600">(GMT+06:00) Novosibirsk</option> 
+<option value="630">(GMT+06:30) Vangon (Rangoon)</option> 
+<option value="700">(GMT+07:00) Bangkok, Hanoi, Jakarta</option> 
+<option value="700">(GMT+07:00) Krasnoyarsk</option> 
+<option value="800">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option> 
+<option value="800">(GMT+08:00) Irkutsk</option> 
+<option value="800">(GMT+08:00) Kuala Lumpur, Singapore</option> 
+<option value="800">(GMT+08:00) Perth</option> 
+<option value="800">(GMT+08:00) Taipei</option> 
+<option value="800">(GMT+08:00) Ulaanbaatar</option> 
+<option value="900">(GMT+09:00) Osaka, Sapporo, Tokyo</option> 
+<option value="900">(GMT+09:00) Seoul</option> 
+<option value="900">(GMT+09:00) Yakutsk</option> 
+<option value="930">(GMT+09:30) Adelaide</option> 
+<option value="930">(GMT+09:30) Darwin</option> 
+<option value="1000">(GMT+10:00) Brisbane</option> 
+<option value="1000">(GMT+10:00) Canberra, Melbourne, Sydney</option> 
+<option value="1000">(GMT+10:00) Guam, Port Moresby</option> 
+<option value="1000">(GMT+10:00) Hobart</option> 
+<option value="1000">(GMT+10:00) Vladivostok</option> 
+<option value="1100">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option> 
+<option value="1200">(GMT+12:00) Auckland, Wellington</option> 
+<option value="1200">(GMT+12:00) Coordinated Universal Time+12</option> 
+<option value="1200">(GMT+12:00) Fiji</option> 
+<option value="1200">(GMT+12:00) Petropavlovsk-Kamchatsky</option> 
+<option value="1300">(GMT+13:00) Nukualofa</option> 
+</select><button type="button" class="btn" name="button" onClick="javascript:location.href='04.html'" >Back</button> 
+<input type="submit" class="btn" name="submit" value="Next" /> 
+</form> 
+		</div>
+		<div id="footer">
+
+			&copy; Your company 2010 | PHP Setup Wizard
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

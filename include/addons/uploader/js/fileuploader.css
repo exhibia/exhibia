@@ -1,0 +1,269 @@
+/*
+ * VERSION 2.1
+ * Original version: 1.0 © 2010 Andrew Valums ( andrew(at)valums.com )
+ * Current Maintainer (2.0+): 2012, Ray Nicholus ( fineuploader(at)garstasio.com )
+ *
+ * Licensed under MIT license, GNU GPL 2 or later, GNU LGPL 2 or later, see license.txt.
+ */
+td .qq-uploader, div .qq-uploader {
+    position: relative;
+    width: 100%;
+}
+td .qq-upload-button, div.qq-upload-button {
+    display: block;
+    /*or inline-block*/
+    width: 105px;
+    padding: 7px 0;
+    text-align: center;
+    background: #880000;
+    border-bottom: 1px solid #DDD;
+    color: #FFF;
+}
+td .qq-upload-button-hover, div .qq-upload-button-hover {
+    background: #CC0000;
+}
+td .qq-upload-button-focus, div .qq-upload-button-focus {
+    outline: 1px dotted #000000;
+}
+td .qq-upload-drop-area, td .qq-upload-extra-drop-area, div .qq-upload-extra-drop-area, div .qq-upload-drop-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 30px;
+    z-index: 2;
+    background: #FF9797;
+    text-align: center;
+}
+td .qq-upload-drop-area span, div .qq-upload-drop-area span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -8px;
+    font-size: 16px;
+}
+td .qq-upload-extra-drop-area, div .qq-upload-extra-drop-area {
+    position: relative;
+    margin-top: 50px;
+    font-size: 16px;
+    padding-top: 30px;
+    height: 20px;
+    min-height: 40px;
+}
+td .qq-upload-drop-area-active, div .qq-upload-drop-area-active {
+    background: #FF7171;
+}
+td .qq-upload-list, div .qq-upload-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+td .qq-upload-list li, div .qq-upload-list li {
+    margin: 0;
+    padding: 9px;
+    line-height: 15px;
+    font-size: 16px;
+    background-color: #FFF0BD;
+}
+td .qq-upload-file, td .qq-upload-spinner, td .qq-upload-size, td .qq-upload-cancel, td .qq-upload-failed-text, td .qq-upload-finished, div .qq-upload-file {
+    margin-right: 12px;
+}
+td .qq-upload-file {
+}
+td .qq-upload-spinner {
+    display: inline-block;
+    background: url("loading.gif");
+    width: 15px;
+    height: 15px;
+    vertical-align: text-bottom;
+}
+td .qq-upload-finished {
+    display:none;
+    width:15px;
+    height:15px;
+    vertical-align:text-bottom;
+}
+td .qq-upload-size, td .qq-upload-cancel {
+    font-size: 12px;
+    font-weight: normal;
+}
+td .qq-upload-failed-text {
+    display: none;
+    font-style: italic;
+    font-weight: bold;
+}
+td .qq-upload-failed-icon {
+    display:none;
+    width:15px;
+    height:15px;
+    vertical-align:text-bottom;
+}
+td .qq-upload-fail td .qq-upload-failed-text {
+    display: inline;
+}
+td .qq-upload-list litd .qq-upload-success {
+    background-color: #5DA30C;
+    color: #FFFFFF;
+}
+td .qq-upload-list litd .qq-upload-fail {
+    background-color: #D60000;
+    color: #FFFFFF;
+}
+td .qq-progress-bar {
+    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(50%,rgba(41,137,216,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
+    width: 0%;
+    height: 15px;
+    border-radius: 6px;
+    margin-bottom: 3px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * VERSION 2.1
+ * Original version: 1.0 © 2010 Andrew Valums ( andrew(at)valums.com )
+ * Current Maintainer (2.0+): 2012, Ray Nicholus ( fineuploader(at)garstasio.com )
+ *
+ * Licensed under MIT license, GNU GPL 2 or later, GNU LGPL 2 or later, see license.txt.
+ */
+p .qq-uploader {
+    position: relative;
+    width: 100%;
+}
+p .qq-upload-button {
+    display: block;
+    /*or inline-block*/
+
+    padding: 7px 0;
+    text-align: center;
+    background: transparent url('./uploads/upload.png') no-repeat;
+    
+    color: #FFF;
+}
+
+p .qq-upload-drop-area, p .qq-upload-extra-drop-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 30px;
+    z-index: 2;
+  
+    text-align: center;
+}
+p .qq-upload-drop-area span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -8px;
+    font-size: 16px;
+}
+p .qq-upload-extra-drop-area {
+    position: relative;
+    margin-top: 50px;
+    font-size: 16px;
+    padding-top: 30px;
+    height: 20px;
+    min-height: 40px;
+}
+p .qq-upload-drop-area-active {
+    background: #FF7171;
+}
+p .qq-upload-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+p .qq-upload-list li {
+    margin: 0;
+    padding: 9px;
+    line-height: 15px;
+    font-size: 16px;
+    background-color: #FFF0BD;
+}
+p .qq-upload-file, p .qq-upload-spinner, p .qq-upload-size, p .qq-upload-cancel, p .qq-upload-failed-text, p .qq-upload-finished {
+    margin-right: 12px;
+}
+p .qq-upload-file {
+}
+p .qq-upload-spinner {
+    display: inline-block;
+    background: url("loading.gif");
+    width: 15px;
+    height: 15px;
+    vertical-align: text-bottom;
+}
+p .qq-upload-finished {
+    display:none;
+    width:15px;
+    height:15px;
+    vertical-align:text-bottom;
+}
+p .qq-upload-size, p .qq-upload-cancel {
+    font-size: 12px;
+    font-weight: normal;
+}
+p .qq-upload-failed-text {
+    display: none;
+    font-style: italic;
+    font-weight: bold;
+}
+p .qq-upload-failed-icon {
+    display:none;
+    width:15px;
+    height:15px;
+    vertical-align:text-bottom;
+}
+p .qq-upload-fail p .qq-upload-failed-text {
+    display: inline;
+}
+p .qq-upload-list lip .qq-upload-success {
+    background-color: #5DA30C;
+    color: #FFFFFF;
+}
+p .qq-upload-list lip .qq-upload-fail {
+    background-color: #D60000;
+    color: #FFFFFF;
+}
+p .qq-progress-bar {
+    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(50%,rgba(41,137,216,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
+    width: 0%;
+    height: 15px;
+    border-radius: 6px;
+    margin-bottom: 3px;
+    display: none;
+}

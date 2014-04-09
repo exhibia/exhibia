@@ -1,0 +1,68 @@
+<table style="width:800px; border:1px solid #999999; background-color:#c2e7d8" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="10px">&nbsp;</td>
+		<td style="text-align:left; line-height:20px"><b>!--txt_help1--</b></td>
+	</tr>
+</table>
+<table style="width:800px; height:150px; border:1px solid #999999; background-color:#E7E7E7" cellspacing="15" cellpadding="0">
+	<tr>
+		<td style="text-align:justify; vertical-align:top">
+    		<u><b>!--txt_help2--</b></u><ul>!--txt_help3--</ul>
+			
+			<u><b>!--txt_help4--</b></u><ul>!--txt_help5--</ul>
+			
+			<u><b>!--txt_help6--</b></u><ul>!--txt_help7--</ul>
+			
+			<u><b>!--txt_help8--</b></u><ul>!--txt_help9--</ul>
+			
+			<u><b>!--txt_help10--</b></u><ul>
+			!--txt_help11-- <b>!--ct_filedir--/log/</b><br /><br />
+				<ol>
+					<li>ct_bots.txt</li>
+					<li>ct_countip.txt</li>
+					<li>ct_ips.txt</li>
+					<li>ct_log.txt</li>
+					<li>ct_log_bots.txt</li>
+					<li>ct_log_ctxtras.txt</li>
+					<li>ct_log_spam.txt</li>
+					<li>ct_spamlist.txt</li>
+					<li>ct_whitelists.txt</li>
+				</ol>
+			</li>
+			</ul>
+	
+			<u><b>!--txt_help12--</b></u><ol>
+			!--txt_help13--<br /><br />
+				<textarea readonly="readonly" cols="85" rows="9">AuthUserFile !--server_document_root--/!--ct_filedir--/log/.htpasswd
+AuthGroupFile /dev/null
+AuthName "CTXtra"
+AuthType Basic
+				
+<Limit GET POST>
+require valid-user
+</Limit></textarea><br /><br />
+			</li>
+			<li>!--txt_help14--<br /><br />
+				<textarea readonly="readonly" cols="85" rows="2">!--ct_db_user--:!--ct_db_pass_crypt--</textarea><br /><br />
+			!--txt_help20--<br /><br />
+				<textarea readonly="readonly" cols="85" rows="2">!--ct_db_user--:!--ct_db_pass--</textarea><br /><br />
+			</li>
+			!--txt_help15--
+			</ol>
+			
+			<u><b>!--txt_help16--</b></u><ul>
+			<li>!--txt_help17--<br /><br />
+			<u>Code:</u><br />
+			<b>&lt;?php echo $ctxtra_footer; ?&gt;</b><br />
+			<br />
+			<u>!--txt_help18--:</u><br />
+			<b>echo $ctxtra_footer;</b><br />
+			<br />
+			<u>!--txt_help18--:</u><br />
+			<b>'.$ctxtra_footer.'</b><br />
+			</li>
+			</ul>
+			!--txt_help19--
+		</td>
+	</tr>
+</table>

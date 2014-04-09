@@ -1,0 +1,1893 @@
+/*! qTip2 - Pretty powerful tooltips - v2.0.0 - 2012-08-14
+* http://craigsworks.com/projects/qtip2/
+* Copyright (c) 2012 Craig Michael Thompson; Licensed MIT, GPL */
+
+/* Core qTip styles */
+.ui-tooltip, .qtip{
+	position: absolute;
+	left: -28000px;
+	top: -28000px;
+	display: none;
+z-index:999999999999999999999999;
+	max-width: 680px;
+	min-width: 50px;
+	width:auto;
+	font-size: 10.5px;
+	line-height: 12px;
+
+	border-width: 0px;
+	border-style: none;
+}
+
+	/* Fluid class for determining actual width in IE */
+	.ui-tooltip-fluid{
+		display: block;
+		visibility: hidden;
+		position: static !important;
+		float: left !important;
+	}
+
+	.ui-tooltip-content{
+		position: relative;
+		padding: 5px 9px;
+		overflow: hidden;
+
+		text-align: left;
+		word-wrap: break-word;
+	}
+
+	.ui-tooltip-titlebar{
+		position: relative;
+		min-height: 14px;
+		padding: 5px 35px 5px 10px;
+		overflow: hidden;
+
+		border-width: 0px;
+		font-weight: bold;
+	}
+
+	.ui-tooltip-titlebar + .ui-tooltip-content{ border-top-width: 0 !important; }
+
+		/* Default close button class */
+		.ui-tooltip-titlebar .ui-state-default{
+			position: absolute;
+			right: 4px;
+			top: 50%;
+			margin-top: -9px;
+
+			cursor: pointer;
+			outline: medium none;
+
+			border-width: 0px;
+			border-style: none;
+		}
+		
+		* html .ui-tooltip-titlebar .ui-state-default{ top: 16px; } /* IE fix */
+
+		.ui-tooltip-titlebar .ui-icon,
+		.ui-tooltip-icon .ui-icon{
+			display: block;
+			text-indent: -1000em;
+			direction: ltr;
+		}
+
+		.ui-tooltip-icon, .ui-tooltip-icon .ui-icon{
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			text-decoration: none;
+		}
+
+			.ui-tooltip-icon .ui-icon{
+				width: 18px;
+				height: 14px;
+
+				text-align: center;
+				text-indent: 0;
+				font: normal bold 10px/13px Tahoma,sans-serif;
+
+				color: inherit;
+				background: transparent none no-repeat -100em -100em;
+			}
+
+
+/* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
+.ui-tooltip-focus{}
+
+/* Applied on hover of tooltips i.e. added/removed on mouseenter/mouseleave respectively */
+.ui-tooltip-hover{}
+
+/* Default tooltip style */
+.ui-tooltip-default{
+ list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+	  width:140px;
+}
+.ui-tooltip-default li{
+ color:#000;
+padding:10px 0 0px 10px; 
+}
+.ui-tooltip-tip {
+
+}
+
+	.ui-tooltip-default .ui-tooltip-titlebar{
+		
+	}
+
+	.ui-tooltip-default .ui-tooltip-icon{
+		border-color: #CCC;
+		background: #F1F1F1;
+		color: #777;
+	}
+	
+	.ui-tooltip-default .ui-tooltip-titlebar .ui-state-hover{
+		border-color: #AAA;
+		color: #111;
+	}
+
+
+/*! Light tooltip style */
+.ui-tooltip-light{
+	background-color: white;
+	border-color: #E2E2E2;
+	color: #454545;
+}
+
+	.ui-tooltip-light .ui-tooltip-titlebar{
+		background-color: #f1f1f1;
+	}
+
+
+/*! Dark tooltip style */
+.ui-tooltip-dark{
+	background-color: #505050;
+	border-color: #303030;
+	color: #f3f3f3;
+}
+
+	.ui-tooltip-dark .ui-tooltip-titlebar{
+		background-color: #404040;
+	}
+
+	.ui-tooltip-dark .ui-tooltip-icon{
+		border-color: #444;
+	}
+
+	.ui-tooltip-dark .ui-tooltip-titlebar .ui-state-hover{
+		border-color: #303030;
+	}
+
+
+/*! Cream tooltip style */
+.ui-tooltip-cream{
+	background-color: #FBF7AA;
+	border:2px solid blue;
+	border-radius:6px;
+	color: blue;
+	background: #ffffff; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2YzZjNmMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f3f3f3), color-stop(51%,#ededed), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+width:350px;
+z-index:999999999999;
+box-shadow: 6px 6px 6px #666;	
+}
+
+	.ui-tooltip-cream .ui-tooltip-titlebar{
+		background-color: #F0DE7D;
+	}
+
+	.ui-tooltip-cream .ui-state-default .ui-tooltip-icon{
+		background-position: -82px 0;
+	}
+
+
+/*! Red tooltip style */
+.ui-tooltip-red{
+	background-color: #F78B83;
+	border-color: #D95252;
+	color: #912323;
+}
+
+	.ui-tooltip-red .ui-tooltip-titlebar{
+		background-color: #F06D65;
+	}
+
+	.ui-tooltip-red .ui-state-default .ui-tooltip-icon{
+		background-position: -102px 0;
+	}
+
+	.ui-tooltip-red .ui-tooltip-icon{
+		border-color: #D95252;
+	}
+
+	.ui-tooltip-red .ui-tooltip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+
+
+/*! Green tooltip style */
+.ui-tooltip-green{
+	background-color: #CAED9E;
+	border-color: #90D93F;
+	color: #3F6219;
+}
+
+	.ui-tooltip-green .ui-tooltip-titlebar{
+		background-color: #B0DE78;
+	}
+
+	.ui-tooltip-green .ui-state-default .ui-tooltip-icon{
+		background-position: -42px 0;
+	}
+
+
+/*! Blue tooltip style */
+.ui-tooltip-blue{
+	background-color: #E5F6FE;
+	border-color: #ADD9ED;
+	color: #5E99BD;
+}
+
+	.ui-tooltip-blue .ui-tooltip-titlebar{
+		background-color: #D0E9F5;
+	}
+
+	.ui-tooltip-blue .ui-state-default .ui-tooltip-icon{
+		background-position: -2px 0;
+	}
+
+
+/* Add shadows to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+.ui-tooltip-shadow{
+	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Add rounded corners to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+.ui-tooltip-rounded,
+.ui-tooltip-tipsy,
+.ui-tooltip-bootstrap{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Youtube tooltip style */
+.ui-tooltip-youtube{
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	
+	-webkit-box-shadow: 0 0 3px #333;
+	-moz-box-shadow: 0 0 3px #333;
+	box-shadow: 0 0 3px #333;
+
+	color: white;
+	border-width: 0;
+
+	background: #4A4A4A;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#4A4A4A),color-stop(100%,black));
+	background-image: -webkit-linear-gradient(top,#4A4A4A 0,black 100%);
+	background-image: -moz-linear-gradient(top,#4A4A4A 0,black 100%);
+	background-image: -ms-linear-gradient(top,#4A4A4A 0,black 100%);
+	background-image: -o-linear-gradient(top,#4A4A4A 0,black 100%);
+}
+
+	.ui-tooltip-youtube .ui-tooltip-titlebar{
+		background-color: #4A4A4A;
+		background-color: rgba(0,0,0,0);
+	}
+	
+	.ui-tooltip-youtube .ui-tooltip-content{
+		padding: .75em;
+		font: 12px arial,sans-serif;
+		
+		filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#4a4a4a,EndColorStr=#000000);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#4a4a4a,EndColorStr=#000000);";
+	}
+
+	.ui-tooltip-youtube .ui-tooltip-icon{
+		border-color: #222;
+	}
+
+	.ui-tooltip-youtube .ui-tooltip-titlebar .ui-state-hover{
+		border-color: #303030;
+	}
+
+
+/* jQuery TOOLS Tooltip style */
+.ui-tooltip-jtools{
+	background: #232323;
+	background: rgba(0, 0, 0, 0.7);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#717171), to(#232323));
+	background-image: -moz-linear-gradient(top, #717171, #232323);
+	background-image: -webkit-linear-gradient(top, #717171, #232323);
+	background-image: -ms-linear-gradient(top, #717171, #232323);
+	background-image: -o-linear-gradient(top, #717171, #232323);
+
+	border: 2px solid #ddd;
+	border: 2px solid rgba(241,241,241,1);
+
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+
+	-webkit-box-shadow: 0 0 12px #333;
+	-moz-box-shadow: 0 0 12px #333;
+	box-shadow: 0 0 12px #333;
+}
+
+	/* IE Specific */
+	.ui-tooltip-jtools .ui-tooltip-titlebar{
+		background-color: transparent;
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#717171,endColorstr=#4A4A4A);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#717171,endColorstr=#4A4A4A)";
+	}
+	.ui-tooltip-jtools .ui-tooltip-content{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4A4A4A,endColorstr=#232323);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#4A4A4A,endColorstr=#232323)";
+	}
+
+	.ui-tooltip-jtools .ui-tooltip-titlebar,
+	.ui-tooltip-jtools .ui-tooltip-content{
+		background: transparent;
+		color: white;
+		border: 0 dashed transparent;
+	}
+
+	.ui-tooltip-jtools .ui-tooltip-icon{
+		border-color: #555;
+	}
+
+	.ui-tooltip-jtools .ui-tooltip-titlebar .ui-state-hover{
+		border-color: #333;
+	}
+
+
+/* Cluetip style */
+.ui-tooltip-cluetip{
+	-webkit-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+
+	background-color: #D9D9C2;
+	color: #111;
+	border: 0 dashed transparent;
+}
+
+	.ui-tooltip-cluetip .ui-tooltip-titlebar{
+		background-color: #87876A;
+		color: white;
+		border: 0 dashed transparent;
+	}
+	
+	.ui-tooltip-cluetip .ui-tooltip-icon{
+		border-color: #808064;
+	}
+	
+	.ui-tooltip-cluetip .ui-tooltip-titlebar .ui-state-hover{
+		border-color: #696952;
+		color: #696952;
+	}
+
+
+/* Tipsy style */
+.ui-tooltip-tipsy{
+	background: black;
+	background: rgba(0, 0, 0, .87);
+
+	color: white;
+	border: 0 solid transparent;
+
+	font-size: 11px;
+	font-family: 'Lucida Grande', sans-serif;
+	font-weight: bold;
+	line-height: 16px;
+	text-shadow: 0 1px black;
+}
+
+	.ui-tooltip-tipsy .ui-tooltip-titlebar{
+		padding: 6px 35px 0 10;
+		background-color: transparent;
+	}
+
+	.ui-tooltip-tipsy .ui-tooltip-content{
+		padding: 6px 10;
+	}
+	
+	.ui-tooltip-tipsy .ui-tooltip-icon{
+		border-color: #222;
+		text-shadow: none;
+	}
+
+	.ui-tooltip-tipsy .ui-tooltip-titlebar .ui-state-hover{
+		border-color: #303030;
+	}
+
+
+/* Tipped style */
+.ui-tooltip-tipped{
+	border: 3px solid #959FA9;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+	background-color: #F9F9F9;
+	color: #454545;
+
+	font-weight: normal;
+	font-family: serif;
+}
+
+	.ui-tooltip-tipped .ui-tooltip-titlebar{
+		border-bottom-width: 0;
+
+		color: white;
+		background: #3A79B8;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#3A79B8), to(#2E629D));
+		background-image: -webkit-linear-gradient(top, #3A79B8, #2E629D);
+		background-image: -moz-linear-gradient(top, #3A79B8, #2E629D);
+		background-image: -ms-linear-gradient(top, #3A79B8, #2E629D);
+		background-image: -o-linear-gradient(top, #3A79B8, #2E629D);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#3A79B8,endColorstr=#2E629D);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#3A79B8,endColorstr=#2E629D)";
+	}
+
+	.ui-tooltip-tipped .ui-tooltip-icon{
+		border: 2px solid #285589;
+		background: #285589;
+	}
+
+		.ui-tooltip-tipped .ui-tooltip-icon .ui-icon{
+			background-color: #FBFBFB;
+			color: #555;
+		}
+
+
+/**
+ * Twitter Bootstrap style.
+ *
+ * Tested with IE 8, IE 9, Chrome 18, Firefox 9, Opera 11.
+ * Does not work with IE 7.
+ */
+.ui-tooltip-bootstrap{
+	font-size: 13px;
+	line-height: 18px;
+
+	color: #333333;
+	background-color: #ffffff;
+
+
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+	.ui-tooltip-bootstrap .ui-tooltip-titlebar{
+		font-size: 18px;
+		line-height: 22px;
+
+		border-bottom: 1px solid #ccc;
+		background-color: transparent;
+	}
+
+		.ui-tooltip-bootstrap .ui-tooltip-titlebar .ui-state-default{
+			right: 9px; top: 49%;
+			border-style: none;
+		}
+
+	.ui-tooltip-bootstrap .ui-tooltip-icon{
+		background: white;
+	}
+
+		.ui-tooltip-bootstrap .ui-tooltip-icon .ui-icon{
+			width: auto;
+			height: auto;
+			float: right;
+			font-size: 20px;
+			font-weight: bold;
+			line-height: 18px;
+			color: #000000;
+			text-shadow: 0 1px 0 #ffffff;
+			opacity: 0.2;
+			filter: alpha(opacity=20);
+		}
+
+		.ui-tooltip-bootstrap .ui-tooltip-icon .ui-icon:hover{
+			color: #000000;
+			text-decoration: none;
+			cursor: pointer;
+			opacity: 0.4;
+			filter: alpha(opacity=40);
+		}
+
+
+/* IE9 fix - removes all filters */
+.ui-tooltip:not(.ie9haxors) div.ui-tooltip-content,
+.ui-tooltip:not(.ie9haxors) div.ui-tooltip-titlebar{
+	filter: none;
+	-ms-filter: none;
+}
+
+
+/* Tips plugin */
+.ui-tooltip .ui-tooltip-tip{
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: 10;
+}
+
+	.ui-tooltip .ui-tooltip-tip,
+	.ui-tooltip .ui-tooltip-tip *{
+		position: absolute;
+		
+		line-height: 0.1px !important;
+		font-size: 0.1px !important;
+		color: #123456;
+
+		background: #fff;
+		border: 0 dashed transparent;
+	}
+	
+	.ui-tooltip .ui-tooltip-tip canvas{ top: 0; left: 0;z-index:9999999; }
+
+
+
+/* Modal plugin */
+#qtip-overlay{
+	position: fixed;
+	left: -10000em;
+	top: -10000em;
+}
+
+	/* Applied to modals with show.modal.blur set to true */
+	#qtip-overlay.blurs{ cursor: pointer; }
+
+	/* Change opacity of overlay here */
+	#qtip-overlay div{
+		position: absolute;
+		left: 0; top: 0;
+		width: 100%; height: 100%;
+
+		background-color: black;
+
+		opacity: 0.7;
+		filter:alpha(opacity=70);
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	}
+
+.tooltip_css_editor {
+font-size:11px;
+background:rgb(201, 208, 208);
+color:#000;
+border:1px dotted rgb(122, 125, 125);
+font-weight:normal;
+opacity: 0.7;
+filter:alpha(opacity=70);
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
+
+.tooltip_css_editor .ui-tooltip-titlebar {
+  color:#fff;
+  font-size:10px;
+  background:rgb(122, 125, 125);
+  padding:8px 15px 0px 15px;
+  border-radius:6px;
+  height:20px;
+  
+  
+}
+.ex-l-qtip {
+  min-width:720px;
+  width:auto;
+  height:auto;
+  min-height:460px;
+}
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+.sold_class{
+color:red;
+}
+.active_class {
+color:#fff;
+}
+
+
+.blink {
+  color:red;
+}
+.gavel {
+  background-image:url(../img/gavel.gif);
+  background-repeat:no-repeat;
+  min-height:103px;
+   margin-bottom:-103px!important;
+margin-left:20px!important;
+position:absolute;
+z-index:700;
+
+}
+#horizontal-auctions-box .auction-item .gavel,  #ending-auct .auction-item .gavel {
+  font-size:14px;
+  width:180px;
+  text-align:center!important;
+  font-weight:bold;
+ position:relative;
+ 
+ 
+ 
+
+ padding:0;
+ 
+
+ z-index:5000000;
+ color:red;
+}
+
+#slider_box .auction-item-slider .reserve {
+position:relative;
+top:200px;
+left:270px;
+font-weight:bold;
+}
+.timer01 {
+  color:#000;
+}
+#horizontal-auctions-box .auction-item .reserve, #ending-auct .auction-item .reserve {
+  font-size:14px;
+  min-width:220px;
+  max-width:220px;
+  text-align:left;
+  font-weight:bold;
+ position:absolute;
+ top:100px;
+ height:14px;
+float:center;
+ padding:0;
+ left:30px;
+clear:both;
+ z-index:10;
+ color:red;
+ 
+}
+#product-information .auction-item .reserve {
+  font-size:14px;
+  width:220px;
+  text-align:center;
+  font-weight:bold;
+ position:absolute;
+ top:100px;
+ 
+float:left;
+left:-40px;
+ padding:0;
+ 
+
+ z-index:5000;
+ color:red;
+}
+#product-information .auction-item .gavel {
+  font-size:14px;
+  width:180px;
+  text-align:center;
+  font-weight:bold;
+ position:absolute;
+ top:100px;
+ height:14px;
+
+ padding:0;
+ margin:0 0 0 -50px;
+
+ z-index:5000;
+ color:red;
+}
+#bid-products .bid-box .auction-item .xoompi.gavel {
+color: #FF0000;
+font-size: 14px;
+font-weight: bold;
+height: 14px;
+margin: 0 0 0 -50px;
+padding: 0;
+position:relative;
+text-align: center;
+top: 100px;
+width: 180px;
+z-index: 5000;
+}
+#product-information .auction-item .xoompi.gavel {
+color: #FF0000;
+font-size: 14px;
+font-weight: bold;
+height: 14px;
+margin: 0 0 0 -50px;
+padding: 0;
+position:absolute!important;
+text-align: center;
+top: 100px;
+width: 180px;
+z-index: 5000;
+}
+.ending_timer_red {
+  color:red;
+}
+.active_timer_black {
+  color:#000;
+}
+
+.highlight {
+color:#000!important;
+outline:2px solid #00a7e1;
+ 
+
+}
+	
+.left_similar {
+background-image: url("snapbids/left-arrow.png");
+background-repeat: no-repeat;
+display: block;
+left: -20px;
+margin-bottom: -55px;
+min-height: 40px !important;
+min-width: 40px !important;
+position: relative;
+z-index: 50000;
+}
+.right_similar {
+background-image: url("snapbids/right-arrow.png");
+background-repeat: no-repeat;
+display: inline-block;
+left: 90px;
+min-height: 40px !important;
+min-width: 40px !important;
+position: relative;
+top: 15px;
+z-index: 50000;
+margin-bottom: -20px;
+}
+
+
+.bids_icon {
+  
+float: right;
+left: 40px;
+margin-top: -5px;
+position: absolute;
+top: 0;
+z-index: 300;
+}
+.bids_icon.large {
+  width:120px;height:auto;margin-top:-20px;
+  left:80px;
+  
+}
+
+#mybids-box div.bid-box div.bid-content .reserve_text {
+  font-size:12px;
+  margin-bottom:-20px;
+  z-index:10;
+}
+#mybids-box div.bid-box div.bid-content .reserve_icon {
+ position:absolute!important;
+left:155px!important; 
+  
+}
+
+.dealdash.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.pas.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.falconbids.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.snapbids.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.upbids.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.zipbids.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.quibids10.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.quibids15.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.quibids20.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.wavee.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.sticky.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.beezid.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+.bidcacticlasssic.fireworks {
+background-image: url("../img/fireworks1.gif");
+background-position: 20px 0;
+background-repeat: no-repeat;
+margin-bottom: -85px;
+min-height: 120px !important;
+min-width: 100px !important;
+position: relative;
+top: -10px;
+
+}
+
+.h-main .credits .credits-counter {
+  background:url('')!important;
+}
+
+
+
+.qtip-falconbids{
+	background-color: #869786;
+	border-color: #000;
+	color: #fff;
+}
+
+	.qtip-falconbids .qtip-titlebar{
+		background-color: #869786;
+	}
+
+	.qtip-falconbids .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-falconbids .qtip-icon{
+		border-color: #D95252;
+	}
+
+	.qtip-falconbids .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-falconbids .ui-tooltip-content{
+		background-color: #869786;
+	}
+	
+	
+	
+
+
+
+
+.qtip-sticky{
+	background-color: #c4c4c4;
+	border-color: #78b71a;
+	color: #000;
+}
+
+	.qtip-sticky .qtip-titlebar{
+		background-color: #c4c4c4;
+	}
+
+	.qtip-sticky .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-sticky .qtip-icon{
+		border-color: #D95252;
+	}
+
+	.qtip-sticky .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-sticky .ui-tooltip-content{
+		background-color: #c4c4c4;
+	}
+
+
+
+.fixed {
+  position:fixed;
+}
+.qtip-wavee{
+	background-color: #c4c4c4;
+	border-color: #f4a31d;
+	color: #000;
+}
+
+	.qtip-wavee .qtip-titlebar{
+		background-color: #c4c4c4;
+	}
+
+	.qtip-wavee .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-wavee .qtip-icon{
+		border-color: #D95252;
+	}
+
+	.qtip-wavee .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-wavee .ui-tooltip-content{
+		background-color: #c4c4c4;
+	}
+	
+	
+	
+	
+
+.qtip-quibids-20{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-quibids-20 a{
+  color: #fff;
+  
+}
+	.qtip-quibids-20 .ui-tooltip-default, .qtip-quibids-20 .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-quibids-20 .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-quibids-20 .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-quibids-20 .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-quibids-20 .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+
+	
+	
+
+.qtip-pas{
+	background-color: #c4c4c4;
+	border-color: #f4a31d;
+	color: #000;
+}
+
+	.qtip-pas .qtip-titlebar{
+		background-color: #c4c4c4;
+	}
+
+	.qtip-pas .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-pas .qtip-icon{
+		border-color: #D95252;
+	}
+
+	.qtip-pas .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-pas .ui-tooltip-content{
+		background-color: #c4c4c4;
+		text-shadow:none;
+	}	
+
+	
+.qtip-quibids-10{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-quibids-10 a{
+  color: #fff;
+  
+}
+	.qtip-quibids-10 .ui-tooltip-default, .qtip-quibids-10 .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-quibids-10 .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-quibids-10 .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-quibids-10 .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-quibids-10 .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+
+.qtip-quibids-15{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-quibids-15 a{
+  color: #fff;
+  
+}
+	.qtip-quibids-15 .ui-tooltip-default, .qtip-quibids-15 .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-quibids-15 .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-quibids-15 .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-quibids-15 .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-quibids-15 .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-snapbids{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-snapbids a{
+  color: #fff;
+  
+}
+	.qtip-snapbids .ui-tooltip-default, .qtip-snapbids .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-snapbids .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-snapbids .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-snapbids .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-snapbids .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-dealdash{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-dealdash a{
+  color: #fff;
+  
+}
+	.qtip-dealdash .ui-tooltip-default, .qtip-dealdash .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-dealdash .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-dealdash .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-dealdash .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-dealdash .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-upbids{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-upbids a{
+  color: #fff;
+  
+}
+	.qtip-upbids .ui-tooltip-default, .qtip-upbids .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-upbids .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-upbids .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-upbids .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-upbids .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-zipbids{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-zipbids a{
+  color: #fff;
+  
+}
+	.qtip-zipbids .ui-tooltip-default, .qtip-zipbids .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-zipbids .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-zipbids .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-zipbids .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-zipbids .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-beezid{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-beezid a{
+  color: #fff;
+  
+}
+	.qtip-beezid .ui-tooltip-default, .qtip-beezid .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-beezid .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-beezid .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-beezid .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-beezid .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+
+.qtip-bidcacti-classic{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-bidcacti-classic a{
+  color: #fff;
+  
+}
+	.qtip-bidcacti-classic .ui-tooltip-default, .qtip-bidcacti-classic .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-bidcacti-classic .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-bidcacti-classic .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-bidcacti-classic .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-bidcacti-classic .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-xoompi{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-xoompi a{
+  color: #fff;
+  
+}
+	.qtip-xoompi .ui-tooltip-default, .qtip-xoompi .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-xoompi .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-xoompi .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-xoompi .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-xoompi .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-voyages{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-voyages a{
+  color: #fff;
+  
+}
+	.qtip-voyages .ui-tooltip-default, .qtip-voyages .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-voyages .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-voyages .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-voyages .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-voyages .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+.qtip-koodeal{
+	background-color: #449edc;
+	border-color: #007fde;
+	color: #fff;
+}
+.qtip-koodeal a{
+  color: #fff;
+  
+}
+	.qtip-koodeal .ui-tooltip-default, .qtip-koodeal .ui-tooltip-titlebar{
+		background-color: #f26225!important;
+		border-radius:6px;
+		margin-bottom:10px;
+	}
+
+	.qtip-koodeal .qtip-close .qtip-icon{
+		background-position: -102px 0;
+	}
+
+	.qtip-koodeal .qtip-icon{
+		border-color: #000;
+	}
+
+	.qtip-koodeal .qtip-titlebar .ui-state-hover{
+		border-color: #D95252;
+	}
+	
+	.qtip-koodeal .ui-tooltip-content{
+		background-color: #449edc;
+		border-radius:6px;
+		
+	}
+	
+
+	
+/* delay text */
+.delay_text {
+position:relative;
+z-index:500000000!important;
+margin-bottom:-40px!important;
+font-size:14px!important;
+  
+}
+.pas.delay_text {
+position:relative;
+z-index:500000000!important;
+margin: 0 0 -70px 0!important;
+font-size:14px!important;
+  
+}		
+.xoompi.delay_text {
+position:relative;
+z-index:500000000!important;
+margin: 0 0 -70px 0!important;
+font-size:14px!important;
+  
+}	
+/* reserver icon styles */
+.voyages.reserve_icon {
+position: absolute;
+z-index: 5;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/voyages/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+#ending-auct .voyages.reserve_icon {
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: url("../include/addons/icons/voyages/reserve_icon.png");
+background-origin: padding-box;
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: 20px 20px !important;
+max-height: 20px !important;
+min-height: 20px !important;
+min-width: 20px !important;
+position: absolute;
+z-index: 10;
+left: 280px;
+}
+#myqb-auction-body .xoompi.reserve_icon {
+position: relative;
+z-index: 500000000000000000000;
+left: 160px;
+top: -23px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/voyages/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+
+#horizontal-auctions-box .auction-item .xoompi.reserve, #ending-auct .auction-item .xoompi.reserve {
+  clear: both;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  height: 14px;
+  max-width: 220px;
+  min-width: 220px;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  top: 30px;
+  margin: 0 0 -30px 0;
+  left:10px;
+  z-index: 10;
+}
+
+
+
+#horizontal-auctions-box .auction-item .falconbids.counter_index_page {
+
+position:relative!important;
+
+
+
+}
+
+#horizontal-auctions-box .auction-item .falconbids.reserve {
+  clear: both;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  max-height: 14px!important;
+  left: 0px;
+  max-width: 220px;
+  min-width: 220px;
+  padding: 0!important;
+  position: relative !important;
+  text-align: left;
+  top: -50px;
+
+  margin-bottom:-64px!important;
+}
+.pas.reserve_icon {
+background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent;
+background-image: url("../include/addons/icons/quibids-2.0/reserve_icon.png");
+background-origin: padding-box;
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: 20px 20px !important;
+display: block !important;
+left: 140px !important;
+max-height: 20px !important;
+max-width: 20px !important;
+min-height: 20px !important;
+min-width: 20px !important;
+position: relative;
+top: 32px !important;
+width: 20px !important;
+margin: -20px 0 0 0!important;
+}
+
+.falconbids.reserve_icon {
+background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent;
+background-image: url("../include/addons/icons/quibids-2.0/reserve_icon.png");
+background-origin: padding-box;
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: 20px 20px !important;
+display: block !important;
+left: 140px !important;
+max-height: 20px !important;
+max-width: 20px !important;
+min-height: 20px !important;
+min-width: 20px !important;
+position: relative;
+top: 32px !important;
+width: 20px !important;
+z-index: 2147483647 !important;
+margin: -20px 0 0 0!important;
+}
+
+
+
+
+
+
+
+
+
+.dealdash.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+
+.qubids-10.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.quibids-15.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.quibids-20.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.sticky.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.wavee.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 140px;
+top: 180px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.upbids.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.zipbids.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.bidcacti-classic.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.beezid.reserve_icon {
+position: absolute;
+z-index: 500000000;
+left: 160px;
+top: 3px;
+min-height: 20px!important;
+min-width: 20px!important;
+max-height:20px!important;
+background: url('../include/addons/icons/quibids-2.0/reserve_icon.png') no-repeat;
+background-size: 20px 20px!important;
+z-index:10;
+}
+.snapbids.reserve_icon {
+  background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent;
+background-image: url("../include/addons/icons/quibids-2.0/reserve_icon.png");
+background-origin: padding-box;
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: 20px 20px !important;
+display: block !important;
+left: 150px !important;
+max-height: 20px !important;
+max-width: 20px !important;
+min-height: 20px !important;
+min-width: 20px !important;
+position: relative;
+top: -132px !important;
+width: 20px !important;
+z-index: 2147483647 !important;
+margin: -20px 0 0 0!important;
+}
+#horizontal-auctions-box .auction-item .reserve.pas {
+  clear: both;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  max-height: 14px!important;
+  left: 0px;
+  max-width: 220px;
+  min-width: 220px;
+  padding: 0!important;
+  position: relative !important;
+  text-align: left;
+  top: -50px;
+  z-index: 10000000000000;
+  margin-bottom:-124px!important;
+}
+#live_support.container {
+  min-height: 500px !important;
+  position: relative;
+  top: -40px;
+}
+#ui-tooltip-support_container_tooltip {
+  min-height: 500px!important;
+}
+
+
+
+
+/* timer delay text */
+
+.timer_delay {
+  font-size:20px!important;
+  color:red;
+}
+#myqb-auction-body .voyages.gavel {
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+
+background-origin: padding-box;
+background-position: 0 0;
+background-repeat: no-repeat;
+
+left: -10px;
+
+position: relative!important;
+top: 40px;
+z-index: 999999999;
+float: right;
+
+}
+#myqb-auction-body .voyages.reserve_icon {
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: url("../include/addons/icons/voyages/reserve_icon.png");
+background-origin: padding-box;
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: 20px 20px !important;
+left: -10px;
+max-height: 20px !important;
+min-height: 20px !important;
+min-width: 20px !important;
+position: relative;
+top: -40px;
+z-index: 10;
+float: right;
+}
+#ending-auct .voyages.gavel {
+  background-repeat: no-repeat;
+  margin-bottom: -103px !important;
+  min-height: 103px;
+  position: relative;
+  z-index: 700;
+  left: 50px!important;
+  top: 100px!important;
+  float: left;
+}
+.biddingArea .snapbids.reserve_icon {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("../include/addons/icons/quibids-2.0/reserve_icon.png");
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 20px 20px !important;
+  display: block !important;
+  left: 200px !important;
+  margin: -20px 0 0 !important;
+  max-height: 20px !important;
+  max-width: 20px !important;
+  min-height: 20px !important;
+  min-width: 20px !important;
+  position: relative;
+  top: -32px !important;
+  width: 20px !important;
+  z-index: 2147483647 !important;
+}
