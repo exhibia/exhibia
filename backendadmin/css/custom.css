@@ -1,0 +1,105 @@
+/* 
+    Document   : main
+    Created on : 2009-12-27, 22:08:49
+    Author     : PennyAuctionSoft
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#loading {
+	Z-INDEX: 2; LEFT: 38%; VISIBILITY: hidden; POSITION: absolute; TOP: 190px;
+}
+
+.categoryorder{
+    padding:15px;
+    font-size: 12px;
+}
+
+.categoryorder .text{
+
+}
+
+.categoryorder .sp{
+    margin-left: 4px;
+    color: #cccccc;
+}
+
+.folder{
+    border:none;
+    vertical-align:middle;
+}
+
+.clear{
+    clear:both;
+}
+
+.alignCenter{
+    text-align: center;
+}
+
+.alignLeft{
+    text-align:left;
+}
+
+.alignRight{
+    text-align: right;
+}
+
+.newline{
+    position:relative;
+    top:-4px;
+    padding:0px;
+}
+
+.message{
+    font-size: 10px;
+    color:#898C95;
+    display: block;
+}
+
+.currency{
+    color:#FF0000;
+    float:left;
+    font-size: 11px;
+}
+
+
+.input_wrapper_custom{
+    display: block;
+    float: left;
+    vertical-align:middle;
+    text-align: left;
+    width: auto;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+
+.input_wrapper_custom .msg_detail{
+    margin-left:20px;
+}
+
+.input_wrapper_custom img{
+    vertical-align: middle;
+}
+
+.input_wrapper_custom input{
+    background: #fefefe url(layout/site/forms/input_text2.gif) repeat-x;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial;
+    border: 1px solid #d3d3d3;
+    width:80px;
+    font-size: 12px;
+    vertical-align: middle;
+    height:18px;
+}
+
+#product_picture img{
+    margin:auto 5px;
+}

@@ -1,0 +1,130 @@
+<table cellpadding="0" cellspacing="0" width="100%">
+                                                                    <tbody>
+                                                                        <tr style="background-color:#484848">
+                                                                            <td colspan="8">&nbsp;<?=$SubCat?></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <!-- DISPLAY THE SUBCATEGORIES AND ON CLICK GO TO SUB CATEGORIES -->
+                                                                                <?
+                                                                                if($totalcat!="") {
+                                                                                    while($catdisp = db_fetch_array($result)) {
+                                                                                        ?>
+                                                                            <td><?php if($catdisp["products_count"]>0) {?><a class="folder" href="pandl.php?catID=<?=$catdisp["categoryID"];?>"><img alt="" class="folder" src="<?='images/icons/folder.gif'?>"/>&nbsp;&nbsp;<?=$catdisp["name"];?></a><?php } else {?> <img alt="" class="folder" src="<?='images/icons/folder.gif'?>"/>&nbsp;&nbsp;<?=$catdisp["name"];?><?php }?>&nbsp;&nbsp;Products : <?=$catdisp["products_count"];?></td>
+                                                                        </tr>
+                                                                                    <?
+                                                                                }
+                                                                            }
+                                                                            ?>
+                                                                        <tr>
+                                                                            <td colspan="8">
+                                                                                <!--END DISPLAY CATEGORIES-->
+                                                                            </td>
+                                                                        </tr>
+
+                                                                            <?php
+                                                                            if($total>0) {
+                                                                                ?>
+                                                                        <tr class="th-a">
+                                                                            <th style="width:6%;text-align:center;">No</th>
+                                                                            <th style="width:19%;text-align:center;" class="photo">Image</th>
+                                                                            <th style="width:11%;">Code</th>
+                                                                            <th style="width:22%">Product</th>
+                                                                            <th style="width:15%">Price</th>
+                                                                            <!--<TD  width="10%">InStock</TD>-->
+                                                                            <th style="width:11%">Status</th>
+                                                                            <th style="width:120px;text-align:center">Action</th>
+                                                                        </tr>
+                                                                                <?php
+                                                                            }
+                                                                            ?>
+
+                                                                            <?php
+                                                                            for($i=0;$i<$total;$i++) {
+                                                                                $row = db_fetch_object($result);
+                                                                                $id=$row->productID;
+                                                                                $catID=$row->categoryID;
+                                                                                $image = $row->picture1;
+                                                                                $code=$row->product_code;
+
+                                                                                $name = $row->name;
+                                                                                $price= $Currency.$row->price;
+                                                                                $status = $row->enabled;
+
+                                                                                $cellColor = "";
+                                                                                $cellColor = ConfigcellColor($i);
+
+                                                                                if($PageNo>1) {
+                                                                                    $srno = ($PageNo-1)*10+$i+1;
+                                                                                }
+                                                                                else {
+                                                                                    $srno = $i+1;
+                                                                                }
+
+                                                                                ?>
+                                                                        <tr class="<?php echo ($i % 2!=0)?'first':'second'; ?>" valign="center" style="">
+                                                                            <td style="width:6%;text-align:center;height:70px;">
+                                                                                        <?php echo $srno;?>
+                                                                            </td>
+                                                                            <td style="width:19%;text-align:center;">
+                                                                                <a href="pandl.php?prodID=<?=$id?>&catID=<?=$catID?>" class="product_thumb">
+                                                                                            <?php if($image!="") {
+                                                                                                echo "<img src='../uploads/products/thumbs/thumb_".$image."'>";
+                                                                                            }else {
+                                                                                                echo "&nbsp;";
+                                                                                            } ?>
+                                                                                </a>
+                                                                            </td>
+                                                                            <td style="width:11%;">
+                                                                                        <?php if($code!="") {
+                                                                                            echo $code;
+                                                                                        }else {
+                                                                                            echo "&nbsp;";
+                                                                                        }?>
+                                                                            </td>
+                                                                            <td style="width:22%;">
+                                                                                <a href="pandl.php?prodID=<?=$id?>&catID=<?=$catID?>" class="product_name">
+                                                                                            <?php if($name!="") {
+                                                                                                echo stripslashes($name);
+                                                                                            }else {
+                                                                                                echo "&nbsp;";
+                                                                                            } ?>
+                                                                                </a>
+                                                                            </td>
+                                                                            <td style="width:15%">
+                                                                                        <?php if($price!="") {
+                                                                                            echo $price;
+                                                                                        }else {
+                                                                                            echo "0.00";
+                                                                                        } ?>
+                                                                            </td>
+                                                                            <td style="width:11%;">
+                                                                                        <?php if($status!="") {
+                                                                                            if($status==1) {
+                                                                                                echo "<font color='green'>Enable</font>";
+                                                                                            }else {
+                                                                                                echo "<font color='red'>Disable</font>";
+                                                                                            }
+                                                                                        }
+                                                                                        else {
+                                                                                            echo "<font color='red'>Not Defined</font>";
+                                                                                        } ?>
+                                                                            </td>
+                                                                            <td style="width:120px;" align="center">
+                                                                                <div class="actions_menu">
+                                                                                    <ul>
+                                                                                        <li>
+                                                                                            <a class="edit" href="addproducts.php?product_edit=<?=$id;?>">Edit</a>
+                                                                                        </li>
+                                                                                        <li><a class="delete" href="" onClick="return OnDeleteAction(<?=$id;?>);">Delete</a></li>
+                                                                                        <li>
+                                                                                            <input type="hidden" id="product_delete_id_<?=$id;?>" name="product_delete_id" value="<?=$id;?>"/>
+                                                                                            <input type="hidden" id="product_delete_cid_<?=$id;?>" name="product_delete_cid" value="<?=$catID;?>"/>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                                <?php }
+                                                                            ?>
+                                                                    </tbody>
+                                                                </table>

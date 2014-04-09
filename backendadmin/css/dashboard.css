@@ -1,0 +1,879 @@
+/* start dashboard */
+@import("../js/dist/jquery.qtip.min.css");
+.dashboard_menu_wrapper {
+    margin: -15px -15px 0 0;
+}
+
+.dashboard_menu {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 0 0px 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+ul.dashboard_menu {
+  padding: 0 0 20px 0;
+}
+.dashboard_menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 103px;
+    height: 101px;
+    background:url(layout/site/dashboard_li.gif) no-repeat 0 0;
+    border-radius:10px 10px 10px 10px;
+    box-shadow:6px 6px 6px #666;
+    float: left;
+    margin: 15px 15px 0 0;
+    position:relative;
+    z-index:999;
+}
+
+.dashboard_menu li:hover {
+    width: 107px;
+    height: 105px;
+ background-size:107px 105px;
+ border-radius:11px 11px 11px 11px;
+    box-shadow:7px 7px 7px #666;
+    float: left;
+    margin: 15px 11px -4px 0;
+   z-index:9999;
+}
+
+
+.dashboard_menu a:link,
+.dashboard_menu a:visited,
+.dashboard_menu a:active
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 20px 3px;
+    color: #2e738c;
+
+}
+
+.dashboard_menu a:hover {
+    color: #0590c2;
+}
+
+.dashboard_menu span {
+    display: block;
+    padding: 77px 7px 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+
+
+.d1 {
+    background-image:url(layout/site/dasboard_icons/d1.gif);
+}
+.d2 {
+    background-image:url(layout/site/dasboard_icons/d2.gif);
+}
+.d3 {
+    background-image:url(layout/site/dasboard_icons/d3.gif);
+}
+.d4 {
+    background-image:url(layout/site/dasboard_icons/d4.gif);
+}
+.d5 {
+    background-image:url(layout/site/dasboard_icons/d5.gif);
+}
+.d6 {
+    background-image:url(layout/site/dasboard_icons/d6.gif);
+}
+.d7 {
+    background-image:url(layout/site/dasboard_icons/d7.gif);
+}
+.d8 {
+    background-image:url(layout/site/dasboard_icons/d8.gif);
+}
+.d9 {
+    background-image:url(layout/site/dasboard_icons/d9.gif);
+}
+.d10 {
+    background-image:url(layout/site/dasboard_icons/d10.gif);
+}
+.d11 {
+    background-image:url(layout/site/dasboard_icons/d11.gif);
+}
+.d12 {
+    background-image:url(layout/site/dasboard_icons/d12.gif);
+}
+.account1 {
+    background-image:url(layout/site/dasboard_icons/image89.png);
+    background-position: 10px;
+}
+
+.account2 {
+    background-image:url(layout/site/dasboard_icons/image90.png);
+    background-position: 10px;
+}
+.account3 {
+    background-image:url(layout/site/dasboard_icons/image91.png);
+    background-position: 10px;
+}
+.upgrades {
+    background-image:url(layout/site/dasboard_icons/upgrades.png);
+    background-position: 10px;
+}
+.account4 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+.account5 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+.account6 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+.account7 {
+    background-image:url(layout/site/dasboard_icons/image94.png);
+    background-position: 10px;
+}
+.account8 {
+    background-image:url(layout/site/dasboard_icons/image95.png);
+    background-position: 10px;
+}
+.account9 {
+    background-image:url(layout/site/dasboard_icons/image98.png);
+    background-position: 10px;
+}
+.account10 {
+    background-image:url(layout/site/dasboard_icons/image97.png);
+    background-position: 10px;
+}
+
+.payment1 {
+    background-image:url(layout/site/dasboard_icons/image28.png);
+    background-position: 10px;
+}
+
+.payment2 {
+    background-image:url(layout/site/dasboard_icons/image29.png);
+    background-position: 10px;
+}
+
+
+
+.plugin1 {
+    background-image:url(layout/site/dasboard_icons/image76.png);
+    background-position: 10px;
+}
+.plugin2 {
+    background-image:url(layout/site/dasboard_icons/image88.png);
+    background-position: 10px;
+}
+.plugin3 {
+    background-image:url(layout/site/dasboard_icons/image52.png);
+    background-position: 10px;
+}
+.plugin4 {
+    background-image:url(layout/site/dasboard_icons/image24.png);
+    background-position: 10px;
+}
+.plugin5 {
+    background-image:url(layout/site/dasboard_icons/image41.png);
+    background-position: 10px;
+}
+
+
+
+.email1 {
+    background-image:url(layout/site/dasboard_icons/image62.png);
+    background-position: 10px;
+}
+
+.email2 {
+    background-image:url(layout/site/dasboard_icons/image62.png);
+    background-position: 10px;
+}
+.email3 {
+    background-image:url(layout/site/dasboard_icons/image63.png);
+    background-position: 10px;
+}
+.email4 {
+    background-image:url(layout/site/dasboard_icons/image65.png);
+    background-position: 10px;
+}
+
+.email5 {
+    background-image:url(layout/site/dasboard_icons/image70.png);
+    background-position: 10px;
+}
+.email6 {
+    background-image:url(layout/site/dasboard_icons/image61.png);
+    background-position: 10px;
+}
+.email7 {
+    background-image:url(layout/site/dasboard_icons/image64.png);
+    background-position: 10px;
+}
+.email8 {
+    background-image:url(layout/site/dasboard_icons/image67.png);
+    background-position: 10px;
+}
+.email9 {
+    background-image:url(layout/site/dasboard_icons/image69.png);
+    background-position: 10px;
+}
+.email10 {
+    background-image:url(layout/site/dasboard_icons/image68.png);
+    background-position: 10px;
+}
+
+
+
+
+.golf {
+    background-image:url(layout/site/dasboard_icons/golf.png);
+    background-position: 10px;
+}
+
+
+.design1 {
+    background-image:url(layout/site/dasboard_icons/image96.png);
+    background-position: 10px;
+}
+
+.design2 {
+    background-image:url(layout/site/dasboard_icons/image103.png);
+    background-position: 10px;
+}
+.design3 {
+    background-image:url(layout/site/dasboard_icons/image104.png);
+    background-position: 10px;
+}
+.design4 {
+    background-image:url(layout/site/dasboard_icons/image105.png);
+    background-position: 10px;
+}
+
+
+.database1 {
+    background-image:url(layout/site/dasboard_icons/image18.png);
+    background-position: 10px;
+}
+
+.database2 {
+    background-image:url(layout/site/dasboard_icons/image5.png);
+    background-position: 10px;
+}
+.database3 {
+    background-image:url(layout/site/dasboard_icons/image48.png);
+    background-position: 10px;
+}
+.database4 {
+    background-image:url(layout/site/dasboard_icons/image6.png);
+    background-position: 10px;
+}
+
+.database5 {
+    background-image:url(layout/site/dasboard_icons/image49.png);
+    background-position: 10px;
+}
+.database6 {
+    background-image:url(layout/site/dasboard_icons/image54.png);
+    background-position: 10px;
+}
+.database7 {
+    background-image:url(layout/site/dasboard_icons/image54.png);
+    background-position: 10px;
+}
+.database8 {
+    background-image:url(layout/site/dasboard_icons/image28.png);
+    background-position: 10px;
+}
+.database9 {
+    background-image:url(layout/site/dasboard_icons/image28.png);
+    background-position: 10px;
+}
+.database10 {
+    background-image:url(layout/site/dasboard_icons/image11.png);
+    background-position: 10px;
+}
+
+.database11 {
+    background-image:url(layout/site/dasboard_icons/image12.png);
+    background-position: 10px;
+}
+
+.database12 {
+    background-image:url(layout/site/dasboard_icons/image90.png);
+    background-position: 10px;
+}
+.database13 {
+    background-image:url(layout/site/dasboard_icons/image24.png);
+    background-position: 10px;
+}
+.database14 {
+    background-image:url(layout/site/dasboard_icons/image24.png);
+    background-position: 10px;
+}
+
+.database15 {
+    background-image:url(layout/site/dasboard_icons/image4.png);
+    background-position: 10px;
+}
+.database16 {
+    background-image:url(layout/site/dasboard_icons/image7.png);
+    background-position: 10px;
+}
+
+
+
+
+.store1 {
+    background-image:url(layout/site/dasboard_icons/image17.png);
+    background-position: 10px;
+}
+
+.store2 {
+    background-image:url(layout/site/dasboard_icons/image76.png);
+    background-position: 10px;
+}
+.store3 {
+    background-image:url(layout/site/dasboard_icons/image2.png);
+    background-position: 10px;
+}
+.store4 {
+    background-image:url(layout/site/dasboard_icons/image3.png);
+    background-position: 10px;
+}
+
+.store5 {
+    background-image:url(layout/site/dasboard_icons/image19.png);
+    background-position: 10px;
+}
+.store6 {
+    background-image:url(layout/site/dasboard_icons/image1.png);
+    background-position: 10px;
+}
+.store7 {
+    background-image:url(layout/site/dasboard_icons/image21.png);
+    background-position: 10px;
+}
+.store8 {
+    background-image:url(layout/site/dasboard_icons/image20.png);
+    background-position: 10px;
+}
+.store9 {
+    background-image:url(layout/site/dasboard_icons/image25.png);
+    background-position: 10px;
+}
+.store10 {
+    background-image:url(layout/site/dasboard_icons/image26.png);
+    background-position: 10px;
+}
+
+
+
+
+
+.store11 {
+    background-image:url(layout/site/dasboard_icons/image27.png);
+    background-position: 10px;
+}
+
+.store12 {
+    background-image:url(layout/site/dasboard_icons/image30.png);
+    background-position: 10px;
+}
+.store13 {
+    background-image:url(layout/site/dasboard_icons/image32.png);
+    background-position: 10px;
+}
+.store14 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+.store15 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+
+
+
+
+.cms1 {
+    background-image:url(layout/site/dasboard_icons/image33.png);
+    background-position: 10px;
+}
+
+.cms2 {
+    background-image:url(layout/site/dasboard_icons/image31.png);
+    background-position: 10px;
+}
+.cms3 {
+    background-image:url(layout/site/dasboard_icons/image68.png);
+    background-position: 10px;
+}
+.cms4 {
+    background-image:url(layout/site/dasboard_icons/image87.png);
+    background-position: 10px;
+}
+
+.cms5 {
+    background-image:url(layout/site/dasboard_icons/image34.png);
+    background-position: 10px;
+}
+.cms6 {
+    background-image:url(layout/site/dasboard_icons/image35.png);
+    background-position: 10px;
+}
+.cms7 {
+    background-image:url(layout/site/dasboard_icons/image35.png);
+    background-position: 10px;
+}
+.cms8 {
+    background-image:url(layout/site/dasboard_icons/image38.png);
+    background-position: 10px;
+}
+.cms9 {
+    background-image:url(layout/site/dasboard_icons/image38.png);
+    background-position: 10px;
+}
+.cms10 {
+    background-image:url(layout/site/dasboard_icons/image11.png);
+    background-position: 10px;
+}
+
+
+
+
+
+.cms11 {
+    background-image:url(layout/site/dasboard_icons/image12.png);
+    background-position: 10px;
+}
+
+.cms12 {
+    background-image:url(layout/site/dasboard_icons/image40.png);
+    background-position: 10px;
+}
+.cms13 {
+    background-image:url(layout/site/dasboard_icons/image41.png);
+    background-position: 10px;
+}
+.cms14 {
+    background-image:url(layout/site/dasboard_icons/image41.png);
+    background-position: 10px;
+}
+
+.cms15 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+
+
+.forums1 {
+    background-image:url(layout/site/dasboard_icons/image13.png);
+    background-position: 10px;
+}
+
+.forums2 {
+    background-image:url(layout/site/dasboard_icons/image14.png);
+    background-position: 10px;
+}
+.forums3 {
+    background-image:url(layout/site/dasboard_icons/image15.png);
+    background-position: 10px;
+}
+.forums4 {
+    background-image:url(layout/site/dasboard_icons/image16.png);
+    background-position: 10px;
+}
+
+.forums5 {
+    background-image:url(layout/site/dasboard_icons/image44.png);
+    background-position: 10px;
+}
+.forums6 {
+    background-image:url(layout/site/dasboard_icons/image23.png);
+    background-position: 10px;
+}
+.forums7 {
+    background-image:url(layout/site/dasboard_icons/image94.png);
+    background-position: 10px;
+}
+.forums8 {
+    background-image:url(layout/site/dasboard_icons/image95.png);
+    background-position: 10px;
+}
+.forums9 {
+    background-image:url(layout/site/dasboard_icons/image98.png);
+    background-position: 10px;
+}
+.forums10 {
+    background-image:url(layout/site/dasboard_icons/image97.png);
+    background-position: 10px;
+}
+
+
+
+
+
+.forums11 {
+    background-image:url(layout/site/dasboard_icons/image89.png);
+    background-position: 10px;
+}
+
+.forums12 {
+    background-image:url(layout/site/dasboard_icons/image90.png);
+    background-position: 10px;
+}
+.forums13 {
+    background-image:url(layout/site/dasboard_icons/image91.png);
+    background-position: 10px;
+}
+.forums14 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+.forums15 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+.users1 {
+    background-image:url(layout/site/dasboard_icons/image56.png);
+    background-position: 10px;
+}
+
+.users2 {
+    background-image:url(layout/site/dasboard_icons/image97.png);
+    background-position: 10px;
+}
+.users3 {
+    background-image:url(layout/site/dasboard_icons/image53.png);
+    background-position: 10px;
+}
+.users4 {
+    background-image:url(layout/site/dasboard_icons/image75.png);
+    background-position: 10px;
+}
+
+.users5 {
+    background-image:url(layout/site/dasboard_icons/image84.png);
+    background-position: 10px;
+}
+.users6 {
+    background-image:url(layout/site/dasboard_icons/image74.png);
+    background-position: 10px;
+}
+.users7 {
+    background-image:url(layout/site/dasboard_icons/image84.png);
+    background-position: 10px;
+}
+.users8 {
+    background-image:url(layout/site/dasboard_icons/image57.png);
+    background-position: 10px;
+}
+.users9 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+.users10 {
+    background-image:url(layout/site/dasboard_icons/image83.png);
+    background-position: 10px;
+}
+
+
+
+
+
+.users11 {
+    background-image:url(layout/site/dasboard_icons/image89.png);
+    background-position: 10px;
+}
+
+.users12 {
+    background-image:url(layout/site/dasboard_icons/image90.png);
+    background-position: 10px;
+}
+.users13 {
+    background-image:url(layout/site/dasboard_icons/image91.png);
+    background-position: 10px;
+}
+.users14 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+.users15 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+
+.reports1 {
+    background-image:url(layout/site/dasboard_icons/image50.png);
+    background-position: 10px;
+}
+
+.reports2 {
+    background-image:url(layout/site/dasboard_icons/image83.png);
+    background-position: 10px;
+}
+.reports3 {
+    background-image:url(layout/site/dasboard_icons/image99.png);
+    background-position: 10px;
+}
+.reports4 {
+    background-image:url(layout/site/dasboard_icons/image100.png);
+    background-position: 10px;
+}
+
+.reports5 {
+    background-image:url(layout/site/dasboard_icons/image101.png);
+    background-position: 10px;
+}
+.reports6 {
+    background-image:url(layout/site/dasboard_icons/image87.png);
+    background-position: 10px;
+}
+.reports7 {
+    background-image:url(layout/site/dasboard_icons/image47.png);
+    background-position: 10px;
+}
+.reports8 {
+    background-image:url(layout/site/dasboard_icons/image48.png);
+    background-position: 10px;
+}
+.reports9 {
+    background-image:url(layout/site/dasboard_icons/image98.png);
+    background-position: 10px;
+}
+.reports10 {
+    background-image:url(layout/site/dasboard_icons/image97.png);
+    background-position: 10px;
+}
+
+
+
+
+
+.reports11 {
+    background-image:url(layout/site/dasboard_icons/image89.png);
+    background-position: 10px;
+}
+
+.reports12 {
+    background-image:url(layout/site/dasboard_icons/image90.png);
+    background-position: 10px;
+}
+.reports13 {
+    background-image:url(layout/site/dasboard_icons/image91.png);
+    background-position: 10px;
+}
+.reports14 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+
+.reports15 {
+    background-image:url(layout/site/dasboard_icons/image93.png);
+    background-position: 10px;
+}
+.table_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 11px;
+
+}
+
+.table_wrapper_inner {
+
+}
+
+.table_wrapper td{
+    border: solid #d3e5ed;
+    border-width: 0px 1px 1px 0;
+}
+
+.table_wrapper th {
+    font-weight: bold;
+    font-size: 13px;
+    border: solid #d3e5ed;
+    border-width: 1px 1px 1px 0;
+}
+
+.table_wrapper th a:link, .table_wrapper th a:visited, .table_wrapper th a:hover, .table_wrapper th a:active {
+    color: #1f476f;
+    display: block;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 0 16px 0 0;
+}
+
+.approved {
+    display: block;
+    display: inline-block;
+    padding: 0 20px 0 0;
+    background:url(layout/site/tables/approved.gif) no-repeat right center;
+}
+
+.pending {
+    display: block;
+    display: inline-block;
+    padding: 0 20px 0 0;
+    background:url(layout/site/tables/pending.gif) no-repeat right center;
+    color: #b86464;
+}
+
+.asc {
+    background-image:url(layout/site/tables/asc.gif);
+}
+.unauthorised {
+    background-image:url(layout/site/dasboard_icons/unauthorised.png);
+     color:red;
+    text-decoration:line-through;
+}
+.unauthorised2 {
+    color:red;
+    text-decoration:line-through;
+}
+.desc {
+    background-image:url(layout/site/tables/desc.gif);
+}
+
+.table_wrapper td , .table_wrapper th {
+    text-align: left;
+    padding: 0 12px;
+    line-height: 26px;
+}
+
+.table_wrapper th {
+
+}
+
+.table_wrapper td {
+    background: #fefefe url(layout/site/tables/td_bg1.gif) repeat-x;
+}
+
+.table_wrapper tr.second td {
+    background: #f3f9fb url(layout/site/tables/td_bg2.gif) repeat-x;
+}
+
+.actions {
+    width: 126px;
+    overflow: hidden;
+}
+
+.actions .radio {
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    float: left;
+
+}
+
+.actions ul {
+    margin: 0;
+    padding: 0;
+    width: 150px;
+}
+
+
+.actions ul li {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0 11px 0 0;
+    list-style: none;
+
+}
+
+.actions ul a:link, .actions ul a:visited, .actions ul a:hover, .actions ul a:active {
+    display: block;
+    width: 14px;
+    height: 13px;
+    text-indent: -3000px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.action1 {
+    background-image:url(layout/site/tables/action1.gif);
+}
+.action2 {
+    background-image:url(layout/site/tables/action2.gif);
+}
+.action3 {
+    background-image:url(layout/site/tables/action3.gif);
+}
+.action4 {
+    background-image:url(layout/site/tables/action4.gif);
+}
+
+
+.table_section .sct_left .sct_left .sct_right {
+    padding: 0 2px;
+} 
+
+
+.table_section form, .table_section fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.table_menu {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 0 0;
+    margin: 0 0 -3px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.table_menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.table_menu .left {
+    float: left;
+    padding: 0 0 0 11px;
+}
+
+.table_menu .right {
+    float: right;
+    padding: 0 7px 0 0;
+}
+
+.table_menu li {
+    float: left;
+    margin: 0;
+    padding: 0 6px 0 0;
+    list-style: none;
+}
+
+.vendors {
+    background-image:url(layout/site/dasboard_icons/vendor.png);
+    background-position: 10px;
+}
+
+.tools {
+    background-image:url(layout/site/dasboard_icons/tools.png);
+    background-position: 10px;
+}
+/* end dashboard */

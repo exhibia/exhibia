@@ -1,0 +1,31 @@
+[08-Jan-2014 19:37:40] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[08-Jan-2014 19:37:42] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[09-Jan-2014 09:52:42] PHP Fatal error:  Class 'Sitesetting' not found in /home/xoomtabletblog/public_html/config/connect.php on line 22
+[09-Jan-2014 23:01:04] PHP Fatal error:  Call to undefined function imap_open() in /home/xoomtabletblog/public_html/include/addons/emailer/admin/interface.php on line 66
+[13-Jan-2014 21:23:13] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[13-Jan-2014 21:23:24] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[13-Jan-2014 21:23:34] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[14-Jan-2014 19:48:00] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[14-Jan-2014 20:16:34] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[15-Jan-2014 00:17:56] PHP Fatal error:  Class 'Sitesetting' not found in /home/xoomtabletblog/public_html/config/connect.php on line 22
+[16-Jan-2014 10:42:33] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[16-Jan-2014 10:42:41] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[16-Jan-2014 10:42:44] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[16-Jan-2014 10:42:51] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[16-Jan-2014 10:42:54] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[16-Jan-2014 10:42:59] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[16-Jan-2014 10:43:02] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[17-Jan-2014 09:39:16] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[17-Jan-2014 09:40:41] PHP Fatal error:  Call to undefined method DalPayInfo::setToken() in /home/xoomtabletblog/public_html/data/paygateway.php on line 71
+[17-Jan-2014 09:43:18] PHP Fatal error:  Call to undefined method DalPayInfo::getToken() in /home/xoomtabletblog/public_html/modules/gateways/dalpay/admin/form.php on line 48
+[17-Jan-2014 09:43:39] PHP Fatal error:  Call to undefined method DalPayInfo::getToken() in /home/xoomtabletblog/public_html/modules/gateways/dalpay/admin/form.php on line 48
+[17-Jan-2014 09:44:19] PHP Fatal error:  Call to undefined method DalPayInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 74
+[17-Jan-2014 09:45:26] PHP Fatal error:  Call to undefined method DalPayDirectInfo::setPassword() in /home/xoomtabletblog/public_html/data/paygateway.php on line 90
+[17-Jan-2014 09:46:00] PHP Fatal error:  Call to undefined method PayGateway::getGlobalPay() in /home/xoomtabletblog/public_html/modules/gateways/globalpay/admin/form.php on line 25
+[17-Jan-2014 09:47:26] PHP Fatal error:  Call to undefined method PayGateway::GlobalPayInfo() in /home/xoomtabletblog/public_html/modules/gateways/globalpay/admin/form.php on line 25
+[17-Jan-2014 09:48:29] PHP Fatal error:  Call to undefined method PayGateway::getGlobalPay() in /home/xoomtabletblog/public_html/modules/gateways/globalpay/admin/form.php on line 25
+[17-Jan-2014 09:49:51] PHP Fatal error:  Call to undefined method GlobalPayInfo::setPhone() in /home/xoomtabletblog/public_html/data/paygateway.php on line 301
+[17-Jan-2014 09:50:59] PHP Fatal error:  Call to undefined method GlobalPayInfo::setPhone() in /home/xoomtabletblog/public_html/data/paygateway.php on line 301
+[17-Jan-2014 11:54:08] PHP Parse error:  syntax error, unexpected T_WHILE in /home/xoomtabletblog/public_html/backendadmin/member_stats.php on line 285
+[17-Jan-2014 12:51:26] PHP Parse error:  syntax error, unexpected $end in /home/xoomtabletblog/public_html/backendadmin/placed_bids.php on line 179
+[18-Jan-2014 11:42:35] PHP Fatal error:  Call to a member function getToken() on a non-object in /home/xoomtabletblog/public_html/data/paygateway.php on line 318

@@ -1,0 +1,30 @@
+/* 
+    Document   : printtable
+    Created on : Jan 20, 2011, 12:11:56 AM
+    Author     : fedora
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.printtable{
+    border-top:1px solid black;
+    border-left:1px solid black;
+}
+
+.printtable th,.printtable td{
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+}
+
+.printtable td{
+    text-align:center;
+}
+
+.printtable th{
+    padding:5px;
+}

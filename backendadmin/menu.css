@@ -1,0 +1,85 @@
+TABLE#tblPaneBar {
+	BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 8pt; CURSOR: default; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #cccccc
+}
+TABLE#tblHidePane {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: #cccccc 1px solid; CURSOR: hand; PADDING-TOP: 1px; BORDER-BOTTOM: #cccccc 1px solid
+}
+TABLE#tblSyncPane {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: #cccccc 1px solid; CURSOR: hand; PADDING-TOP: 1px; BORDER-BOTTOM: #cccccc 1px solid
+}
+TABLE#tblPaneBar TD#tdPaneBarText {
+	PADDING-LEFT: 6px
+}
+.MenuHead {
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 4px;
+	FONT-WEIGHT: bold;
+	PADDING-BOTTOM: 4px;
+	COLOR: black;
+	PADDING-TOP: 2px;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.menuhead-a {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 4px; FONT-WEIGHT: bold; PADDING-BOTTOM: 4px; COLOR: #777777; PADDING-TOP: 2px
+}
+.mnpInherit {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.mnpMenuRow {
+	BORDER-RIGHT: #efebef 1px solid;
+	PADDING-RIGHT: 15px;
+	BORDER-TOP: #efebef 1px solid;
+	PADDING-LEFT: 6px;
+	OVERFLOW-X: hidden;
+	PADDING-BOTTOM: 3px;
+	MARGIN: 0px 2px;
+	BORDER-LEFT: #efebef 1px solid;
+	WIDTH: 150px;
+	CURSOR: hand;
+	COLOR: black;
+	PADDING-TOP: 3px;
+	BORDER-BOTTOM: #efebef 1px solid;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+.mnpMenuRow A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; TEXT-DECORATION: none
+}
+.mnpMenuRow A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; TEXT-DECORATION: none
+}
+.menu_item {
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+A.menu_item:hover {
+	COLOR: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+a.Menuhead {
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 4px;
+	FONT-WEIGHT: bold;
+	PADDING-BOTTOM: 4px;
+	COLOR: black;
+	PADDING-TOP: 2px;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+a.menuhead:hover {
+
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 4px;
+	FONT-WEIGHT: bold;
+	PADDING-BOTTOM: 4px;
+	PADDING-TOP: 2px;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+	
+}
